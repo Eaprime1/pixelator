@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Termux local data (stays on device, not in repo)
+.pixelator/
+
+# Nested repos — should never be committed here
+qdrive/
