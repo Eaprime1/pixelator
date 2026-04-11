@@ -432,7 +432,9 @@ def main():
 
     dry_run = args.dry_run or cfg.DRY_RUN
 
-    if args.interval:
+    if args.interval is not None:
+        if args.interval <= 0:
+            parser.error("--interval must be greater than 0")
         print(f"\n  Pixelator running on {args.interval}s interval. Ctrl+C to stop.")
         try:
             while True:
