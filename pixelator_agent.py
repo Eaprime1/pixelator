@@ -239,6 +239,40 @@ def print_run_summary(entries):
     print(f"\n  ∰◊€π¿🌌∞  Quality First. Enjoy the Journey.\n")
 
 
+def print_pressure_report(queue, manifest):
+    total = len(queue)
+    capacity = cfg.MAX_PER_RUN
+    cycles = (total + capacity - 1) // capacity if total else 0
+    held_after_burst = max(total - capacity, 0)
+
+    print("\n  Queue Pressure Report")
+    print(f"  {'─' * 52}")
+    print(f"  Queued now   : {total} item(s)")
+    print(f"  Burst size   : {capacity} item(s) per run")
+    print(f"  Cycles drain : {cycles} run(s) needed at current limit")
+    print(f"  Held pressure: {held_after_burst} item(s) remain after one burst")
+
+    by_label = {}
+    for item in queue:
+        label = item.get("label", "UNKNOWN")
+        by_label[label] = by_label.get(label, 0) + 1
+
+    if by_label:
+        print("  Pressure by lane:")
+        for label in sorted(by_label):
+            print(f"    - {label:12s} {by_label[label]} item(s)")
+    else:
+        print("  Pressure by lane: queue is empty")
+
+    if total:
+        preview = ", ".join(item.get("filename", "?") for item in queue[:3])
+        print(f"  Queue head   : {preview}")
+        if total > 3:
+            print(f"  Queue tail   : ... +{total - 3} more item(s)")
+
+    print("")
+
+
 # ─── Main Run ─────────────────────────────────────────────────────────────────
 
 def run_cycle(dry_run=False, status_only=False, pressure_only=False):
@@ -250,8 +284,12 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     queue = scan_feeds()
     manifest = update_queue_manifest(queue)
 
-    if status_only or pressure_only:
+    if status_only:
         print_status(queue, manifest)
+        return
+
+    if pressure_only:
+        print_pressure_report(queue, manifest)
         return
 
     print_status(queue, manifest)
