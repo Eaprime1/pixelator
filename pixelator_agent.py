@@ -142,6 +142,20 @@ def update_queue_manifest(queue):
 
 # ─── Processor ────────────────────────────────────────────────────────────────
 
+def _same_file_metadata(source, dest):
+    """Return True when source and dest appear to be the same file content/version."""
+    try:
+        source_stat = os.stat(source)
+        dest_stat = os.stat(dest)
+    except OSError:
+        return False
+
+    return (
+        source_stat.st_size == dest_stat.st_size
+        and source_stat.st_mtime_ns == dest_stat.st_mtime_ns
+    )
+
+
 def process_item(item, dry_run=False, copy_mode=False):
     """Move or copy one item. Returns a log entry."""
     source = item["source"]
@@ -150,11 +164,6 @@ def process_item(item, dry_run=False, copy_mode=False):
     label = item["label"]
 
     dest_path = os.path.join(dest_dir, filename)
-
-    # Handle filename collision — add timestamp suffix
-    if os.path.exists(dest_path):
-        stem, ext = os.path.splitext(filename)
-        dest_path = os.path.join(dest_dir, f"{stem}_{timestamp().replace(':', '')}{ext}")
 
     if dry_run:
         return log_entry(
@@ -168,6 +177,22 @@ def process_item(item, dry_run=False, copy_mode=False):
 
     try:
         os.makedirs(dest_dir, exist_ok=True)
+
+        if copy_mode and os.path.exists(dest_path) and _same_file_metadata(source, dest_path):
+            return log_entry(
+                action="SKIP",
+                source=source,
+                dest=dest_path,
+                label=label,
+                status="SUCCESS",
+                note="Destination already contains this source; skipping duplicate copy",
+            )
+
+        # Handle filename collision — add timestamp suffix
+        if os.path.exists(dest_path):
+            stem, ext = os.path.splitext(filename)
+            dest_path = os.path.join(dest_dir, f"{stem}_{timestamp().replace(':', '')}{ext}")
+
         if copy_mode:
             shutil.copy2(source, dest_path)
             action = "COPY"
