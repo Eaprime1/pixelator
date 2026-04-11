@@ -7,3 +7,5 @@ Thumbs.db
 
 # Nested repos — should never be committed here
 qdrive/
+.vercel
+.env*.local

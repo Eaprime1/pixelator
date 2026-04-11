@@ -1,0 +1,107 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/4 more awesome (and practical) things you can do with a terminal on Android.pdf",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/4 more awesome (and practical) things you can do with a terminal on Android.pdf",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Android.txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Android.txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Claude (1).txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Claude (1).txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/PIXEL_8A_ENVIRONMENTAL_COMPLETE.md",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/PIXEL_8A_ENVIRONMENTAL_COMPLETE.md",
+      "label": "doc",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Project dev plan and guide (1).pdf",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Project dev plan and guide (1).pdf",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Terminal transcript 202508051954.txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Terminal transcript 202508051954.txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Terminal transcript 202508061849.txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Terminal transcript 202508061849.txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Terminal transcript 202508062112.txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Terminal transcript 202508062112.txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Terminal transcript 202508221005 (1).txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Terminal transcript 202508221005 (1).txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    },
+    {
+      "timestamp": "2026-03-24T02:25:19",
+      "action": "DRY_RUN",
+      "source": "/storage/emulated/0/pixel8a/pixelate/Terminal transcript 202508221005.txt",
+      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Terminal transcript 202508221005.txt",
+      "label": "unsorted",
+      "status": "SIMULATED",
+      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
+      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+    }
+  ],
+  "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8",
+  "last_run": "2026-03-24T02:25:19",
+  "total_operations": 10
+}
