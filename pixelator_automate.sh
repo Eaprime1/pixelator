@@ -117,6 +117,7 @@ echo "$EXISTING" > /tmp/pixelator_cron_tmp 2>/dev/null || {
 
 echo "$CRON_ENTRY" >> /tmp/pixelator_cron_tmp
 crontab /tmp/pixelator_cron_tmp
+rm /tmp/pixelator_cron_tmp
 
 echo "  ✓ Cron entry added ($SCHEDULE_LABEL)"
 echo "  $CRON_ENTRY"
