@@ -200,18 +200,19 @@ def append_custody_log(entries):
 
 # ─── Reports ──────────────────────────────────────────────────────────────────
 
-def print_status(queue, manifest):
+def print_status(queue, manifest, dry_run=None):
     pressure_color = {
         "HIGH":   "*** HIGH PRESSURE ***",
         "MEDIUM": "~~ MEDIUM PRESSURE ~~",
         "LOW":    "-- low pressure --",
     }
+    effective_dry_run = dry_run if dry_run is not None else (cfg.DRY_RUN or "--dry-run" in sys.argv[1:])
     print(f"\n╔═══ PIXELATOR STATUS ════════════════════════════════════╗")
     print(f"  Time       : {timestamp()}")
     print(f"  Queue Depth: {manifest['queue_depth']} items")
     print(f"  Pressure   : {pressure_color.get(manifest['pressure'], manifest['pressure'])}")
     print(f"  Max/Run    : {cfg.MAX_PER_RUN} items (one hertz burst)")
-    print(f"  Mode       : {'DRY RUN' if cfg.DRY_RUN else 'LIVE'}")
+    print(f"  Mode       : {'DRY RUN' if effective_dry_run else 'LIVE'}")
     print(f"  Agent      : {AGENT_SIGNATURE}")
     print(f"╚═══════════════════════════════════════════════════════════╝")
     if queue:
