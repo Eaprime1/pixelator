@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Organize scattered content into proper locations",
+  "description": "Move content from multiple locations into the appropriate repos (pixel8 for setup, pixelation for interactive, pixelate for working files).",
+  "activeForm": "Organizing scattered content",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

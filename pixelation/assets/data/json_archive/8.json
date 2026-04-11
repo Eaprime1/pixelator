@@ -1,0 +1,9 @@
+{
+  "id": "8",
+  "subject": "Design carbonite conversion test plan",
+  "description": "Create test plan for duplicatus carbonite conversion: (1) origin document gets duplicatus metric, (2) first duplicate becomes carbonite with heritage, (3) subsequent duplicates become shadow economy with ©(count), (4) unique content extraction and preservation.",
+  "activeForm": "Designing carbonite conversion test plan",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

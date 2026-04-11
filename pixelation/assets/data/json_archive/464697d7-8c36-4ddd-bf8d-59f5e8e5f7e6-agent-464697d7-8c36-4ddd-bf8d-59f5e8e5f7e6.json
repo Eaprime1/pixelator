@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Sync Google Drive prime_codex - COMPLETE (460/461 files)",
+    "status": "completed",
+    "activeForm": "Completed"
+  },
+  {
+    "content": "Sync Google Drive p_prime folder",
+    "status": "in_progress",
+    "activeForm": "Syncing p_prime from Google Drive"
+  },
+  {
+    "content": "Create sync summary document",
+    "status": "pending",
+    "activeForm": "Creating sync summary"
+  },
+  {
+    "content": "Update deduplication log and commit all foundation work",
+    "status": "pending",
+    "activeForm": "Committing foundation work"
+  }
+]

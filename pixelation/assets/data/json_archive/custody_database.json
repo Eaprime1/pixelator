@@ -1,0 +1,328 @@
+{
+  "metadata": {
+    "created": "2025-08-19T22:43:15-07:00",
+    "version": "1.0",
+    "framework": "Sacred Empire Terminal Framework",
+    "purpose": "Chain of custody tracking for terminal documents"
+  },
+  "documents": {
+    "DOC_68679b82_1755668595": {
+      "id": "DOC_68679b82_1755668595",
+      "filename": "sacred_empire_terminal_framework.md",
+      "original_path": "/storage/emulated/0/terminal_que/sacred_empire_terminal_framework.md",
+      "current_path": "~/terminal/frameworks/sacred_empire_terminal_framework.md",
+      "category": "framework",
+      "registered": "2025-08-19T22:43:15-07:00",
+      "size": "55066",
+      "md5_hash": "80387493c14f9fc68187f877a5193a1a",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:43:15-07:00",
+          "location": "~/terminal/frameworks/sacred_empire_terminal_framework.md",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:43:15-07:00",
+          "location": "~/terminal/frameworks/sacred_empire_terminal_framework.md",
+          "operator": "custody_tracker",
+          "notes": "Core Sacred Empire Terminal Framework - primary implementation guide"
+        }
+      ]
+    },
+    "DOC_237bfc74_1755668610": {
+      "id": "DOC_237bfc74_1755668610",
+      "filename": "sacred_empire_game_design.md",
+      "original_path": "/storage/emulated/0/terminal_que/sacred_empire_game_design.md",
+      "current_path": "~/terminal/sacred_empire/sacred_empire_game_design.md",
+      "category": "sacred_empire",
+      "registered": "2025-08-19T22:43:30-07:00",
+      "size": "7444",
+      "md5_hash": "5665170618da3e905a3bbb76086a4b51",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:43:30-07:00",
+          "location": "~/terminal/sacred_empire/sacred_empire_game_design.md",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:43:30-07:00",
+          "location": "~/terminal/sacred_empire/sacred_empire_game_design.md",
+          "operator": "custody_tracker",
+          "notes": "Sacred Empire game design documentation"
+        }
+      ]
+    },
+    "DOC_8b55bf34_1755668620": {
+      "id": "DOC_8b55bf34_1755668620",
+      "filename": "terminal_sacred_odyssey_prospectus.md",
+      "original_path": "/storage/emulated/0/terminal_que/terminal_sacred_odyssey_prospectus.md",
+      "current_path": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus.md",
+      "category": "prospectus",
+      "registered": "2025-08-19T22:43:40-07:00",
+      "size": "12869",
+      "md5_hash": "d0a52d7856340c884cb4ef1e51d66cec",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:43:40-07:00",
+          "location": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus.md",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:43:40-07:00",
+          "location": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus.md",
+          "operator": "custody_tracker",
+          "notes": "Terminal Sacred Odyssey main prospectus document"
+        }
+      ]
+    },
+    "DOC_02ef5fcd_1755668630": {
+      "id": "DOC_02ef5fcd_1755668630",
+      "filename": "terminal_sacred_odyssey_prospectus (1).md",
+      "original_path": "/storage/emulated/0/terminal_que/terminal_sacred_odyssey_prospectus (1).md",
+      "current_path": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus_v2.md",
+      "category": "prospectus",
+      "registered": "2025-08-19T22:43:50-07:00",
+      "size": "7744",
+      "md5_hash": "dd62ff505a6c997e43f2095e882d1459",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:43:50-07:00",
+          "location": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus_v2.md",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:43:50-07:00",
+          "location": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus_v2.md",
+          "operator": "custody_tracker",
+          "notes": "Terminal Sacred Odyssey prospectus version 2"
+        }
+      ]
+    },
+    "DOC_0e6f8b96_1755668640": {
+      "id": "DOC_0e6f8b96_1755668640",
+      "filename": "conscious_terminal_guide.md",
+      "original_path": "/storage/emulated/0/terminal_que/conscious_terminal_guide.md",
+      "current_path": "~/terminal/frameworks/conscious_terminal_guide.md",
+      "category": "framework",
+      "registered": "2025-08-19T22:44:00-07:00",
+      "size": "9519",
+      "md5_hash": "97d1e0fb38ce5178391dab95d684e732",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:44:00-07:00",
+          "location": "~/terminal/frameworks/conscious_terminal_guide.md",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:44:00-07:00",
+          "location": "~/terminal/frameworks/conscious_terminal_guide.md",
+          "operator": "custody_tracker",
+          "notes": "Conscious terminal implementation guide"
+        }
+      ]
+    },
+    "DOC_ca4d52db_1755668655": {
+      "id": "DOC_ca4d52db_1755668655",
+      "filename": "Terminal transcript 20250819 14-11.txt",
+      "original_path": "/storage/emulated/0/terminal_que/Terminal transcript 20250819 14-11.txt",
+      "current_path": "~/terminal/transcripts/Terminal_transcript_20250819_14-11.txt",
+      "category": "transcript",
+      "registered": "2025-08-19T22:44:15-07:00",
+      "size": "9493",
+      "md5_hash": "da8fc1c73e1b300b5814be601cf0b069",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:44:15-07:00",
+          "location": "~/terminal/transcripts/Terminal_transcript_20250819_14-11.txt",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:44:16-07:00",
+          "location": "~/terminal/transcripts/Terminal_transcript_20250819_14-11.txt",
+          "operator": "custody_tracker",
+          "notes": "Terminal session transcript from August 19"
+        }
+      ]
+    },
+    "DOC_ad0ae540_1755668666": {
+      "id": "DOC_ad0ae540_1755668666",
+      "filename": "abacusian_comprehensive_json.json",
+      "original_path": "/storage/emulated/0/terminal_que/abacusian_comprehensive_json.json",
+      "current_path": "~/terminal/configurations/abacusian_comprehensive.json",
+      "category": "configuration",
+      "registered": "2025-08-19T22:44:26-07:00",
+      "size": "13210",
+      "md5_hash": "fea3376491e9010805e5412f1eab2aec",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:44:26-07:00",
+          "location": "~/terminal/configurations/abacusian_comprehensive.json",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:44:26-07:00",
+          "location": "~/terminal/configurations/abacusian_comprehensive.json",
+          "operator": "custody_tracker",
+          "notes": "Abacusian comprehensive configuration data"
+        }
+      ]
+    },
+    "DOC_afd731b7_1755668675": {
+      "id": "DOC_afd731b7_1755668675",
+      "filename": "conscious_terminal_json.json",
+      "original_path": "/storage/emulated/0/terminal_que/conscious_terminal_json.json",
+      "current_path": "~/terminal/configurations/conscious_terminal.json",
+      "category": "configuration",
+      "registered": "2025-08-19T22:44:35-07:00",
+      "size": "6085",
+      "md5_hash": "32f6661b5606c03225ea4c9529954c37",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:44:35-07:00",
+          "location": "~/terminal/configurations/conscious_terminal.json",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:44:36-07:00",
+          "location": "~/terminal/configurations/conscious_terminal.json",
+          "operator": "custody_tracker",
+          "notes": "Conscious terminal configuration data"
+        }
+      ]
+    },
+    "DOC_5708ec9d_1755668685": {
+      "id": "DOC_5708ec9d_1755668685",
+      "filename": "pass_forward_json.json",
+      "original_path": "/storage/emulated/0/terminal_que/pass_forward_json.json",
+      "current_path": "~/terminal/configurations/pass_forward.json",
+      "category": "configuration",
+      "registered": "2025-08-19T22:44:45-07:00",
+      "size": "6360",
+      "md5_hash": "c3bf2d281256d6a38d7d7a888f4d502d",
+      "chain_of_custody": [
+        {
+          "action": "REGISTERED",
+          "timestamp": "2025-08-19T22:44:45-07:00",
+          "location": "~/terminal/configurations/pass_forward.json",
+          "operator": "custody_tracker",
+          "notes": "Initial registration in Sacred Empire Terminal Framework"
+        },
+        {
+          "action": "MOVED",
+          "timestamp": "2025-08-19T22:44:46-07:00",
+          "location": "~/terminal/configurations/pass_forward.json",
+          "operator": "custody_tracker",
+          "notes": "Pass forward configuration data"
+        }
+      ]
+    }
+  },
+  "movements": [
+    {
+      "document_id": "DOC_68679b82_1755668595",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:43:15-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/sacred_empire_terminal_framework.md",
+      "new_path": "~/terminal/frameworks/sacred_empire_terminal_framework.md",
+      "operator": "custody_tracker",
+      "notes": "Core Sacred Empire Terminal Framework - primary implementation guide"
+    },
+    {
+      "document_id": "DOC_237bfc74_1755668610",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:43:30-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/sacred_empire_game_design.md",
+      "new_path": "~/terminal/sacred_empire/sacred_empire_game_design.md",
+      "operator": "custody_tracker",
+      "notes": "Sacred Empire game design documentation"
+    },
+    {
+      "document_id": "DOC_8b55bf34_1755668620",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:43:40-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/terminal_sacred_odyssey_prospectus.md",
+      "new_path": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus.md",
+      "operator": "custody_tracker",
+      "notes": "Terminal Sacred Odyssey main prospectus document"
+    },
+    {
+      "document_id": "DOC_02ef5fcd_1755668630",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:43:50-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/terminal_sacred_odyssey_prospectus (1).md",
+      "new_path": "~/terminal/prospectus/terminal_sacred_odyssey_prospectus_v2.md",
+      "operator": "custody_tracker",
+      "notes": "Terminal Sacred Odyssey prospectus version 2"
+    },
+    {
+      "document_id": "DOC_0e6f8b96_1755668640",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:44:00-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/conscious_terminal_guide.md",
+      "new_path": "~/terminal/frameworks/conscious_terminal_guide.md",
+      "operator": "custody_tracker",
+      "notes": "Conscious terminal implementation guide"
+    },
+    {
+      "document_id": "DOC_ca4d52db_1755668655",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:44:16-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/Terminal transcript 20250819 14-11.txt",
+      "new_path": "~/terminal/transcripts/Terminal_transcript_20250819_14-11.txt",
+      "operator": "custody_tracker",
+      "notes": "Terminal session transcript from August 19"
+    },
+    {
+      "document_id": "DOC_ad0ae540_1755668666",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:44:26-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/abacusian_comprehensive_json.json",
+      "new_path": "~/terminal/configurations/abacusian_comprehensive.json",
+      "operator": "custody_tracker",
+      "notes": "Abacusian comprehensive configuration data"
+    },
+    {
+      "document_id": "DOC_afd731b7_1755668675",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:44:36-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/conscious_terminal_json.json",
+      "new_path": "~/terminal/configurations/conscious_terminal.json",
+      "operator": "custody_tracker",
+      "notes": "Conscious terminal configuration data"
+    },
+    {
+      "document_id": "DOC_5708ec9d_1755668685",
+      "action": "MOVED",
+      "timestamp": "2025-08-19T22:44:46-07:00",
+      "old_path": "/storage/emulated/0/terminal_que/pass_forward_json.json",
+      "new_path": "~/terminal/configurations/pass_forward.json",
+      "operator": "custody_tracker",
+      "notes": "Pass forward configuration data"
+    }
+  ],
+  "audit_trail": []
+}

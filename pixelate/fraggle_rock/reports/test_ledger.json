@@ -1,0 +1,56 @@
+{
+  "ledger_id": "fraggle_github_hygiene",
+  "created": "20260301203003288",
+  "entries": [
+    {
+      "coc_id": "COC-0001",
+      "timestamp": "20260301203003288",
+      "entity": "henry_test",
+      "action": "SCAN",
+      "detail": "Test scan entry",
+      "status": "COMPLETE"
+    },
+    {
+      "coc_id": "COC-0002",
+      "timestamp": "20260301203003299",
+      "entity": "lsmancer_test",
+      "action": "ANALYZE",
+      "detail": "Test analyze entry",
+      "status": "COMPLETE"
+    },
+    {
+      "coc_id": "COC-0003",
+      "timestamp": "20260301203003301",
+      "entity": "fraggle_test",
+      "action": "LAUNCH",
+      "detail": "Test launch entry",
+      "status": "COMPLETE",
+      "updated": "20260301203003303"
+    },
+    {
+      "coc_id": "COC-0004",
+      "timestamp": "20260301204744248",
+      "entity": "henry_test",
+      "action": "SCAN",
+      "detail": "Test scan entry",
+      "status": "COMPLETE"
+    },
+    {
+      "coc_id": "COC-0005",
+      "timestamp": "20260301204744251",
+      "entity": "lsmancer_test",
+      "action": "ANALYZE",
+      "detail": "Test analyze entry",
+      "status": "COMPLETE"
+    },
+    {
+      "coc_id": "COC-0006",
+      "timestamp": "20260301204744254",
+      "entity": "fraggle_test",
+      "action": "LAUNCH",
+      "detail": "Test launch entry",
+      "status": "COMPLETE",
+      "updated": "20260301204744256"
+    }
+  ]
+}

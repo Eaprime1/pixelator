@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Organize trashed files in quanta/ and _.eric/",
+  "description": "Review and categorize trashed files in the quanta/ and _.eric/ directories. Determine what should be archived, what should be deleted, and what needs preservation.",
+  "activeForm": "Organizing trashed files",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

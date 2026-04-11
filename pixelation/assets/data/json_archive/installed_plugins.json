@@ -1,0 +1,387 @@
+{
+  "version": 2,
+  "plugins": {
+    "context7@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/context7/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:24:54.407Z",
+        "lastUpdated": "2025-12-22T20:24:54.407Z"
+      }
+    ],
+    "serena@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/serena/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:25:27.124Z",
+        "lastUpdated": "2025-12-22T20:25:27.124Z"
+      }
+    ],
+    "feature-dev@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/feature-dev/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:25:42.840Z",
+        "lastUpdated": "2025-12-22T20:25:42.840Z"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/frontend-design/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:26:21.790Z",
+        "lastUpdated": "2025-12-22T20:26:21.790Z"
+      }
+    ],
+    "github@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/github/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:26:36.292Z",
+        "lastUpdated": "2025-12-22T20:26:36.292Z"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/code-review/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:26:44.988Z",
+        "lastUpdated": "2025-12-22T20:26:44.988Z"
+      }
+    ],
+    "commit-commands@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/commit-commands/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:27:11.684Z",
+        "lastUpdated": "2025-12-22T20:27:11.684Z"
+      }
+    ],
+    "atlassian@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/atlassian/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:27:41.051Z",
+        "lastUpdated": "2025-12-22T20:27:41.051Z",
+        "gitCommitSha": "c2625747baa8863ed7ca0f9f1f320d7a8ea1d928"
+      }
+    ],
+    "security-guidance@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/security-guidance/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-22T20:27:58.782Z",
+        "lastUpdated": "2025-12-22T20:27:58.782Z"
+      }
+    ],
+    "supabase@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/supabase/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:00.564Z",
+        "lastUpdated": "2026-02-04T09:17:01.748Z"
+      }
+    ],
+    "agent-sdk-dev@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/agent-sdk-dev/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:00.678Z",
+        "lastUpdated": "2026-02-04T09:17:01.753Z"
+      }
+    ],
+    "figma@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/figma/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:05.068Z",
+        "lastUpdated": "2025-12-22T20:30:05.068Z",
+        "gitCommitSha": "20aca44ee6ba6092037e943c151c067896828360"
+      }
+    ],
+    "pr-review-toolkit@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:05.171Z",
+        "lastUpdated": "2026-02-04T09:17:01.758Z"
+      }
+    ],
+    "swift-lsp@claude-plugins-official": [
+      {
+        "scope": "project",
+        "projectPath": "/data/data/com.termux/files/home/Q",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/swift-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:09.563Z",
+        "lastUpdated": "2025-12-22T20:30:09.563Z"
+      },
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/swift-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:24.199Z",
+        "lastUpdated": "2025-12-22T20:30:24.199Z"
+      }
+    ],
+    "Notion@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/Notion/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2025-12-22T20:30:12.806Z",
+        "lastUpdated": "2025-12-22T20:30:12.806Z",
+        "gitCommitSha": "a7d0b05ca3f910c71dba56d4062ba781ae092e78"
+      }
+    ],
+    "explanatory-output-style@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/explanatory-output-style/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:12.956Z",
+        "lastUpdated": "2026-02-04T09:17:01.761Z"
+      }
+    ],
+    "laravel-boost@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/laravel-boost/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.080Z",
+        "lastUpdated": "2026-02-04T09:17:01.764Z"
+      }
+    ],
+    "linear@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/linear/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.230Z",
+        "lastUpdated": "2026-02-04T09:17:01.766Z"
+      }
+    ],
+    "ralph-wiggum@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/ralph-wiggum/6d3752c000e2",
+        "version": "6d3752c000e2",
+        "installedAt": "2025-12-22T20:30:13.361Z",
+        "lastUpdated": "2025-12-24T03:28:07.008Z"
+      }
+    ],
+    "playwright@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/playwright/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.487Z",
+        "lastUpdated": "2026-02-04T09:17:01.769Z"
+      }
+    ],
+    "plugin-dev@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/plugin-dev/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.651Z",
+        "lastUpdated": "2026-02-04T09:17:01.773Z"
+      }
+    ],
+    "hookify@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/hookify/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.797Z",
+        "lastUpdated": "2026-02-04T09:17:01.777Z"
+      }
+    ],
+    "learning-output-style@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/learning-output-style/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:13.933Z",
+        "lastUpdated": "2026-02-04T09:17:01.788Z"
+      }
+    ],
+    "sentry@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/sentry/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:19.741Z",
+        "lastUpdated": "2025-12-22T20:30:19.741Z",
+        "gitCommitSha": "215e5f1bf44a5a332da8fb3661980658b8db116c"
+      }
+    ],
+    "gitlab@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/gitlab/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:19.815Z",
+        "lastUpdated": "2026-02-04T09:17:01.783Z"
+      }
+    ],
+    "slack@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/slack/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:19.877Z",
+        "lastUpdated": "2026-02-04T09:17:01.785Z"
+      }
+    ],
+    "greptile@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/greptile/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:19.957Z",
+        "lastUpdated": "2026-02-04T09:17:01.790Z"
+      }
+    ],
+    "vercel@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/vercel/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.215Z",
+        "lastUpdated": "2025-12-22T20:30:23.215Z",
+        "gitCommitSha": "ae067751b4f42c97d13054211657275029ca8b6d"
+      }
+    ],
+    "firebase@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/firebase/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:23.280Z",
+        "lastUpdated": "2026-02-04T09:17:01.793Z"
+      }
+    ],
+    "asana@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/asana/27d2b86d72da",
+        "version": "27d2b86d72da",
+        "installedAt": "2025-12-22T20:30:23.344Z",
+        "lastUpdated": "2026-02-04T09:17:01.795Z"
+      }
+    ],
+    "stripe@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/stripe/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2025-12-22T20:30:23.403Z",
+        "lastUpdated": "2025-12-22T20:30:23.403Z"
+      }
+    ],
+    "clangd-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.467Z",
+        "lastUpdated": "2025-12-22T20:30:23.467Z"
+      }
+    ],
+    "csharp-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/csharp-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.562Z",
+        "lastUpdated": "2025-12-22T20:30:23.562Z"
+      }
+    ],
+    "gopls-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/gopls-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.637Z",
+        "lastUpdated": "2025-12-22T20:30:23.637Z"
+      }
+    ],
+    "jdtls-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/jdtls-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.726Z",
+        "lastUpdated": "2025-12-22T20:30:23.726Z"
+      }
+    ],
+    "lua-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/lua-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.824Z",
+        "lastUpdated": "2025-12-22T20:30:23.824Z"
+      }
+    ],
+    "php-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/php-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:23.923Z",
+        "lastUpdated": "2025-12-22T20:30:23.923Z"
+      }
+    ],
+    "pyright-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:24.025Z",
+        "lastUpdated": "2025-12-22T20:30:24.025Z"
+      }
+    ],
+    "rust-analyzer-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/rust-analyzer-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:24.117Z",
+        "lastUpdated": "2025-12-22T20:30:24.117Z"
+      }
+    ],
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/data/data/com.termux/files/home/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-22T20:30:24.287Z",
+        "lastUpdated": "2025-12-22T20:30:24.287Z"
+      }
+    ]
+  }
+}

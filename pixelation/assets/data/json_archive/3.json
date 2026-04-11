@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Set up pixelation repository for interactive project",
+  "description": "Create/initialize pixelation as a git repository for the interactive project components.",
+  "activeForm": "Setting up pixelation repo",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

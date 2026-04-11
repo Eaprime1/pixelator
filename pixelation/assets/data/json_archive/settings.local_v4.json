@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(git --version:*)",
+      "Bash(rclone version:*)",
+      "Bash(pkg list-installed:*)",
+      "Bash(ls:*)",
+      "Bash(python /storage/emulated/0/pixel8a/fleet_ops.py:*)",
+      "Bash(while read gitdir)",
+      "Bash(done)",
+      "Bash(git config:*)",
+      "Bash(git fetch:*)",
+      "Bash(chmod:*)",
+      "Bash(rclone listremotes:*)",
+      "Bash(rclone lsd gdrive_terminal:)",
+      "Bash(wc:*)",
+      "Bash(du -sh:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python /storage/emulated/0/pixel8a/Q/redundancy_entity_analyzer.py:*)",
+      "Bash(python prime_collapse.py:*)",
+      "Bash(python prime_search.py:*)",
+      "Bash(cat:*)",
+      "Bash(zip:*)",
+      "Bash(bash:*)",
+      "Bash(gh --version:*)",
+      "Bash(gh release create:*)",
+      "Bash(gravity_core_v1.0_alpha_consciousness.zip )",
+      "Bash(gravity_core_v1.0_beta_documents.zip )",
+      "Bash(gravity_core_v1.0_gamma_data.zip)",
+      "Bash(gh release view:*)",
+      "Bash(gh release upload:*)"
+    ]
+  }
+}

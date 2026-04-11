@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Resume after phone restart and verify environment",
+  "description": "After phone restart, verify working directory, test bash commands work without permission errors, and continue with directory creation and git initialization.",
+  "activeForm": "Waiting for phone restart",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

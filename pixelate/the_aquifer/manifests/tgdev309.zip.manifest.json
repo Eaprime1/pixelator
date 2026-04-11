@@ -1,0 +1,23 @@
+{
+  "zip_path": "/storage/emulated/0/pixel8a/ziparchive/tgdev309.zip",
+  "zip_name": "tgdev309.zip",
+  "zip_size_kb": 74.1,
+  "zip_sha256": "e5d6189fdce91c78df64bc7aba2d16a364d37684a22863fdf275f153ddd17a2f",
+  "total_files": 15,
+  "total_dirs": 0,
+  "uncompressed_mb": 0.28,
+  "timestamp": "20260326142618098",
+  "extensions": {
+    "pr": 1,
+    "pas": 2,
+    "doc": 5,
+    "diz": 1,
+    "lst": 1,
+    "h": 1,
+    "inc": 1,
+    "out": 1,
+    "c": 1,
+    "309": 1
+  },
+  "error": null
+}

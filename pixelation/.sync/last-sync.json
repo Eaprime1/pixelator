@@ -1,0 +1,12 @@
+{
+  "last_sync": null,
+  "status": "never_synced",
+  "internal_path": "/data/data/com.termux/files/home/pixelation",
+  "external_path": "/data/data/com.termux/files/home/storage/shared/pixelate",
+  "conflicts": [],
+  "stats": {
+    "files_synced": 0,
+    "total_size": 0,
+    "duration_seconds": 0
+  }
+}

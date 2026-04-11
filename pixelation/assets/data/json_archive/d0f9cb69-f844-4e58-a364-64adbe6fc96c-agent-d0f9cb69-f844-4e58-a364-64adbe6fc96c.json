@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Space fix: AI-Projects venv",
+    "status": "completed",
+    "activeForm": "Identified 236MB ai-env"
+  },
+  {
+    "content": "Design portaque pipeline",
+    "status": "completed",
+    "activeForm": "3-stage system designed"
+  },
+  {
+    "content": "Build Stage 2: Link Extractor",
+    "status": "pending",
+    "activeForm": "Next: link extraction"
+  },
+  {
+    "content": "Build Stage 3: Content Scraper",
+    "status": "pending",
+    "activeForm": "Smart scraping system"
+  },
+  {
+    "content": "Build Mission Module",
+    "status": "pending",
+    "activeForm": "Intelligence layer"
+  }
+]

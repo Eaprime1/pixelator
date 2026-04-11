@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Create pixelate working folder (no git)",
+  "description": "Set up pixelate as a working directory for temporary/scratch work that doesn't need version control.",
+  "activeForm": "Creating pixelate working folder",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

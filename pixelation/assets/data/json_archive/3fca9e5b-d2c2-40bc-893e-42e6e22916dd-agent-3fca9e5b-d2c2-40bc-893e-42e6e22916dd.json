@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Explore current Q and pixel8 directory structure",
+    "status": "completed",
+    "activeForm": "Exploring current directory structure"
+  },
+  {
+    "content": "Review domos concept for entity location folders",
+    "status": "completed",
+    "activeForm": "Reviewing domos concept"
+  },
+  {
+    "content": "Create project structure and documentation",
+    "status": "completed",
+    "activeForm": "Creating project structure"
+  },
+  {
+    "content": "Create bash environment and utility scripts",
+    "status": "completed",
+    "activeForm": "Creating bash environment"
+  },
+  {
+    "content": "Identify duplicates across sync and repos",
+    "status": "pending",
+    "activeForm": "Identifying duplicates"
+  },
+  {
+    "content": "Move large files to Q folder structure",
+    "status": "pending",
+    "activeForm": "Moving large files to Q"
+  }
+]

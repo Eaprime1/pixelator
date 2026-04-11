@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Organize consortium folders",
+  "description": "Organize .eric/, .claude/, and .gemini/ consortium folders into runexusiam/consortium/ for better structure.",
+  "activeForm": "Organizing consortium folders",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

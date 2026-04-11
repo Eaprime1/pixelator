@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Create conversation preservation document",
+    "status": "completed",
+    "activeForm": "Preserving conversation"
+  },
+  {
+    "content": "Create conversation essence index",
+    "status": "in_progress",
+    "activeForm": "Creating essence index"
+  },
+  {
+    "content": "Save to archive location",
+    "status": "pending",
+    "activeForm": "Saving to archive"
+  }
+]

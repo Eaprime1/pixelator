@@ -1,0 +1,19 @@
+{
+  "zip_path": "/storage/emulated/0/pixel8a/ziparchive/tg309sp4.zip",
+  "zip_name": "tg309sp4.zip",
+  "zip_size_kb": 569.8,
+  "zip_sha256": "258b415d09fa33cccf2fbda963cca6c13809634812192fb1f5cd12c7860a0cdd",
+  "total_files": 10,
+  "total_dirs": 0,
+  "uncompressed_mb": 0.87,
+  "timestamp": "20260326142617856",
+  "extensions": {
+    "zip": 2,
+    "dif": 2,
+    "doc": 1,
+    "exe": 3,
+    "lst": 1,
+    "diz": 1
+  },
+  "error": null
+}

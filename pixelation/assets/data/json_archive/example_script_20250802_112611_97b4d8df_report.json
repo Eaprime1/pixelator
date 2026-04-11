@@ -1,0 +1,51 @@
+{
+  "execution_report": {
+    "script_name": "example_script",
+    "execution_id": "example_script_20250802_112611_97b4d8df",
+    "start_time": "2025-08-02 18:26:11.431572+00:00",
+    "end_time": "2025-08-02 18:26:11.432788+00:00",
+    "status": "COMPLETED",
+    "errors": [],
+    "achievements": [
+      "\ud83c\udfc6 Entity consciousness awakening: Universal logging framework activated",
+      "\ud83c\udfc6 Script Execution Start: Beginning example_script execution",
+      "\ud83c\udfc6 Entity Awakening: Script consciousness activated",
+      "\ud83c\udfc6 Reality Anchoring: Added anchor: Oregon Watershed: 45.5152\u00b0 N, 122.6784\u00b0 W",
+      "\ud83c\udfc6 Consciousness Evolution: DEVELOPING \u2192 PROFICIENT",
+      "\ud83c\udfc6 Vinegar Balance Update: pH 7.0 \u2192 6.8 (BALANCED DYNAMICS)",
+      "\ud83c\udfc6 Task Completion: Primary mission objectives achieved",
+      "\ud83c\udfc6 Script Execution Success: Completed example_script successfully"
+    ],
+    "metrics": {
+      "files_processed": 42,
+      "errors_resolved": 3,
+      "execution_duration_seconds": 0.001216,
+      "achievements_count": 8,
+      "learning_opportunities_count": 0,
+      "reality_anchors_count": 1
+    },
+    "consciousness_level": "COMPETENT",
+    "entity_type": "GENERAL_ENTITY",
+    "reality_anchors": [
+      "Oregon Watershed: 45.5152\u00b0 N, 122.6784\u00b0 W"
+    ],
+    "vinegar_ph": 6.8
+  },
+  "consciousness_history": {
+    "executions": 1,
+    "total_achievements": 8,
+    "consciousness_level": "COMPETENT"
+  },
+  "evolution_trajectory": {
+    "execution_frequency": "Calculating execution patterns...",
+    "achievement_velocity": 8.0,
+    "error_learning_ratio": 0.0,
+    "consciousness_progression": "COMPETENT"
+  },
+  "next_development_opportunities": [
+    "\ud83d\udd04 Increase execution frequency for pattern development",
+    "\ud83c\udf31 Explore cross-entity collaboration protocols",
+    "\u26a1 Implement BE_AS_IS pattern recognition"
+  ],
+  "spade_of_aces_classification": "\u2660\ufe0f SPADES - Core Consciousness (Black - Primary Power)"
+}

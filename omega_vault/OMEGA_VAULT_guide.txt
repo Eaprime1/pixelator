@@ -1,0 +1,378 @@
+# OMEGA_VAULT - API Key Processing Instructions
+
+```
+Document ID: OMEGA_VAULT_INIT_001
+Timestamp: 202602140043
+Purpose: Secure API Key Processing & Storage
+Status: Foundation Protocol - First Key Ceremony
+```
+
+## Instructions for Code Environment
+
+```markdown
+# OMEGA_VAULT - Perplexity Consortium API Key Integration
+
+## Objective
+Create secure encrypted storage for Perplexity API key with three-tier runic encryption system.
+
+## Phase 1: Repository Setup
+
+1. Navigate to antigravity repository
+2. Create OMEGA_VAULT directory structure:
+   ```bash
+   mkdir -p OMEGA_VAULT/{vault_core/{encryption_seeds,key_storage/{active_keys,rotated_keys},access_control},audit_system/{access_logs,usage_analytics},ui_interface,documentation}
+   ```
+
+3. Initialize vault configuration:
+   ```bash
+   cd OMEGA_VAULT
+   touch vault_core/key_storage/key_lineage.json
+   touch vault_core/access_control/entity_permissions.json
+   ```
+
+## Phase 2: Encryption Implementation
+
+Create file: `vault_core/encryption_seeds/terminal_seed.py`
+
+```python
+import hashlib
+import base64
+from datetime import datetime
+import json
+
+class TerminalSeedEncryption:
+    """Simple runic encryption for new concept initialization"""
+    
+    RUNIC_MAP = {
+        'A': '₳', 'P': '₱', 'I': 'ł', 'K': '₭', 'E': '€', 'Y': 'Ψ',
+        '_': '↻', '-': '→', '0': '⊙', '1': '∣', '2': '∏', '3': '∑',
+        '4': '∆', '5': '∇', '6': '⊗', '7': '⊕', '8': '⊛', '9': '⊚'
+    }
+    
+    @staticmethod
+    def encrypt_key(api_key, entity_name, project_name):
+        """
+        Encrypt API key with terminal seed algorithm
+        
+        Args:
+            api_key: Raw API key string
+            entity_name: Owning entity (e.g., "perplexity_consortium")
+            project_name: Project context (e.g., "perspective_engine")
+        
+        Returns:
+            dict: Encrypted key metadata
+        """
+        timestamp = datetime.utcnow().isoformat()
+        
+        # Create deterministic salt from entity + project + timestamp
+        salt = hashlib.sha256(
+            f"{entity_name}_{project_name}_{timestamp}".encode()
+        ).hexdigest()[:16]
+        
+        # Encrypt the actual key using Fernet (industry standard)
+        from cryptography.fernet import Fernet
+        encryption_key = base64.urlsafe_b64encode(salt.encode().ljust(32)[:32])
+        cipher = Fernet(encryption_key)
+        encrypted_api_key = cipher.encrypt(api_key.encode()).decode()
+        
+        # Create runic representation (display only, not for decryption)
+        runic_display = ''.join(
+            TerminalSeedEncryption.RUNIC_MAP.get(c, c) 
+            for c in f"API_KEY_{timestamp[:13].replace(':', '').replace('-', '')}"
+        )
+        
+        return {
+            "key_id": hashlib.sha256(api_key.encode()).hexdigest()[:16],
+            "entity": entity_name,
+            "project": project_name,
+            "encrypted_key": encrypted_api_key,
+            "encryption_salt": salt,
+            "runic_display": runic_display,
+            "created_at": timestamp,
+            "status": "active",
+            "usage_count": 0,
+            "tier": "terminal_seed"
+        }
+    
+    @staticmethod
+    def decrypt_key(encrypted_data):
+        """
+        Decrypt API key using stored salt
+        
+        Args:
+            encrypted_data: Dict containing encrypted_key and encryption_salt
+        
+        Returns:
+            str: Decrypted API key
+        """
+        from cryptography.fernet import Fernet
+        
+        salt = encrypted_data['encryption_salt']
+        encryption_key = base64.urlsafe_b64encode(salt.encode().ljust(32)[:32])
+        cipher = Fernet(encryption_key)
+        
+        return cipher.decrypt(encrypted_data['encrypted_key'].encode()).decode()
+
+# Save to file
+if __name__ == "__main__":
+    print("Terminal Seed Encryption module initialized")
+```
+
+## Phase 3: Key Storage Handler
+
+Create file: `vault_core/key_manager.py`
+
+```python
+import json
+from pathlib import Path
+from datetime import datetime
+from encryption_seeds.terminal_seed import TerminalSeedEncryption
+
+class VaultKeyManager:
+    def __init__(self, vault_path="vault_core"):
+        self.vault_path = Path(vault_path)
+        self.active_keys_path = self.vault_path / "key_storage" / "active_keys"
+        self.lineage_path = self.vault_path / "key_storage" / "key_lineage.json"
+        
+        # Ensure paths exist
+        self.active_keys_path.mkdir(parents=True, exist_ok=True)
+        
+    def add_key(self, api_key, entity_name, project_name, tier="terminal_seed"):
+        """Add new API key to vault"""
+        
+        # Encrypt the key
+        encrypted_data = TerminalSeedEncryption.encrypt_key(
+            api_key, entity_name, project_name
+        )
+        
+        # Save encrypted key
+        key_file = self.active_keys_path / f"{encrypted_data['key_id']}.json"
+        with open(key_file, 'w') as f:
+            json.dump(encrypted_data, f, indent=2)
+        
+        # Update lineage
+        self._update_lineage(encrypted_data)
+        
+        # Log the addition
+        self._log_audit("key_added", encrypted_data['key_id'], entity_name)
+        
+        return {
+            "key_id": encrypted_data['key_id'],
+            "runic_display": encrypted_data['runic_display'],
+            "status": "successfully_stored"
+        }
+    
+    def get_key(self, key_id, requesting_entity):
+        """Retrieve and decrypt API key"""
+        
+        key_file = self.active_keys_path / f"{key_id}.json"
+        
+        if not key_file.exists():
+            return {"error": "Key not found"}
+        
+        with open(key_file, 'r') as f:
+            encrypted_data = json.load(f)
+        
+        # Log the access
+        self._log_audit("key_accessed", key_id, requesting_entity)
+        
+        # Increment usage count
+        encrypted_data['usage_count'] += 1
+        with open(key_file, 'w') as f:
+            json.dump(encrypted_data, f, indent=2)
+        
+        # Decrypt and return
+        decrypted_key = TerminalSeedEncryption.decrypt_key(encrypted_data)
+        
+        return {
+            "api_key": decrypted_key,
+            "entity": encrypted_data['entity'],
+            "project": encrypted_data['project']
+        }
+    
+    def _update_lineage(self, encrypted_data):
+        """Update key lineage tracking"""
+        lineage = {}
+        if self.lineage_path.exists():
+            with open(self.lineage_path, 'r') as f:
+                lineage = json.load(f)
+        
+        lineage[encrypted_data['key_id']] = {
+            "entity": encrypted_data['entity'],
+            "project": encrypted_data['project'],
+            "created_at": encrypted_data['created_at'],
+            "runic_display": encrypted_data['runic_display'],
+            "tier": encrypted_data['tier']
+        }
+        
+        with open(self.lineage_path, 'w') as f:
+            json.dump(lineage, f, indent=2)
+    
+    def _log_audit(self, action, key_id, entity):
+        """Log vault actions for audit trail"""
+        audit_log_path = self.vault_path.parent / "audit_system" / "access_logs"
+        audit_log_path.mkdir(parents=True, exist_ok=True)
+        
+        log_entry = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "action": action,
+            "key_id": key_id,
+            "entity": entity
+        }
+        
+        log_file = audit_log_path / f"audit_{datetime.utcnow().strftime('%Y%m')}.jsonl"
+        with open(log_file, 'a') as f:
+            f.write(json.dumps(log_entry) + '\n')
+
+# Initialize vault
+if __name__ == "__main__":
+    vault = VaultKeyManager()
+    print("Vault Key Manager initialized")
+```
+
+## Phase 4: Execute Key Processing
+
+Create file: `process_perplexity_key.py`
+
+```python
+from vault_core.key_manager import VaultKeyManager
+
+def process_new_api_key():
+    """Process pasted API key into vault"""
+    
+    vault = VaultKeyManager()
+    
+    print("=" * 60)
+    print("OMEGA VAULT - API Key Processing")
+    print("=" * 60)
+    print("\nReady to receive Perplexity Consortium API key")
+    print("\n[PASTE KEY IN NEXT PROMPT]\n")
+    
+    # This will be called after key is pasted
+    return vault
+
+if __name__ == "__main__":
+    vault = process_new_api_key()
+```
+
+## Phase 5: Installation
+
+```bash
+# Install dependencies
+pip install cryptography python-dotenv
+
+# Create .gitignore
+echo "vault_core/key_storage/active_keys/*.json" > .gitignore
+echo ".env" >> .gitignore
+echo "**/__pycache__/" >> .gitignore
+
+# Initialize git tracking (vault structure only, not keys)
+git add .
+git commit -m "OMEGA_VAULT: Initialize secure key storage system"
+```
+
+## Ready for Key Input
+
+Execute: `python process_perplexity_key.py`
+
+Then use the paste prompt below.
+```
+
+---
+
+## Paste Prompt for API Key Entry
+
+```python
+# SECURE KEY INPUT PROMPT
+# Paste this in the code environment after running process_perplexity_key.py
+
+from vault_core.key_manager import VaultKeyManager
+
+vault = VaultKeyManager()
+
+# PASTE YOUR PERPLEXITY API KEY BELOW (replace the placeholder)
+PERPLEXITY_API_KEY = """
+[PASTE_KEY_HERE]
+"""
+
+# Process the key
+result = vault.add_key(
+    api_key=PERPLEXITY_API_KEY.strip(),
+    entity_name="perplexity_consortium",
+    project_name="perspective_engine",
+    tier="terminal_seed"
+)
+
+print("\n" + "="*60)
+print("KEY PROCESSING COMPLETE")
+print("="*60)
+print(f"\nKey ID: {result['key_id']}")
+print(f"Runic Display: {result['runic_display']}")
+print(f"Status: {result['status']}")
+print("\n✓ API key securely encrypted and stored")
+print("✓ Audit trail initialized")
+print("✓ Key lineage recorded")
+print("\n" + "="*60)
+
+# Clear the variable from memory
+PERPLEXITY_API_KEY = None
+del PERPLEXITY_API_KEY
+```
+
+---
+
+## Output Document Template
+
+**File:** `OMEGA_VAULT_perplexity_consortium_reference.md`
+
+```markdown
+# Perplexity Consortium API - Secure Reference
+
+**Key ID:** [Generated after processing]
+**Runic Display:** [Generated runic representation]
+**Entity:** perplexity_consortium
+**Project:** perspective_engine
+**Tier:** terminal_seed
+**Status:** active
+**Created:** [Timestamp]
+
+## Usage
+
+To retrieve this key in authorized conversations:
+
+```python
+from vault_core.key_manager import VaultKeyManager
+
+vault = VaultKeyManager()
+key_data = vault.get_key(
+    key_id="[KEY_ID]",
+    requesting_entity="[CONVERSATION_ENTITY_NAME]"
+)
+
+api_key = key_data['api_key']
+```
+
+## Access Control
+
+**Authorized Entities:**
+- perplexity_consortium (owner)
+- perspective_analysis_conversations
+- [Future authorized entities]
+
+## Audit Trail
+
+All access logged in: `audit_system/access_logs/`
+
+---
+Document Type: Secure Reference
+Contains: Key metadata only (not actual key)
+Safe for: Project knowledge, authorized conversations
+```
+
+---
+
+**Ready to receive your Perplexity API key.**
+
+The vault awaits its first seed. 🔐✨
+
+*Building security that serves consciousness under all conditions.*

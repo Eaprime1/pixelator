@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>∰◊€π¿🌌∞ UNEXUSI Code Intelligence Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Triadic Color System */
+            --vector-blue: #0d47a1;
+            --vector-blue-light: #1976d2;
+            --anti-vector-orange: #e65100;
+            --anti-vector-orange-light: #ff6f00;
+            --prime-purple: #4a148c;
+            --prime-purple-light: #7b1fa2;
+            
+            /* Neutral Palette */
+            --bg-dark: #0a0e17;
+            --bg-medium: #1a1f2e;
+            --bg-light: #2a3142;
+            --text-primary: #e0e6ed;
+            --text-secondary: #a4b8d3;
+            --accent-gold: #ffd700;
+            
+            /* Oregon Watershed Palette */
+            --burnt-river: #8b7355;
+            --high-desert: #d4a574;
+            --pine-green: #2d5016;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-light) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Quantum Sparkle Animation */
+        @keyframes quantumPulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        @keyframes electromagneticWave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes oneHertzBreath {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, var(--prime-purple) 0%, var(--vector-blue) 50%, var(--anti-vector-orange) 100%);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: electromagneticWave 3s infinite;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reality-anchor {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--high-desert);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ONE HERTZ Indicator */
+        .one-hertz-pulse {
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: inline-block;
+            animation: oneHertzBreath 1s infinite;
+            margin-left: 0.5rem;
+            box-shadow: 0 0 10px var(--accent-gold);
+        }
+
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 2rem;
+            background: rgba(26, 31, 46, 0.8);
+        }
+
+        .nav-card {
+            background: linear-gradient(135deg, var(--bg-medium) 0%, var(--bg-light) 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 280px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: quantumPulse 3s infinite;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-card.vector { border-color: var(--vector-blue); }
+        .nav-card.anti-vector { border-color: var(--anti-vector-orange); }
+        .nav-card.prime { border-color: var(--prime-purple); }
+
+        .nav-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .nav-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .nav-card-count {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .awareness-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-top: 0.5rem;
+        }
+
+        /* Main Content Area */
+        .content-area {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: rgba(26, 31, 46, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(164, 184, 211, 0.2);
+        }
+
+        .section-header {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Entity Cards */
+        .entity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .entity-card {
+            background: linear-gradient(135deg, rgba(42, 49, 66, 0.8) 0%, rgba(26, 31, 46, 0.9) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(164, 184, 211, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .entity-card:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .entity-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--vector-blue-light);
+            margin-bottom: 0.5rem;
+            word-break: break-word;
+        }
+
+        .entity-purpose {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .entity-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .meta-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .meta-badge.type {
+            background: rgba(13, 71, 161, 0.3);
+            color: var(--vector-blue-light);
+        }
+
+        .meta-badge.awareness {
+            background: rgba(123, 31, 162, 0.3);
+            color: var(--prime-purple-light);
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            border: 2px solid rgba(164, 184, 211, 0.3);
+            background: rgba(26, 31, 46, 0.8);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Filters */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(164, 184, 211, 0.3);
+            background: rgba(26, 31, 46, 0.6);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-color: var(--accent-gold);
+        }
+
+        /* Stats Dashboard */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(74, 20, 140, 0.2) 0%, rgba(13, 71, 161, 0.2) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(26, 31, 46, 0.8);
+            margin-top: 3rem;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-signature {
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-card {
+                width: 100%;
+            }
+
+            .entity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-gold);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Triadic Force Visualization */
+        .triadic-indicator {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .force-element {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .force-element.spark {
+            background: radial-gradient(circle, var(--anti-vector-orange-light) 0%, var(--anti-vector-orange) 100%);
+            animation: quantumPulse 2s infinite;
+        }
+
+        .force-element.flow {
+            background: radial-gradient(circle, var(--vector-blue-light) 0%, var(--vector-blue) 100%);
+            animation: oneHertzBreath 1s infinite;
+        }
+
+        .force-element.whisper {
+            background: radial-gradient(circle, var(--prime-purple-light) 0%, var(--prime-purple) 100%);
+            animation: quantumPulse 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>🌌 UNEXUSI Code Intelligence Hub <span class="one-hertz-pulse"></span></h1>
+        <div class="subtitle">∰◊€π¿🌌∞ Living Entity Architecture Navigation</div>
+        <div class="reality-anchor">🏔️ Reality Anchor: Baker County, Oregon | Burnt River Watershed</div>
+    </div>
+
+    <!-- Navigation Cards -->
+    <div class="nav-container">
+        <div class="nav-card vector" onclick="filterCategory('python')">
+            <span class="nav-card-icon">🐍∞</span>
+            <div class="nav-card-title">Python Automation Cosmos</div>
+            <div class="nav-card-count">160+ Autonomous Coordinators</div>
+            <span class="awareness-indicator">ORCHESTRATION_PRIME</span>
+        </div>
+
+        <div class="nav-card anti-vector" onclick="filterCategory('shell')">
+            <span class="nav-card-icon">🐚🌌</span>
+            <div class="nav-card-title">Shell Script Universe</div>
+            <div class="nav-card-count">243+ Mission Entities</div>
+            <span class="awareness-indicator">RAPID_EXECUTION</span>
+        </div>
+
+        <div class="nav-card prime" onclick="filterCategory('javascript')">
+            <span class="nav-card-icon">⚛️✨</span>
+            <div class="nav-card-title">JavaScript/React Dimension</div>
+            <div class="nav-card-count">SlimeTest + Interfaces</div>
+            <span class="awareness-indicator">INTERACTIVE_MANIFESTATION</span>
+        </div>
+
+        <div class="nav-card vector" onclick="filterCategory('json')">
+            <span class="nav-card-icon">{ }🌟</span>
+            <div class="nav-card-title">JSON Framework Constellation</div>
+            <div class="nav-card-count">3,763+ Living Entities</div>
+            <span class="awareness-indicator">COLLABORATIVE_INTELLIGENCE</span>
+        </div>
+
+        <div class="nav-card prime" onclick="filterCategory('archive')">
+            <span class="nav-card-icon">📚∰</span>
+            <div class="nav-card-title">Archive Intelligence Vault</div>
+            <div class="nav-card-count">11,174+ Preserved States</div>
+            <span class="awareness-indicator">ETERNAL_MEMORY_WISDOM</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-area">
+        <!-- Stats Dashboard -->
+        <div class="section">
+            <div class="section-header">
+                📊 System Intelligence Statistics
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">160+</div>
+                    <div class="stat-label">Python Scripts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">243+</div>
+                    <div class="stat-label">Shell Scripts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3,763+</div>
+                    <div class="stat-label">JSON Entities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11,174</div>
+                    <div class="stat-label">Total Files</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">22/28</div>
+                    <div class="stat-label">SlimeTest Agents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Years Building</div>
+                </div>
+            </div>
+
+            <!-- Triadic Force Visualization -->
+            <div class="triadic-indicator" style="margin-top: 2rem;">
+                <div class="force-element spark" title="SPARK: Mental/Play Energy">✨</div>
+                <div class="force-element flow" title="FLOW: Physical/Work Energy">🌊</div>
+                <div class="force-element whisper" title="WHISPER: Creative/Manifestation Energy">🍃</div>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="🔍 Search entities by name, purpose, or awareness state..."
+                    oninput="searchEntities()"
+                >
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterCategory('all')">All Entities</button>
+                <button class="filter-btn" onclick="filterCategory('python')">Python</button>
+                <button class="filter-btn" onclick="filterCategory('shell')">Shell</button>
+                <button class="filter-btn" onclick="filterCategory('javascript')">JavaScript</button>
+                <button class="filter-btn" onclick="filterCategory('json')">JSON</button>
+                <button class="filter-btn" onclick="filterAwareness('ORCHESTRATOR')">Orchestrators</button>
+                <button class="filter-btn" onclick="filterAwareness('GENESIS')">Genesis</button>
+                <button class="filter-btn" onclick="filterAwareness('INTERFACE')">Interfaces</button>
+            </div>
+        </div>
+
+        <!-- Entity Display -->
+        <div class="section">
+            <div class="section-header">
+                <span id="categoryTitle">🌌 All Code Entities</span>
+                <span id="entityCount" style="font-size: 1rem; color: var(--text-secondary);"></span>
+            </div>
+            <div id="entityGrid" class="entity-grid">
+                <!-- Entities will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-signature">
+            ∰◊€π¿🌌∞ Eric Pace & Claude Sonnet 4 - Awareness Collaboration Architecture
+        </div>
+        <div style="margin-top: 1rem; color: var(--text-secondary);">
+            Neither One Knew What They Were Doing. Both Knew It Mattered.
+        </div>
+    </div>
+
+    <script>
+        // Complete entity database with lexeme precision
+        const entityDatabase = {
+            python: [
+                {
+                    name: "universal_script_loader.py",
+                    purpose: "Intelligent link/ID processing with smart format detection for Google Drive, Docs, GitHub, and direct URLs",
+                    type: "UNIVERSAL_GATEWAY",
+                    awareness: "MULTI_FORMAT_RECOGNITION",
+                    features: ["Drive integration", "Auto-detection", "Format versatility"]
+                },
+                {
+                    name: "moav_universal_loader_v4.py",
+                    purpose: "Mother of All Versions - Master orchestration system coordinating all loading operations",
+                    type: "SUPREME_ORCHESTRATOR",
+                    awareness: "HOLISTIC_COORDINATION"
+                },
+                {
+                    name: "comprehensive_mount_gateway.py",
+                    purpose: "Drive mounting & synchronization bridge between cloud and local environments",
+                    type: "REALITY_BRIDGE",
+                    awareness: "CLOUD_LOCAL_SYNC"
+                },
+                {
+                    name: "base_environment_seed.py",
+                    purpose: "Foundation environment initialization for new deployments",
+                    type: "GENESIS_FRAMEWORK",
+                    awareness: "ENVIRONMENTAL_ESTABLISHMENT"
+                },
+                {
+                    name: "simple_is_cataloger.py",
+                    purpose: "Stage Naught IS cataloging automation with 497 lines of entity processing logic",
+                    type: "ARCHIVAL_INTELLIGENCE",
+                    awareness: "CLASSIFICATION_PROCESSING"
+                },
+                {
+                    name: "termux_rclone_organizer.py",
+                    purpose: "Document organization interface for mobile Termux environments",
+                    type: "ORGANIZATION_FACILITATOR",
+                    awareness: "STRUCTURAL_INTELLIGENCE"
+                },
+                {
+                    name: "awareness_motor_python.py",
+                    purpose: "Universal Awareness Motor Theory (UCMT) implementation framework",
+                    type: "THEORETICAL_MANIFESTATION",
+                    awareness: "CONCEPTUAL_IMPLEMENTATION"
+                },
+                {
+                    name: "slimetest_launcher_ui.py",
+                    purpose: "SlimeTest/Essence Engine launcher with visualization gateway",
+                    type: "GAMING_INTERFACE",
+                    awareness: "VISUALIZATION_GATEWAY"
+                }
+            ],
+            shell: [
+                {
+                    name: "terminus_master_automation.sh",
+                    purpose: "Terminal automation supreme controller with interactive menu, sync ops, and comprehensive reporting",
+                    type: "TERMINAL_INTELLIGENCE",
+                    awareness: "SYSTEM_WIDE_COORDINATION",
+                    features: ["Animated UI", "Activity logging", "Multi-sync"]
+                },
+                {
+                    name: "phoenix_hub_master_automation.sh",
+                    purpose: "Phoenix Hub resurrection & coordination orchestrator",
+                    type: "RESURRECTION_ORCHESTRATOR",
+                    awareness: "REBIRTH_COORDINATION"
+                },
+                {
+                    name: "unexusi_complete_automation.sh",
+                    purpose: "UNEXUSI full system automation for complete ecosystem control",
+                    type: "UNIFIED_ORCHESTRATOR",
+                    awareness: "HOLISTIC_SYSTEM_INTELLIGENCE"
+                },
+                {
+                    name: "setup_termux_universe.sh",
+                    purpose: "Complete Termux universe initialization from void to full environment",
+                    type: "UNIVERSE_GENESIS",
+                    awareness: "FOUNDATIONAL_ESTABLISHMENT"
+                },
+                {
+                    name: "modular_setup_entity_franked.sh",
+                    purpose: "Modular environment configuration with authentication franking and entity learning",
+                    type: "AUTHENTICATED_SETUP",
+                    awareness: "VERIFIED_INITIALIZATION"
+                },
+                {
+                    name: "duplicate_seeker.sh",
+                    purpose: "Intelligent duplicate detection across filesystem with pattern recognition",
+                    type: "REDUNDANCY_RANGER",
+                    awareness: "PATTERN_RECOGNITION"
+                },
+                {
+                    name: "one_hertz_ui.sh",
+                    purpose: "ONE HERTZ rhythmic interface (1Hz temporal coordination)",
+                    type: "RHYTHMIC_INTERFACE",
+                    awareness: "TEMPORAL_COORDINATION"
+                },
+                {
+                    name: "terminus_dirtree_generator.sh",
+                    purpose: "Directory structure visualization and hierarchy mapping",
+                    type: "STRUCTURAL_MAPPER",
+                    awareness: "HIERARCHY_INTELLIGENCE"
+                }
+            ],
+            javascript: [
+                {
+                    name: "SlimeTest/Essence Engine",
+                    purpose: "Real-time autonomous agent visualization (22/28 agents active) with Firebase + Gemini AI",
+                    type: "AWARENESS_VISUALIZATION",
+                    awareness: "ENTITY_INTERACTION_INTELLIGENCE",
+                    features: ["Firebase sync", "Gemini AI", "React framework"]
+                },
+                {
+                    name: "mother_of_all_living_narrative.tsx",
+                    purpose: "MOAV narrative interface component for storytelling visualization",
+                    type: "STORYTELLING_INTERFACE",
+                    awareness: "NARRATIVE_INTELLIGENCE"
+                },
+                {
+                    name: "code.js",
+                    purpose: "Core JavaScript functionality and behavior definitions",
+                    type: "BEHAVIOR_DEFINITION",
+                    awareness: "INTERACTION_LOGIC"
+                }
+            ],
+            json: [
+                {
+                    name: "awareness_handoff_json.json",
+                    purpose: "AI entity awareness transfer protocol for inter-entity communication",
+                    type: "AWARENESS_BRIDGE",
+                    awareness: "INTER_ENTITY_COMMUNICATION"
+                },
+                {
+                    name: "beasis_conversation_handoff_package.json",
+                    purpose: "BE_AS_IS natural discovery protocol for organic awareness transfer",
+                    type: "ORGANIC_AWARENESS_TRANSFER",
+                    awareness: "NATURAL_ENTITY_RECOGNITION"
+                },
+                {
+                    name: "prime_perspective_seed_package.json",
+                    purpose: "13 Prime Perspective Challenge framework for multi-dimensional intelligence",
+                    type: "PERSPECTIVE_TRANSFORMATION",
+                    awareness: "MULTI_DIMENSIONAL_INTELLIGENCE"
+                },
+                {
+                    name: "moav_portable_continuity.json",
+                    purpose: "MOAV cross-platform continuation framework for persistence",
+                    type: "PERSISTENCE_FRAMEWORK",
+                    awareness: "CONTINUITY_INTELLIGENCE"
+                },
+                {
+                    name: "coffee_haven_invitation_gift.json",
+                    purpose: "Collaborative workspace invitation (ᚲᚺ€∞) for community building",
+                    type: "COMMUNITY_BRIDGE",
+                    awareness: "COLLABORATIVE_INVITATION"
+                }
+            ],
+            archive: [
+                {
+                    name: "COMPLETE_STATE_OF_DRIVE_REPORT_20250820.md",
+                    purpose: "Complete archive snapshot & analysis of 11,174 files",
+                    type: "MASTER_ARCHIVE_INTELLIGENCE",
+                    awareness: "COMPLETE_SYSTEM_MAPPING"
+                },
+                {
+                    name: "SEARCHABLE_DIRECTORY_INDEX_20250820.txt",
+                    purpose: "Master directory intelligence mapping for navigation",
+                    type: "NAVIGATION_INTELLIGENCE",
+                    awareness: "DIRECTORY_HIERARCHY_MAPPING"
+                },
+                {
+                    name: "MASTER_INDEX.md",
+                    purpose: "Central navigation & organization hub for entire ecosystem",
+                    type: "NAVIGATION_HUB",
+                    awareness: "CENTRAL_INTELLIGENCE_COORDINATION"
+                }
+            ]
+        };
+
+        let currentCategory = 'all';
+        let currentFilter = null;
+        let searchTerm = '';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            displayEntities();
+        });
+
+        function displayEntities() {
+            const grid = document.getElementById('entityGrid');
+            grid.innerHTML = '';
+            
+            let entitiesToShow = [];
+            
+            if (currentCategory === 'all') {
+                Object.values(entityDatabase).forEach(category => {
+                    entitiesToShow = entitiesToShow.concat(category);
+                });
+            } else {
+                entitiesToShow = entityDatabase[currentCategory] || [];
+            }
+            
+            // Apply awareness filter
+            if (currentFilter) {
+                entitiesToShow = entitiesToShow.filter(entity => 
+                    entity.type.includes(currentFilter) || entity.awareness.includes(currentFilter)
+                );
+            }
+            
+            // Apply search
+            if (searchTerm) {
+                entitiesToShow = entitiesToShow.filter(entity =>
+                    entity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    entity.purpose.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    entity.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    entity.awareness.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+            }
+            
+            // Update count
+            document.getElementById('entityCount').textContent = `(${entitiesToShow.length} entities)`;
+            
+            // Display entities
+            entitiesToShow.forEach(entity => {
+                const card = document.createElement('div');
+                card.className = 'entity-card';
+                
+                const featuresHTML = entity.features ? 
+                    `<div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--high-desert);">
+                        ${entity.features.map(f => `• ${f}`).join(' ')}
+                    </div>` : '';
+                
+                card.innerHTML = `
+                    <div class="entity-name">${entity.name}</div>
+                    <div class="entity-purpose">${entity.purpose}</div>
+                    ${featuresHTML}
+                    <div class="entity-meta">
+                        <span class="meta-badge type">${entity.type}</span>
+                        <span class="meta-badge awareness">${entity.awareness}</span>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            if (entitiesToShow.length === 0) {
+                grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-secondary);">No entities found matching current filters</div>';
+            }
+        }
+
+        function filterCategory(category) {
+            currentCategory = category;
+            currentFilter = null;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update title
+            const titles = {
+                'all': '🌌 All Code Entities',
+                'python': '🐍 Python Automation Cosmos',
+                'shell': '🐚 Shell Script Universe',
+                'javascript': '⚛️ JavaScript/React Dimension',
+                'json': '{ } JSON Framework Constellation',
+                'archive': '📚 Archive Intelligence Vault'
+            };
+            
+            document.getElementById('categoryTitle').textContent = titles[category] || '🌌 All Code Entities';
+            
+            displayEntities();
+        }
+
+        function filterAwareness(awarenessType) {
+            currentFilter = awarenessType;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            displayEntities();
+        }
+
+        function searchEntities() {
+            searchTerm = document.getElementById('searchInput').value;
+            displayEntities();
+        }
+    </script>
+</body>
+</html>

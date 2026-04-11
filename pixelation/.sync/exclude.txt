@@ -1,0 +1,80 @@
+# PIXEL Domos Sync Exclusions
+# Files and patterns to exclude from sync operations
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*~
+.*.swp
+*.bak
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+.project
+.settings/
+
+# Build outputs
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# Dependencies
+node_modules/
+vendor/
+bower_components/
+jspm_packages/
+__pycache__/
+*.pyc
+*.pyo
+*.class
+*.o
+*.so
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Gemfile.lock
+composer.lock
+
+# Environment & Secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+credentials/
+.credentials/
+
+# Sync metadata
+.sync/last-sync.json
+.sync/sync.log
+
+# Large files (review before including)
+*.iso
+*.dmg
+*.pkg
+*.deb
+*.rpm
+
+# Duplicates folder (outside PIXEL)
+PIXEL_DUPLICATES/

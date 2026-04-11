@@ -1,0 +1,15 @@
+{
+  "name": "gps-location-app",
+  "version": "1.0.0",
+  "description": "Simple GPS location tracker with web UI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.14.2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Assess hodie git repository status",
+  "description": "Review the hodie/ git repository for deleted .eric/ files and untracked content. Document what needs cleanup without making changes yet.",
+  "activeForm": "Assessing hodie git repository status",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

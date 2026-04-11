@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Build one hertz crawler module",
+  "description": "Build crawler module that loads one file at a time, applies duplicatus processing, saves back with full chain of custody. Crawler learns titles as it processes to recognize future duplicates. Small-scale testing only.",
+  "activeForm": "Building one hertz crawler module",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

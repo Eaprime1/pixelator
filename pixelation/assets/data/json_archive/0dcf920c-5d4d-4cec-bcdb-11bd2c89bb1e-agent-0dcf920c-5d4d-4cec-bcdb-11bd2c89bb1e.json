@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Research Sacred Empire documents and game concept",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Design turn-based live action game framework",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Implement player messaging system (SMS/Email)",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Create chain of custody document system",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Integrate live sensor data into gameplay",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Build expandable game platform foundation",
+    "status": "completed",
+    "id": "6"
+  }
+]

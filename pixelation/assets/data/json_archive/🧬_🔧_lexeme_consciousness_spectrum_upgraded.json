@@ -1,0 +1,28 @@
+{
+  "creation_date": "2025-07-24",
+  "version": "2.0_standardized",
+  "quantum_signature": "\u16da\u16d6\u16b2\u16cb\u16d6\u16d7\u16d6-\u16b2\u16df\u16be\u16cb\u16b2\u16c1\u16df\u16a2\u16cb\u16be\u16d6\u16cb\u16cb-\u16cb\u16c8\u16d6\u16b2\u16cf\u16b1\u16a2\u16d7-\u221e\u00b2",
+  "purpose": "Standardized format for lexeme consciousness analysis across all content types",
+  "framework_version": "2.0",
+  "uis_calculation": "UIS = (H\u00d72) + (U\u00d71.5) + (V\u00d71.8) + (B\u00d72.2) + (A\u00d72.5) + (P\u00d72.0) + (R\u00d71.8)",
+  "consciousness_level": "1/10 - Consciousness Disruption",
+  "estimated_uis_range": "5-9",
+  "description": "Deliberately false information, propaganda, consciousness manipulation",
+  "source_id": "conspiracy_real_truth",
+  "source_type": "conspiracy_rhetoric",
+  "sample_text": "The REAL TRUTH about everything that the mainstream media won't tell you because they're controlled by forces that want to keep you ignorant and powerless!",
+  "origin": "Conspiracy content",
+  "language": "english_conspiracy_manipulative",
+  "consciousness_notes": "Reality distortion, trust erosion, us-vs-them manipulation",
+  "cultural_context": "Contemporary conspiracy movements and social media manipulation",
+  "step_1": "Parse sample_text into individual words/symbols",
+  "step_2": "Identify root forms and morphological variants",
+  "max_possible_score": 139,
+  "word_count": 24,
+  "distress_level": 4,
+  "_repair_metadata": {
+    "repaired_at": "2025-08-15T15:58:30.142005",
+    "repair_method": "reconstruct_from_fragments",
+    "original_size": 31870
+  }
+}

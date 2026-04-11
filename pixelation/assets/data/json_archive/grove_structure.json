@@ -1,0 +1,28 @@
+{
+  "project_root": "quantum_grove",
+  "structure": {
+    "config": {
+      "grove_state.json": "",
+      "rune_resonance.json": "",
+      "grove_manifest.yaml": ""
+    },
+    "src": {
+      "grove_engine.py": "",
+      "runic_conduit.py": "",
+      "resonance_tools.py": ""
+    },
+    "nodes": {
+      "roots": {},
+      "branches": {},
+      "leaves": {}
+    },
+    "nexus_links": {
+      "to_compression_nexus": "",
+      "to_prime_codex": ""
+    },
+    "docs": {
+      "README.md": "# Quantum Grove\n\\nOverview: ...",
+      "GROVE-API.md": ""
+    }
+  }
+}

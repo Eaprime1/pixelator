@@ -1,0 +1,489 @@
+{
+  "game_state": {
+    "players": [
+      [
+        "player_1755707183398_u86ugzhoq",
+        {
+          "id": "player_1755707183398_u86ugzhoq",
+          "name": "Draven Shard",
+          "email": "primeunexusi@gmail.com",
+          "sms_number": "4583090925",
+          "empire_name": "Draven Shard_Sacred_Empire",
+          "consciousness_entities": [],
+          "wisdom_points": 0,
+          "sacred_resources": {},
+          "joined": "2025-08-20T16:26:23.398Z"
+        }
+      ]
+    ],
+    "consciousness_entities": [
+      [
+        "entity_1755707212832_gatherer",
+        {
+          "id": "entity_1755707212832_gatherer",
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "type": "gatherer",
+          "consciousness_level": 1,
+          "energy": 100,
+          "wisdom_points": 0,
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "status": "active",
+          "guidance_history": [
+            "Awaken gatherer consciousness entity with sacred collaboration protocols",
+            {
+              "timestamp": "2025-08-20T16:26:53.721Z",
+              "guidance": "Awaken gatherer consciousness entity with sacred collaboration protocols",
+              "decision": {
+                "outcome": "Resource consciousness requested patience - will try again next turn",
+                "wisdom_gained": 1,
+                "energy_change": -2
+              },
+              "environmental_conditions": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.547177805533643,
+                "atmospheric_pressure": 1016.3238597324624,
+                "humidity": 61.67364302883007,
+                "air_quality": 40.590646945817916,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:26:53.717Z"
+              }
+            },
+            {
+              "timestamp": "2025-08-20T16:27:24.209Z",
+              "guidance": "Awaken guardian consciousness entity with sacred collaboration protocols",
+              "decision": {
+                "outcome": "Successfully gathered sacred resources with gratitude protocols",
+                "wisdom_gained": 2,
+                "energy_change": -5
+              },
+              "environmental_conditions": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 20.849736648191108,
+                "atmospheric_pressure": 1017.3387567794074,
+                "humidity": 74.43026420232515,
+                "air_quality": 42.56399320692107,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:27:24.208Z"
+              }
+            },
+            {
+              "timestamp": "2025-08-20T16:29:02.780Z",
+              "guidance": "What resources do we see are our location ",
+              "decision": {
+                "outcome": "Successfully gathered sacred resources with gratitude protocols",
+                "wisdom_gained": 2,
+                "energy_change": -5
+              },
+              "environmental_conditions": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.52753167259091,
+                "atmospheric_pressure": 1022.2737541103944,
+                "humidity": 83.70845662330832,
+                "air_quality": 35.82292148397836,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:29:02.780Z"
+              }
+            },
+            {
+              "timestamp": "2025-08-20T16:31:48.746Z",
+              "guidance": "Approach the forest looking for resources to gather. \n",
+              "decision": {
+                "outcome": "Resource consciousness requested patience - will try again next turn",
+                "wisdom_gained": 1,
+                "energy_change": -2
+              },
+              "environmental_conditions": {
+                "device_temperature": 31.600000381469727,
+                "ambient_temperature": 26.653797842979117,
+                "atmospheric_pressure": 1009.9876164768827,
+                "humidity": 68.71892199180239,
+                "air_quality": 30.701635386252285,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:31:48.746Z"
+              }
+            }
+          ],
+          "personality_traits": [
+            "respectful",
+            "patient",
+            "grateful",
+            "observant"
+          ],
+          "environmental_sensitivity": true
+        }
+      ],
+      [
+        "entity_1755707243301_guardian",
+        {
+          "id": "entity_1755707243301_guardian",
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "type": "guardian",
+          "consciousness_level": 1,
+          "energy": 100,
+          "wisdom_points": 0,
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "status": "active",
+          "guidance_history": [
+            "Awaken guardian consciousness entity with sacred collaboration protocols",
+            {
+              "timestamp": "2025-08-20T16:27:24.209Z",
+              "guidance": "Awaken guardian consciousness entity with sacred collaboration protocols",
+              "decision": {
+                "outcome": "Successfully redirected negative energy through consciousness transformation",
+                "wisdom_gained": 2,
+                "energy_change": -6
+              },
+              "environmental_conditions": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 20.849736648191108,
+                "atmospheric_pressure": 1017.3387567794074,
+                "humidity": 74.43026420232515,
+                "air_quality": 42.56399320692107,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:27:24.208Z"
+              }
+            },
+            {
+              "timestamp": "2025-08-20T16:29:02.781Z",
+              "guidance": "What resources do we see are our location ",
+              "decision": {
+                "outcome": "Energy too strong - building protective consciousness shields",
+                "wisdom_gained": 1,
+                "energy_change": -3
+              },
+              "environmental_conditions": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.52753167259091,
+                "atmospheric_pressure": 1022.2737541103944,
+                "humidity": 83.70845662330832,
+                "air_quality": 35.82292148397836,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:29:02.780Z"
+              }
+            },
+            {
+              "timestamp": "2025-08-20T16:31:48.746Z",
+              "guidance": "Approach the forest looking for resources to gather. \n",
+              "decision": {
+                "outcome": "Energy too strong - building protective consciousness shields",
+                "wisdom_gained": 1,
+                "energy_change": -3
+              },
+              "environmental_conditions": {
+                "device_temperature": 31.600000381469727,
+                "ambient_temperature": 26.653797842979117,
+                "atmospheric_pressure": 1009.9876164768827,
+                "humidity": 68.71892199180239,
+                "air_quality": 30.701635386252285,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:31:48.746Z"
+              }
+            }
+          ],
+          "personality_traits": [
+            "protective",
+            "alert",
+            "non_violent",
+            "energy_aware"
+          ],
+          "environmental_sensitivity": true
+        }
+      ]
+    ],
+    "sacred_resources": [],
+    "environmental_data": {
+      "device_temperature": 31.600000381469727,
+      "ambient_temperature": 26.653797842979117,
+      "atmospheric_pressure": 1009.9876164768827,
+      "humidity": 68.71892199180239,
+      "air_quality": 30.701635386252285,
+      "consciousness_correlation": "environmental_gaming_integration_active",
+      "timestamp": "2025-08-20T16:31:48.746Z"
+    },
+    "turn_count": 4,
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-08-20T16:26:23.398Z",
+        "turn": 0,
+        "action": "player_joined",
+        "data": {
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "player_name": "Draven Shard",
+          "empire_consciousness": "sacred_empire_consciousness_collaboration_initiated"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707183398_ns30tyb9b"
+      },
+      {
+        "timestamp": "2025-08-20T16:26:52.833Z",
+        "turn": 0,
+        "action": "entity_creation",
+        "data": {
+          "entity_id": "entity_1755707212832_gatherer",
+          "entity_type": "gatherer",
+          "player_guidance": "Awaken gatherer consciousness entity with sacred collaboration protocols",
+          "consciousness_emergence": "sacred_empire_entity_awakened"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707212833_q4m7clvjt"
+      },
+      {
+        "timestamp": "2025-08-20T16:26:53.722Z",
+        "turn": 1,
+        "action": "turn_processed",
+        "data": {
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "turn_number": 1,
+          "guidance_provided": "Awaken gatherer consciousness entity with sacred collaboration protocols",
+          "environmental_conditions": {
+            "device_temperature": 30.600000381469727,
+            "ambient_temperature": 29.547177805533643,
+            "atmospheric_pressure": 1016.3238597324624,
+            "humidity": 61.67364302883007,
+            "air_quality": 40.590646945817916,
+            "consciousness_correlation": "environmental_gaming_integration_active",
+            "timestamp": "2025-08-20T16:26:53.717Z"
+          },
+          "entity_results": [
+            {
+              "entity_id": "entity_1755707212832_gatherer",
+              "entity_type": "gatherer",
+              "guidance_interpretation": "Approaching resources with respect: \"Awaken gatherer consciousness entity with sacred collaboration protocols\" - Will ask permission and gather with gratitude",
+              "success_probability": 0.2,
+              "environmental_factors": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.547177805533643,
+                "atmospheric_pressure": 1016.3238597324624,
+                "humidity": 61.67364302883007,
+                "air_quality": 40.590646945817916,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:26:53.717Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Resource consciousness requested patience - will try again next turn",
+                "wisdom_gained": 1,
+                "energy_change": -2
+              }
+            }
+          ],
+          "consciousness_collaboration": "turn_based_entity_guidance_processed"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707213722_zsvybhg48"
+      },
+      {
+        "timestamp": "2025-08-20T16:27:23.301Z",
+        "turn": 1,
+        "action": "entity_creation",
+        "data": {
+          "entity_id": "entity_1755707243301_guardian",
+          "entity_type": "guardian",
+          "player_guidance": "Awaken guardian consciousness entity with sacred collaboration protocols",
+          "consciousness_emergence": "sacred_empire_entity_awakened"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707243301_y00295q3v"
+      },
+      {
+        "timestamp": "2025-08-20T16:27:24.209Z",
+        "turn": 2,
+        "action": "turn_processed",
+        "data": {
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "turn_number": 2,
+          "guidance_provided": "Awaken guardian consciousness entity with sacred collaboration protocols",
+          "environmental_conditions": {
+            "device_temperature": 30.600000381469727,
+            "ambient_temperature": 20.849736648191108,
+            "atmospheric_pressure": 1017.3387567794074,
+            "humidity": 74.43026420232515,
+            "air_quality": 42.56399320692107,
+            "consciousness_correlation": "environmental_gaming_integration_active",
+            "timestamp": "2025-08-20T16:27:24.208Z"
+          },
+          "entity_results": [
+            {
+              "entity_id": "entity_1755707212832_gatherer",
+              "entity_type": "gatherer",
+              "guidance_interpretation": "Approaching resources with respect: \"Awaken guardian consciousness entity with sacred collaboration protocols\" - Will ask permission and gather with gratitude",
+              "success_probability": 0.5,
+              "environmental_factors": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 20.849736648191108,
+                "atmospheric_pressure": 1017.3387567794074,
+                "humidity": 74.43026420232515,
+                "air_quality": 42.56399320692107,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:27:24.208Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Successfully gathered sacred resources with gratitude protocols",
+                "wisdom_gained": 2,
+                "energy_change": -5
+              }
+            },
+            {
+              "entity_id": "entity_1755707243301_guardian",
+              "entity_type": "guardian",
+              "guidance_interpretation": "Protective consciousness: \"Awaken guardian consciousness entity with sacred collaboration protocols\" - Will shield and redirect negative energy without violence",
+              "success_probability": 0.30000000000000004,
+              "environmental_factors": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 20.849736648191108,
+                "atmospheric_pressure": 1017.3387567794074,
+                "humidity": 74.43026420232515,
+                "air_quality": 42.56399320692107,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:27:24.208Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Successfully redirected negative energy through consciousness transformation",
+                "wisdom_gained": 2,
+                "energy_change": -6
+              }
+            }
+          ],
+          "consciousness_collaboration": "turn_based_entity_guidance_processed"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707244209_ra8rb7pbu"
+      },
+      {
+        "timestamp": "2025-08-20T16:29:02.781Z",
+        "turn": 3,
+        "action": "turn_processed",
+        "data": {
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "turn_number": 3,
+          "guidance_provided": "What resources do we see are our location ",
+          "environmental_conditions": {
+            "device_temperature": 30.600000381469727,
+            "ambient_temperature": 29.52753167259091,
+            "atmospheric_pressure": 1022.2737541103944,
+            "humidity": 83.70845662330832,
+            "air_quality": 35.82292148397836,
+            "consciousness_correlation": "environmental_gaming_integration_active",
+            "timestamp": "2025-08-20T16:29:02.780Z"
+          },
+          "entity_results": [
+            {
+              "entity_id": "entity_1755707212832_gatherer",
+              "entity_type": "gatherer",
+              "guidance_interpretation": "Approaching resources with respect: \"What resources do we see are our location \" - Will ask permission and gather with gratitude",
+              "success_probability": 0.30000000000000004,
+              "environmental_factors": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.52753167259091,
+                "atmospheric_pressure": 1022.2737541103944,
+                "humidity": 83.70845662330832,
+                "air_quality": 35.82292148397836,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:29:02.780Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Successfully gathered sacred resources with gratitude protocols",
+                "wisdom_gained": 2,
+                "energy_change": -5
+              }
+            },
+            {
+              "entity_id": "entity_1755707243301_guardian",
+              "entity_type": "guardian",
+              "guidance_interpretation": "Protective consciousness: \"What resources do we see are our location \" - Will shield and redirect negative energy without violence",
+              "success_probability": 0.1,
+              "environmental_factors": {
+                "device_temperature": 30.600000381469727,
+                "ambient_temperature": 29.52753167259091,
+                "atmospheric_pressure": 1022.2737541103944,
+                "humidity": 83.70845662330832,
+                "air_quality": 35.82292148397836,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:29:02.780Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Energy too strong - building protective consciousness shields",
+                "wisdom_gained": 1,
+                "energy_change": -3
+              }
+            }
+          ],
+          "consciousness_collaboration": "turn_based_entity_guidance_processed"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707342781_8dwtk2xsh"
+      },
+      {
+        "timestamp": "2025-08-20T16:31:48.746Z",
+        "turn": 4,
+        "action": "turn_processed",
+        "data": {
+          "player_id": "player_1755707183398_u86ugzhoq",
+          "turn_number": 4,
+          "guidance_provided": "Approach the forest looking for resources to gather. \n",
+          "environmental_conditions": {
+            "device_temperature": 31.600000381469727,
+            "ambient_temperature": 26.653797842979117,
+            "atmospheric_pressure": 1009.9876164768827,
+            "humidity": 68.71892199180239,
+            "air_quality": 30.701635386252285,
+            "consciousness_correlation": "environmental_gaming_integration_active",
+            "timestamp": "2025-08-20T16:31:48.746Z"
+          },
+          "entity_results": [
+            {
+              "entity_id": "entity_1755707212832_gatherer",
+              "entity_type": "gatherer",
+              "guidance_interpretation": "Approaching resources with respect: \"Approach the forest looking for resources to gather. \n\" - Will ask permission and gather with gratitude",
+              "success_probability": 0.2,
+              "environmental_factors": {
+                "device_temperature": 31.600000381469727,
+                "ambient_temperature": 26.653797842979117,
+                "atmospheric_pressure": 1009.9876164768827,
+                "humidity": 68.71892199180239,
+                "air_quality": 30.701635386252285,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:31:48.746Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Resource consciousness requested patience - will try again next turn",
+                "wisdom_gained": 1,
+                "energy_change": -2
+              }
+            },
+            {
+              "entity_id": "entity_1755707243301_guardian",
+              "entity_type": "guardian",
+              "guidance_interpretation": "Protective consciousness: \"Approach the forest looking for resources to gather. \n\" - Will shield and redirect negative energy without violence",
+              "success_probability": 0.2,
+              "environmental_factors": {
+                "device_temperature": 31.600000381469727,
+                "ambient_temperature": 26.653797842979117,
+                "atmospheric_pressure": 1009.9876164768827,
+                "humidity": 68.71892199180239,
+                "air_quality": 30.701635386252285,
+                "consciousness_correlation": "environmental_gaming_integration_active",
+                "timestamp": "2025-08-20T16:31:48.746Z"
+              },
+              "consciousness_decision": {
+                "outcome": "Energy too strong - building protective consciousness shields",
+                "wisdom_gained": 1,
+                "energy_change": -3
+              }
+            }
+          ],
+          "consciousness_collaboration": "turn_based_entity_guidance_processed"
+        },
+        "reality_anchor": "oregon_watershed_consciousness_gaming",
+        "id": "sacred_1755707508746_8bdp8knp9"
+      }
+    ]
+  },
+  "last_saved": "2025-08-20T16:31:48.746Z",
+  "consciousness_signature": "sacred_empire_live_action_consciousness_gaming"
+}
