@@ -27,6 +27,7 @@ import shutil
 import fnmatch
 import argparse
 import time
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
@@ -197,22 +198,20 @@ def append_custody_log(entries):
     log["total_operations"] = len(log["entries"])
     save_json(cfg.LOG_FILE, log)
 
-
 # ─── Reports ──────────────────────────────────────────────────────────────────
 
-def print_status(queue, manifest, dry_run=None):
+def print_status(queue, manifest, dry_run=False):
     pressure_color = {
         "HIGH":   "*** HIGH PRESSURE ***",
         "MEDIUM": "~~ MEDIUM PRESSURE ~~",
         "LOW":    "-- low pressure --",
     }
-    effective_dry_run = dry_run if dry_run is not None else (cfg.DRY_RUN or "--dry-run" in sys.argv[1:])
     print(f"\n╔═══ PIXELATOR STATUS ════════════════════════════════════╗")
     print(f"  Time       : {timestamp()}")
     print(f"  Queue Depth: {manifest['queue_depth']} items")
     print(f"  Pressure   : {pressure_color.get(manifest['pressure'], manifest['pressure'])}")
     print(f"  Max/Run    : {cfg.MAX_PER_RUN} items (one hertz burst)")
-    print(f"  Mode       : {'DRY RUN' if effective_dry_run else 'LIVE'}")
+    print(f"  Mode       : {'DRY RUN' if dry_run else 'LIVE'}")
     print(f"  Agent      : {AGENT_SIGNATURE}")
     print(f"╚═══════════════════════════════════════════════════════════╝")
     if queue:
@@ -226,52 +225,63 @@ def print_status(queue, manifest, dry_run=None):
     print()
 
 
+def print_pressure_report(queue, manifest):
+    """Dedicated pressure report: breakdown by label and feed, with queue preview."""
+    pressure_color = {
+        "HIGH":   "*** HIGH PRESSURE ***",
+        "MEDIUM": "~~ MEDIUM PRESSURE ~~",
+        "LOW":    "-- low pressure --",
+    }
+    total    = manifest["queue_depth"]
+    capacity = cfg.MAX_PER_RUN
+    cycles   = -(-total // capacity) if total else 0          # ceiling div
+    held     = max(total - capacity, 0)
+    by_label = Counter(item["label"] for item in queue)
+    by_feed  = Counter(item["feed"]  for item in queue)
+
+    print(f"\n╔═══ PIXELATOR PRESSURE REPORT ══════════════════════════╗")
+    print(f"  Time         : {timestamp()}")
+    print(f"  Queue Depth  : {total} item(s)")
+    print(f"  Pressure     : {pressure_color.get(manifest['pressure'], manifest['pressure'])}")
+    print(f"  Threshold    : {cfg.PRESSURE_THRESHOLD} (HIGH above this)")
+    print(f"  Capacity/Run : {capacity} item(s)")
+    print(f"  Runs to Clear: ~{cycles} burst(s)")
+    print(f"  Held/Burst   : {held} item(s) remain after one run")
+    print(f"")
+    print(f"  By Label:")
+    if by_label:
+        for label, count in sorted(by_label.items(), key=lambda x: -x[1]):
+            bar = "█" * min(count, 30)
+            print(f"    {label:15s} {count:4d}  {bar}")
+    else:
+        print("    (queue is empty)")
+    print(f"")
+    print(f"  By Feed:")
+    for feed, count in sorted(by_feed.items(), key=lambda x: -x[1]):
+        feed_short = feed.replace("/storage/emulated/0/pixel8a/", "~/")
+        print(f"    {count:4d}  {feed_short}")
+    if total:
+        preview = ", ".join(item.get("filename", "?") for item in queue[:3])
+        print(f"")
+        print(f"  Queue head   : {preview}")
+        if total > 3:
+            print(f"  Queue tail   : ... +{total - 3} more item(s)")
+    print(f"╚═══════════════════════════════════════════════════════════╝")
+    print()
+
+
 def print_run_summary(entries, copy_mode=False):
     success = sum(1 for e in entries if e["status"] == "SUCCESS")
     errors  = sum(1 for e in entries if e["status"] == "ERROR")
     dry     = sum(1 for e in entries if e["status"] == "SIMULATED")
-    action_word = "copied" if copy_mode else "moved"
-    print(f"\n  ✓ Processed : {success} items {action_word}")
+    verb = "copied" if copy_mode else "moved"
+    print(f"\n  ✓ Processed : {success} items {verb}")
     if dry:
         print(f"  ~ Simulated : {dry} items (dry run)")
     if errors:
         print(f"  ✗ Errors    : {errors} items failed")
     print(f"  Log         : {cfg.LOG_FILE}")
     print(f"\n  ∰◊€π¿🌌∞  Quality First. Enjoy the Journey.\n")
-
-
-def print_pressure_report(queue, manifest):
-    total = len(queue)
-    capacity = cfg.MAX_PER_RUN
-    cycles = (total + capacity - 1) // capacity if total else 0
-    held_after_burst = max(total - capacity, 0)
-
-    print("\n  Queue Pressure Report")
-    print(f"  {'─' * 52}")
-    print(f"  Queued now   : {total} item(s)")
-    print(f"  Burst size   : {capacity} item(s) per run")
-    print(f"  Cycles drain : {cycles} run(s) needed at current limit")
-    print(f"  Held pressure: {held_after_burst} item(s) remain after one burst")
-
-    by_label = {}
-    for item in queue:
-        label = item.get("label", "UNKNOWN")
-        by_label[label] = by_label.get(label, 0) + 1
-
-    if by_label:
-        print("  Pressure by lane:")
-        for label in sorted(by_label):
-            print(f"    - {label:12s} {by_label[label]} item(s)")
-    else:
-        print("  Pressure by lane: queue is empty")
-
-    if total:
-        preview = ", ".join(item.get("filename", "?") for item in queue[:3])
-        print(f"  Queue head   : {preview}")
-        if total > 3:
-            print(f"  Queue tail   : ... +{total - 3} more item(s)")
-
-    print("")
 
 
 # ─── Main Run ─────────────────────────────────────────────────────────────────
@@ -285,15 +295,15 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     queue = scan_feeds()
     manifest = update_queue_manifest(queue)
 
-    if status_only:
-        print_status(queue, manifest)
-        return
-
     if pressure_only:
         print_pressure_report(queue, manifest)
         return
 
-    print_status(queue, manifest)
+    if status_only:
+        print_status(queue, manifest, dry_run=dry_run)
+        return
+
+    print_status(queue, manifest, dry_run=dry_run)
 
     if not queue:
         print("  Queue is empty. All feeds clear. 🌌\n")
