@@ -1,0 +1,28 @@
+# Microversa - Universal Dilation Perspectives Entity Requirements
+# Concept: Universal dilation perspectives
+
+# Core scaling capabilities
+pyyaml>=6.0.1
+python-dateutil>=2.9.0
+
+# Multi-scale modeling
+numpy>=1.26.0
+scipy>=1.11.0
+
+# Fractal and scale-invariant patterns
+fractal>=1.0.0
+pywavelets>=1.5.0
+
+# Dimensional analysis
+dimensionality>=0.1.0
+
+# Perspective management
+transitions>=0.9.0
+
+# Pattern recognition across scales
+scikit-learn>=1.4.0
+
+# Visualization (multi-scale views)
+matplotlib>=3.8.0
+
+# ∰◊€π¿🌌∞

@@ -1,0 +1,97 @@
+"directory to manage documentation, configuration, source code, and project management. 
+📄 Common Root-Level Documents
+README.md: Provides a high-level overview of the project, including its purpose, how to install and run it, and contribution guidelines. This is often the first file a new user or developer will read.
+LICENSE or LICENSE.md: Contains the legal terms under which the software is distributed.
+.gitignore: (For Git users) Specifies which files and directories should be ignored by version control (e.g., temporary files, build artifacts, or virtual environments).
+setup.py or pyproject.toml: Used in Python projects for packaging and distribution, defining project metadata and installation requirements.
+Dockerfile: Contains instructions for building a Docker container image for the application, ensuring a consistent environment for deployment.
+CONTRIBUTING.md: Provides guidelines for how other developers can contribute to the project (e.g., coding standards, testing procedures).
+CHANGELOG.md or HISTORY.md: Documents the changes made in each version or release of the project. 
+📁 Standard Folders
+src/ (or the project name folder): Contains the main source code for the application.
+docs/ or doc/: Dedicated to extensive project documentation, such as user manuals, API documentation, or design specifications.
+tests/ or test/: Stores test scripts and test cases for quality assurance.
+config/ or settings/: Holds configuration files or settings for different environments (development, production, testing).
+data/: Used for storing data files, such as sample data, raw data, or processed data, especially in data-related projects.
+venv/ or .venv/: A standard location for the project's isolated virtual environment, which is typically ignored by version control.
+build/ or dist/: Directories where compiled files or distributable packages are placed during the build process. 
+📝 Project Management Documents
+In a general business or project management context, other non-code documents are used, such as: 
+Project Plan: A comprehensive document detailing how the project will be managed, including timelines, resources, and scope.
+Risk Register: A log of potential project risks, their potential impact, and mitigation strategies.
+Meeting Minutes: Records of discussions, decisions, and action items from project meetings.
+Status Reports: Regular updates on project progress for stakeholders. 
+
+
+
+What other files can be in a project folder?
+
+How do you manage dependencies in Python projects?
+
+What are some popular Python web frameworks besides Django?
+Python: The Pythonic Way to Handle File Directories for Your Data ...
+
+Medium
+
+What are standard directory layouts for source code, other libraries, build ...
+
+Software Engineering Stack Exchange
+
+How to Structure Files and Folder in your Project? - GeeksforGeeks
+
+GeeksforGeeks
+
+Show all
+
+
+
+
+
+4 sites
+Yes, many programming languages and tools use simple, text-based files for configuration and dependency management that are similar in concept to Python's requirements.txt. These files typically work with specific command-line tools. 
+Here are some common examples:
+📦 Dependency & Package Management Files
+These files define the libraries and packages your project needs, and a specific command-line tool is used to install them. 
+package.json (JavaScript/Node.js):
+Purpose: Defines project metadata and lists required Node.js packages (dependencies and devDependencies).
+Command: Use the npm (Node Package Manager) or yarn command-line tool.
+Install: npm install
+Gemfile (Ruby):
+Purpose: Specifies required gems (libraries) for a Ruby project. It is used by the bundler gem to ensure the correct versions are installed.
+Command: bundle install
+pom.xml (Java/Maven):
+Purpose: The Project Object Model file used by Maven to manage project builds, dependencies, and documentation. It's an XML file.
+Command: mvn install or mvn compile
+Cargo.toml (Rust):
+Purpose: The manifest file for Rust projects, listing dependencies, metadata, and sections for building.
+Command: Use the cargo command-line tool.
+Build: cargo build
+Run: cargo run 
+⚙️ Configuration & Automation Files
+These files are used by command-line tools to define how a project should be built, run, or configured.
+Makefile:
+Purpose: Defines a set of tasks or "targets" (like install, clean, test) and the commands needed to execute them. Used by the make build automation tool.
+Command: make [target_name] (e.g., make test)
+Dockerfile:
+Purpose: Contains instructions for the docker command-line tool to automatically build a container image, which packages an application and all its dependencies into a consistent environment.
+Command: docker build -t my-app .
+Procfile:
+Purpose: Used by platforms like Heroku to declare what commands are run by the application's dynos (processes).
+Command: Automatically used by the platform, but often tested locally with tools like foreman start or heroku local.
+.gitignore:
+Purpose: A simple text file used by the git command-line tool to determine which files and directories to ignore when committing code.
+Command: Automatically consulted by git commands like git add and git status. 
+
+
+Pipfile for Python - Hacker News
+
+Hacker News
+How to Create and Pip Install Requirements.txt in Python
+
+freeCodeCamp
+
+gem equivalent of `pip install -r requirements.txt` - Stack Overflow
+
+Stack Overflow
+Show all
+"

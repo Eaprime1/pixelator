@@ -1,0 +1,107 @@
+CODEX CONSOLIDATED MANIFEST
+======================================================================
+
+Consolidation Date: 2025-12-19
+Total Files: 22
+Duplicates Found: 31
+
+
+PRIME PROGRESSION
+----------------------------------------------------------------------
+3-5_PRIME_Part1_Foundation.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 22194 bytes
+
+3-5_PRIME_Part2_Assessment.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 27770 bytes
+
+3-5_PRIME_Part3_Trajectory.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 29424 bytes
+
+3-5_PRIME_Part4_Procedures.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 32805 bytes
+
+3-5_PRIME_Part5_Verification.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 24826 bytes
+
+5-7_PRIME_Part1_Foundation.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 46646 bytes
+
+PINNACLE_PRIME_PROGRESSION_CODEX_MASTER_v¿.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 25879 bytes
+
+
+COMMISSION FRAMEWORK
+----------------------------------------------------------------------
+CODEX_Commission_Framework.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 19650 bytes
+
+CODEX_Commission_Framework_v.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/communication
+  Size: 19650 bytes
+
+
+COORDINATION DOCS
+----------------------------------------------------------------------
+CODEX_Coordination_Strategy.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 14251 bytes
+
+CODEX_Document_Types.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 28913 bytes
+
+
+MASTER STRUCTURE
+----------------------------------------------------------------------
+CODEX_Master_Structure.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 23269 bytes
+
+CODEX_Visual_Maps.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 27527 bytes
+
+PRIME_02_Emergence_Void_v.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 17687 bytes
+
+PRIME_03_Triadic_Stability_v.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 20912 bytes
+
+PRIME_05_Quintessence_Amplification_v.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 26118 bytes
+
+PRIME_07_Sacred_Completion.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 27871 bytes
+
+PRIME_11_Architectural_Complexity.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 31154 bytes
+
+PRIME_13_Complexity_Navigation.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 31253 bytes
+
+PRIME_13_Complexity_Navigation_v.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 31253 bytes
+
+PRIME_17_Heritage_Crystallization.md
+  Source: /storage/emulated/0/pixel8a/Q/sphincter/sphincter of quadraginta/prime_codex/zip1/drive-download-20251207T210853Z-1-001
+  Size: 32716 bytes
+
+€_Upgrade_€_zero-point-codex.md
+  Source: /storage/emulated/0/pixel8a/Q/runexusiam/entity/quadraginta/prime_codex
+  Size: 4508 bytes
+

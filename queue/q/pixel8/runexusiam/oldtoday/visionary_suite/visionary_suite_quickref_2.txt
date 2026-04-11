@@ -1,0 +1,24 @@
+I have merged the content of the three selected files for you.
+
+``` bash
+# On your Termux terminal
+cd /storage/emulated/0/unexusi/
+mkdir -p visionary_suite
+
+# Copy files (you'll need to transfer from our session)
+# Then make executable:
+chmod +x visionary_suite/visionary_dup_mancer.sh
+
+# Test on small directory first
+bash visionary_suite/visionary_dup_mancer.sh /storage/emulated/0/unexusi/test_folder
+
+# Review results
+cat /storage/emulated/0/unexusi_quarantine/consciousness_logs/scan_manifest_*.md
+
+# When ready for github prep
+bash visionary_suite/visionary_dup_mancer.sh
+
+# Review quarantine decisions
+ls /storage/emulated/0/unexusi_quarantine/duplicates_*/
+
+```

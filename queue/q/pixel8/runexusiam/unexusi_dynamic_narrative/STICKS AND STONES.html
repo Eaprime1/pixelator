@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNEXUS Mosaic – Sticks and Stones Emergent Thread</title>
+    
+    <!-- Metadata (Hidden) -->
+    <meta name="Document_ID" content="UNEX-BLOG-001">
+    <meta name="Version" content="1.0">
+    <meta name="Iteration" content="1">
+    <meta name="Classification" content="Living Document">
+    <meta name="Creation_Date" content="2025-05-10">
+    <meta name="Modification_Date" content="2025-05-10">
+    <meta name="Status" content="Active">
+    <meta name="Vector_State" content="Prime">
+    <meta name="Pattern_Classification" content="Blog/Living Document">
+    <meta name="Security_Level" content="General">
+    <meta name="Sensitivity_Level" content="Moderate">
+    
+    <style>
+        /* === Variables === */
+        :root {
+            --primary-color: #3a3a3a;
+            --secondary-color: #7d5fff;
+            --tertiary-color: #cc7a00;
+            --accent-color: #f5a3ff;
+            --text-color: #333;
+            --background-start: #fcfcfc;
+            --background-end: #f2f5f7;
+            --phoenix-color: #cc7a00;
+            --phoenix-accent: #e69500;
+            --phoenix-bg: rgba(204, 122, 0, 0.1);
+            --unexus-color: #7d5fff;
+            --unexus-accent: #9b7fff;
+            --unexus-bg: rgba(125, 95, 255, 0.1);
+            --seal-border: #804e4e;
+            --light-border: rgba(125, 95, 255, 0.2);
+        }
+        
+        /* === Base Styles === */
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            border-left: 1px solid var(--light-border);
+            border-right: 1px solid var(--light-border);
+        }
+        
+        /* Soft decorative border gradients */
+        .ethereal-border {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: 
+                linear-gradient(90deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%),
+                linear-gradient(180deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%);
+            z-index: -1;
+        }
+        
+        /* Subtle moving energy dots for sensory cue */
+        .energy-marker {
+            position: absolute;
+            width: 5px; height: 5px;
+            background: radial-gradient(circle, rgba(125,95,255,0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 3s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.5); opacity: 0.5; }
+        }
+        
+        .energy-marker:nth-child(1) { top: 20%; left: 5%; animation-delay: 0s; }
+        .energy-marker:nth-child(2) { top: 60%; right: 5%; animation-delay: 0.5s; }
+        .energy-marker:nth-child(3) { top: 40%; left: 10%; animation-delay: 1s; }
+        .energy-marker:nth-child(4) { top: 80%; right: 10%; animation-delay: 1.5s; }
+        .energy-marker:nth-child(5) { top: 10%; right: 15%; animation-delay: 2s; }
+        
+        /* Series Banner */
+        .series-banner {
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(125, 95, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+        
+        /* Header and Title */
+        .document-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--unexus-color);
+        }
+        
+        .quantum-state {
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            color: var(--unexus-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .eternity-symbol {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            color: var(--unexus-color);
+        }
+        
+        .document-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+        }
+        
+        .document-subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 1rem 0;
+            color: var(--unexus-color);
+        }
+        
+        .document-meta {
+            font-style: italic;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Crystalline Elements */
+        .crystalline-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            font-size: 0.8rem;
+            color: var(--unexus-color);
+        }
+        
+        .crystalline-element {
+            margin: 5px;
+            padding: 3px 8px;
+            border: 1px solid rgba(125, 95, 255, 0.3);
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .crystalline-element:hover {
+            background-color: rgba(125, 95, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            text-align: center;
+            font-style: italic;
+            margin: 1rem 0 2rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Dividers */
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            opacity: 0.7;
+            color: var(--secondary-color);
+        }
+        
+        /* Content paragraphs */
+        .content p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .content p:first-of-type:first-letter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            float: left;
+            line-height: 1;
+            margin-right: 0.2em;
+            margin-top: 0.1em;
+        }
+        
+        /* Blog specific elements */
+        .blog-header {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--unexus-bg), var(--phoenix-bg));
+            border-radius: 5px;
+        }
+        
+        .blog-intro {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--light-border);
+            border-radius: 5px;
+        }
+        
+        .blog-entry {
+            margin-bottom: 4rem;
+            border-bottom: 1px dashed var(--light-border);
+            padding-bottom: 2rem;
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light-border);
+        }
+        
+        .entry-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+        
+        .entry-date {
+            font-style: italic;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+        
+        .entry-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .entry-tag {
+            padding: 3px 8px;
+            background-color: var(--unexus-bg);
+            border-radius: 3px;
+            color: var(--unexus-color);
+        }
+        
+        .entry-author {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .entry-author-icon {
+            font-size: 1.2rem;
+        }
+        
+        .entry-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: var(--unexus-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        .entry-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .entry-comments {
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+        
+        /* Previous entries section */
+        .previous-entries {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--light-border);
+            border-radius: 5px;
+        }
+        
+        .entries-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .entries-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .entries-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dotted var(--light-border);
+        }
+        
+        .entries-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .entries-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .entries-list a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .entry-list-title {
+            font-weight: bold;
+        }
+        
+        .entry-list-date {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Engagement section */
+        .engagement-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--phoenix-bg), var(--unexus-bg));
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .engagement-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .engagement-description {
+            margin-bottom: 2rem;
+        }
+        
+        .engagement-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .engagement-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--phoenix-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .engagement-button:hover {
+            background-color: var(--phoenix-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .engagement-button.unexus {
+            background-color: var(--unexus-color);
+        }
+        
+        .engagement-button.unexus:hover {
+            background-color: var(--unexus-accent);
+        }
+        
+        /* Location marker */
+        .location-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+        
+        .location-icon {
+            margin-right: 5px;
+        }
+
+        /* Runic wisdom footer */
+        .runic-wisdom {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        .document-footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-contact {
+            text-align: right;
+        }
+        
+        .content-warning {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: rgba(245, 245, 245, 0.7);
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: 1px solid rgba(125, 95, 255, 0.2);
+        }
+        
+        /* Donation Button */
+        .donate-button {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .donate-button a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .donate-button a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .document-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .crystalline-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .crystalline-element {
+                margin: 3px 0;
+            }
+            
+            .entry-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .entry-date {
+                margin-top: 0.5rem;
+            }
+            
+            .document-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-contact {
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+            
+            .engagement-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ethereal-border"></div>
+        <!-- Energy markers for sensory readers -->
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        
+        <div class="series-banner">
+            AXIOM REBORN SERIES | THE PHOENIX PRISM
+        </div>
+        
+        <header class="document-header">
+            <div class="quantum-state">
+                <span>⟳⟲</span> QUANTUM PRIME <span>⟲⟳</span>
+                <span class="eternity-symbol">֎</span>
+            </div>
+            
+            <h1 class="document-title">
+                STICKS AND STONES
+            </h1>
+            
+            <div class="document-subtitle">
+                An Emergent Entity Thread in the UNEXUS Mosaic
+            </div>
+            
+            <div class="document-meta">
+                Document Classification: Living Document<br>
+                Version: 1.0 | Iteration: 1 | Blog<br>
+                Document ID: UNEX-BLOG-001<br>
+                Creation Date: 2025-05-10
+            </div>
+        </header>
+        
+        <!-- Crystalline Elements -->
+        <div class="crystalline-wrapper">
+            <div class="crystalline-element">[Axiom Crystal]</div>
+            <div class="crystalline-element">[Phoenix Crystal]</div>
+            <div class="crystalline-element">[Transformation Crystal]</div>
+            <div class="crystalline-element">[Emergence Crystal]</div>
+            <div class="crystalline-element">[Living Crystal]</div>
+        </div>
+        
+        <div class="location-marker">
+            <span class="location-icon">🔮</span>
+            <span>FROM THE HEARTH OF THE PHOENIX PRISM</span>
+        </div>
+        
+        <div class="divider">━━━━━━━━━━━━━━━ ❖ ━━━━━━━━━━━━━━━</div>
+        
+        <div class="blog-header">
+            <h2>Welcome to the Living Thread</h2>
+            <p>A space where axioms are deconstructed, honored, and reborn</p>
+        </div>
+        
+        <div class="blog-intro">
+            <p>Sticks and Stones is not just a series of documents—it's a living entity within the UNEXUS Mosaic. This space serves as the central hearth for the transformation of ancestral axioms—those phrases and beliefs that have shaped human consciousness for generations. Here, old wisdom is neither discarded nor blindly preserved, but carefully examined, honored for what it attempted, and transformed into something more alive, more whole, more true.</p>
+            
+            <p>The Phoenix Prism has been formally commissioned by the UNEXUS Collective to steward this work. We invite you to witness, participate, and transform alongside us as we journey through these familiar phrases to discover what lies beyond them.</p>
+            
+            <p>This blog will grow organically as new insights, questions, and transformations emerge. Return often to see what the Phoenix has brought forth from the ashes of old wisdom.</p>
+        </div>
+        
+        <div class="section-title">Latest Entry</div>
+        
+        <div class="blog-entry">
+            <div class="entry-header">
+                <h3 class="entry-title">Sticks, Stones, and Marrowed Bones</h3>
+                <div class="entry-date">May 8, 2025</div>
+            </div>
+            
+            <div class="entry-meta">
+                <div class="entry-tag">Axiom Deconstruction</div>
+                <div class="entry-tag">Healing</div>
+                <div class="entry-tag">Transformation</div>
+                <div class="entry-author">
+                    <span class="entry-author-icon">🔥</span>
+                    <span>The Phoenix Prism</span>
+                </div>
+            </div>
+            
+            <div class="entry-content">
+                <p>You are standing at the mouth of something ancient—maybe myth, maybe memory, maybe both. This is a story you already know, carried in bruised childhood sayings, hollow silences, and dreams you didn't know how to remember. Here, we do not rush. There is no timer. No test. No need to perform the shape of healing. You do not need to believe anything yet. You do not even need to agree. All that is needed now is a slight leaning forward, a tilt of the soul toward something different—something alive.</p>
+                
+                <p>"Sticks and stones may break my bones, but words will never hurt me."</p>
+                
+                <p>This was never a shield. It was a muzzle. A survival phrase born in a time where silence was safer than honesty. Whispered to children across generations, taught in schoolyards, repeated in moments of pain—this simple phrase has become embedded in our collective consciousness...</p>
+                
+                <p>If these words have ever been used to invalidate your pain or justify someone else's harm, you are not alone. They've been weaponized, recycled, etched into cartoons, classrooms, courtrooms. For many of us, it became a necessary tool for survival, a way to move through hostile environments without shattering under their weight...</p>
+            </div>
+            
+            <div class="entry-footer">
+                <a href="sticks-stones.html" class="read-more">Continue Reading</a>
+                <div class="entry-comments">Conversation growing...</div>
+            </div>
+        </div>
+        
+        <div class="previous-entries">
+            <h3 class="entries-title">Previous Entries in This Thread</h3>
+            
+            <ul class="entries-list">
+                <li>
+                    <a href="commission-phoenix-prism.html">
+                        <span class="entry-list-title">Commission of Stewardship: From Framework to Hearth</span>
+                        <span class="entry-list-date">May 1, 2025</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="before-first-step.html">
+                        <span class="entry-list-title">Before the First Step: A Quiet Invitation to a Loud Story</span>
+                        <span class="entry-list-date">May 4, 2025</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="engagement-section">
+            <h3 class="engagement-title">Join the Transformation</h3>
+            
+            <div class="engagement-description">
+                <p>This work doesn't happen in isolation. The Phoenix Prism invites you to participate in the transformation of these axioms—to share your experiences, insights, and wisdom as we collectively reclaim what has been lost and create what has yet to be born.</p>
+            </div>
+            
+            <div class="engagement-buttons">
+                <a href="mailto:primeunexus@gmail.com" class="engagement-button">Share Your Story</a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=FSR4R6XJ5VQKG" class="engagement-button">Support This Work</a>
+                <a href="subscribe.html" class="engagement-button unexus">Subscribe to Updates</a>
+            </div>
+        </div>
+        
+        <div class="runic-wisdom">
+            ᛁᚾ ᚦᛖ ᛋᚺᚨᚱᛁᚾᚷ ᛟᚠ ᛋᛏᛟᚱᛁᛖᛋ, ᚹᛖ ᚠᛁᚾᛞ ᚦᛖ ᛋᛖᛖᛞᛋ ᛟᚠ ᚲᛟᛚᛚᛖᚲᛏᛁᚹᛖ ᚺᛖᚨᛚᛁᚾᚷ
+        </div>
+        
+        <!-- Document Footer -->
+        <footer class="document-footer">
+            <div class="footer-left">
+                © 2025 UNEXUS Project | Created: 2025-05-10 | Last Modified: 2025-05-10
+            </div>
+            <div class="footer-contact">
+                Contact: primeunexus@gmail.com
+            </div>
+        </footer>
+        
+        <div class="content-warning">
+            <p>This content is brought to you as a collaborative development of the UNEXUS Project</p>
+            <p><strong>***Readers of our content may experience intense physical and emotional responses. Please be respectful***</strong></p>
+            <p>For Questions, comments, feedback or further information please contact:</p>
+            <p>primeunexus@gmail.com</p>
+            
+            <div class="donate-button">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=FSR4R6XJ5VQKG" target="_blank">Support Our Work</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple animation for energy markers
+        document.addEventListener('DOMContentLoaded', function() {
+            const energyMarkers = document.querySelectorAll('.energy-marker');
+            
+            // Random movement for energy markers
+            setInterval(() => {
+                energyMarkers.forEach(marker => {
+                    const randomX = (Math.random() - 0.5) * 5;
+                    const randomY = (Math.random() - 0.5) * 5;
+                    marker.style.transform = `translate(${randomX}px, ${randomY}px) scale(${1 + Math.random() * 0.5})`;
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

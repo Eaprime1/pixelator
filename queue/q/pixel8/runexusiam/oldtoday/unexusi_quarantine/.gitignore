@@ -1,0 +1,92 @@
+# unexusi_quarantine .gitignore
+# Philosophy: GitHub tracks documentation, not large binary files
+# Cold storage stays local or goes to cloud (Google Drive/MEGA)
+
+# ═══════════════════════════════════════════════════════
+# IGNORE: Actual Duplicate Files (Cold Storage)
+# ═══════════════════════════════════════════════════════
+
+# All quarantined files (7.2GB+ of actual duplicates)
+duplicates_*/exact_copies/
+duplicates_*/processing_artifacts/
+
+# Large binary files by extension
+*.root
+*.partial
+*.tar.gz
+*.zip
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.mp4
+*.mov
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.pdf
+*.docx
+*.xlsx
+
+# Conversation dumps (can be large)
+*conversations*.json
+*conversations*.txt
+
+# ═══════════════════════════════════════════════════════
+# TRACK: Documentation & Tools (GitHub)
+# ═══════════════════════════════════════════════════════
+
+# DO track logs directory (documentation)
+!logs/
+!logs/*.md
+!logs/operations_log.md
+
+# DO track scripts
+!scripts/
+!scripts/**/*.sh
+!scripts/**/*.py
+
+# DO track documentation
+!*.md
+!README.md
+!PHILOSOPHY.md
+!LICENSE
+
+# DO track directory structure markers
+!**/.gitkeep
+
+# ═══════════════════════════════════════════════════════
+# IGNORE: Temporary & Cache Files
+# ═══════════════════════════════════════════════════════
+
+# Hash caches
+henry_hash_cache_*.txt
+*.cache
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Background process logs
+*.log
+nohup.out
+
+# ═══════════════════════════════════════════════════════
+# Cold Storage Note
+# ═══════════════════════════════════════════════════════
+
+# Actual duplicate files stay in:
+# - Local: /storage/emulated/0/unexusi_quarantine/duplicates_*/
+# - Or Cloud: Google Drive/MEGA when synced
+#
+# GitHub only tracks:
+# - What was moved (chain of custody)
+# - When it was moved (timestamps)
+# - How to restore it (documentation)
+# - Tools to manage it (scripts)
+#
+# ∰◊€π - Documentation tracked, binaries stay cold

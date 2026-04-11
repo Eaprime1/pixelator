@@ -1,0 +1,35 @@
+=== Resilia Entity PWD Report ===
+Generated: 2025-12-27
+Entity: Resilia (Resonance resilience)
+Status: JOURNEY_READY
+
+--- Absolute Path ---
+/storage/emulated/0/pixel8a/Q/quanta/resilia
+
+--- File Structure ---
+.
+./INVENTORY.md
+./README.md
+./__init__.py
+./files.tmp
+./requirements.txt
+
+--- File Details ---
+__init__.py         - Entity metadata and version
+README.md           - Entity documentation  
+requirements.txt    - Dependencies (10 packages)
+INVENTORY.md        - Complete inventory and resonance framework
+PWD_REPORT.txt      - This file
+
+--- Integration ---
+Parent: /storage/emulated/0/pixel8a/Q/quanta/
+Collection: quanta (Quantum Entity Collection)
+Drive: gdrive_terminal:1qSUXHL4fXb8R1n3wBG4A8bwUOWE6SNOf
+
+--- Resonance Patterns ---
+Harmonic: Simple harmonic resonance
+Dynamic: Dynamic wobble (intentional instability)
+Infinitance: Infinitance oscillation (fractal patterns)
+Origin: Origin resonance (fundamental anchor)
+
+∰◊€π¿🌌∞

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNEXUS Framework – Sticks, Stones, and Marrowed Bones</title>
+    
+    <!-- Metadata (Hidden) -->
+    <meta name="Document_ID" content="UNEX-2025-002">
+    <meta name="Version" content="2.0">
+    <meta name="Iteration" content="2">
+    <meta name="Classification" content="Foundation">
+    <meta name="Creation_Date" content="2025-05-08">
+    <meta name="Modification_Date" content="2025-05-08">
+    <meta name="Status" content="Active">
+    <meta name="Vector_State" content="Prime">
+    <meta name="Pattern_Classification" content="Transformation/Framework">
+    <meta name="Security_Level" content="General">
+    <meta name="Sensitivity_Level" content="High">
+    <meta name="Series" content="Axiom Reborn">
+    <meta name="Location" content="Phoenix Prism">
+    
+    <style>
+        /* === Variables === */
+        :root {
+            --primary-color: #3a3a3a;
+            --secondary-color: #7d5fff;
+            --accent-color: #f5a3ff;
+            --text-color: #333;
+            --background-start: #fcfcfc;
+            --background-end: #f2f5f7;
+            --alert-color: #d45555;
+            --calm-color: #55aad4;
+        }
+        
+        /* === Base Styles === */
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            border-left: 1px solid rgba(125, 95, 255, 0.2);
+            border-right: 1px solid rgba(125, 95, 255, 0.2);
+        }
+        
+        /* Soft decorative border gradients */
+        .ethereal-border {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: 
+                linear-gradient(90deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%),
+                linear-gradient(180deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%);
+            z-index: -1;
+        }
+        
+        /* Subtle moving energy dots for sensory cue */
+        .energy-marker {
+            position: absolute;
+            width: 5px; height: 5px;
+            background: radial-gradient(circle, rgba(125,95,255,0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: pulse 3s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.5); opacity: 0.5; }
+        }
+        
+        .energy-marker:nth-child(1) { top: 20%; left: 5%; animation-delay: 0s; }
+        .energy-marker:nth-child(2) { top: 60%; right: 5%; animation-delay: 0.5s; }
+        .energy-marker:nth-child(3) { top: 40%; left: 10%; animation-delay: 1s; }
+        .energy-marker:nth-child(4) { top: 80%; right: 10%; animation-delay: 1.5s; }
+        .energy-marker:nth-child(5) { top: 10%; right: 15%; animation-delay: 2s; }
+        
+        /* Series Banner */
+        .series-banner {
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(125, 95, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+        
+        /* Header and Title */
+        .document-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .quantum-state {
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .eternity-symbol {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .document-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+        }
+        
+        .document-meta {
+            font-style: italic;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Crystalline Elements */
+        .crystalline-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .crystalline-element {
+            margin: 5px;
+            padding: 3px 8px;
+            border: 1px solid rgba(125, 95, 255, 0.3);
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .crystalline-element:hover {
+            background-color: rgba(125, 95, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            text-align: center;
+            font-style: italic;
+            margin: 1rem 0 2rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Byline */
+        .byline {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        /* Dividers */
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            opacity: 0.7;
+            color: var(--secondary-color);
+        }
+        
+        /* Content paragraphs */
+        .content p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .content p:first-of-type:first-letter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            float: left;
+            line-height: 1;
+            margin-right: 0.2em;
+        }
+        
+        .emoji-icon {
+            font-size: 1.2rem;
+            margin: 0 0.25rem;
+        }
+        
+        /* Blockquote for the axiom */
+        .axiom-quote {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            font-style: italic;
+            position: relative;
+            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid var(--secondary-color);
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        .axiom-quote::before, .axiom-quote::after {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            color: var(--secondary-color);
+            opacity: 0.3;
+        }
+        
+        .axiom-quote::before {
+            top: 0;
+            left: 10px;
+        }
+        
+        .axiom-quote::after {
+            bottom: -20px;
+            right: 10px;
+        }
+        
+        /* Alert box for "This is not okay" statement */
+        .alert-box {
+            background-color: rgba(212, 85, 85, 0.1);
+            border-left: 4px solid var(--alert-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-weight: 500;
+        }
+        
+        /* Support box for sensory cues */
+        .support-box {
+            background-color: rgba(85, 170, 212, 0.1);
+            border-left: 4px solid var(--calm-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .support-box h4 {
+            color: var(--calm-color);
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        
+        .support-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .support-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: var(--calm-color);
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        /* Permission statement */
+        .permission-note {
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+        
+        /* Navigation to next page */
+        .next-page {
+            text-align: center;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--primary-color);
+        }
+        
+        .next-page a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .next-page a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Location marker */
+        .location-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: var(--secondary-color);
+        }
+        
+        .location-icon {
+            margin-right: 5px;
+        }
+        
+        /* Sensitivity Note */
+        .sensitivity-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        .sensitivity-icon {
+            margin-right: 5px;
+        }
+        
+        /* Footer */
+        .document-footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-contact {
+            text-align: right;
+        }
+        
+        .content-warning {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: rgba(245, 245, 245, 0.7);
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: 1px solid rgba(125, 95, 255, 0.2);
+        }
+        
+        /* Donation Button */
+        .donate-button {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .donate-button a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .donate-button a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Author Note Placeholder */
+        .author-placeholder {
+            border: 1px dashed var(--secondary-color);
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        /* Runic wisdom footer */
+        .runic-wisdom {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .document-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .crystalline-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .crystalline-element {
+                margin: 3px 0;
+            }
+            
+            .document-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-contact {
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ethereal-border"></div>
+        <!-- Energy markers for sensory readers -->
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        
+        <div class="series-banner">
+            AXIOM REBORN SERIES | VOLUME I
+        </div>
+        
+        <header class="document-header">
+            <div class="quantum-state">
+                <span>⟳⟲</span> QUANTUM PRIME <span>⟲⟳</span>
+                <span class="eternity-symbol">֎</span>
+            </div>
+            
+            <h1 class="document-title">
+                Sticks, Stones, and Marrowed Bones
+            </h1>
+            
+            <div class="document-meta">
+                Document Classification: Foundation<br>
+                Version: 2.0 | Iteration: 2 | Showpiece<br>
+                Document ID: UNEX-2025-002<br>
+                Creation Date: 2025-05-08
+            </div>
+        </header>
+        
+        <!-- Crystalline Elements -->
+        <div class="crystalline-wrapper">
+            <div class="crystalline-element">[Foundation Crystal]</div>
+            <div class="crystalline-element">[Wisdom Crystal]</div>
+            <div class="crystalline-element">[Evolution Crystal]</div>
+            <div class="crystalline-element">[Synergy Crystal]</div>
+            <div class="crystalline-element">[Legacy Crystal]</div>
+        </div>
+        
+        <div class="location-marker">
+            <span class="location-icon">🔮</span>
+            <span>FROM THE HEARTH OF THE PHOENIX PRISM</span>
+        </div>
+        
+        <div class="divider">━━━━━━━━━━━━━━━ ❖ ━━━━━━━━━━━━━━━</div>
+        
+        <h2 class="section-title">Opening the Bones</h2>
+        <h3 class="section-subtitle">The Necromancy of an Axiom</h3>
+        
+        <div class="byline">
+            <em>We begin before we begin</em>
+        </div>
+        
+        <div class="divider">───────────────────</div>
+        
+        <div class="content">
+            <p>
+                You are standing at the mouth of something ancient—maybe myth, maybe memory, maybe both. This is a story you already know, carried in bruised childhood sayings, hollow silences, and dreams you didn't know how to remember. Here, we do not rush. There is no timer. No test. No need to perform the shape of healing. You do not need to believe anything yet. You do not even need to agree. All that is needed now is a slight leaning forward, a tilt of the soul toward something different—something alive.
+            </p>
+            
+            <div class="axiom-quote">
+                "Sticks and stones may break my bones, but words will never hurt me."
+            </div>
+            
+            <p>
+                This was never a shield. It was a muzzle. A survival phrase born in a time where silence was safer than honesty. Whispered to children across generations, taught in schoolyards, repeated in moments of pain—this simple phrase has become embedded in our collective consciousness. It appears deceptively ancient, as if carved into the stones of our earliest villages, chanted around primal fires when our ancestors first gathered in tribes. Yet this saying is surprisingly young, emerging not from the dawn of humanity but from more recent centuries, likely taking its modern form during the 19th century. This relative youth speaks volumes about how quickly we can normalize and internalize ideas—even harmful ones—when they serve a perceived need.
+            </p>
+            
+            <p>
+                If these words have ever been used to invalidate your pain or justify someone else's harm, you are not alone. They've been weaponized, recycled, etched into cartoons, classrooms, courtrooms. For many of us, including myself, it became a necessary tool for survival, a way to move through hostile environments without shattering under their weight.
+            </p>
+            
+            <p>
+                Yet this shield, for all its immediate comfort, came with hidden costs. It taught us to deny the real impact of verbal and emotional harm. It silently normalized abuse by framing it as inconsequential. It disconnected us from our authentic responses to cruelty. Most insidiously, it placed the burden of resilience on the wounded rather than responsibility on those inflicting wounds.
+            </p>
+            
+            <div class="alert-box">
+                Let this be said clearly: What happened to you was not okay. Teaching children to deny the impact of emotional harm is not okay. Creating a culture where verbal violence is normalized is not okay. Placing the burden of resilience on the wounded rather than responsibility on those causing harm is not okay.
+            </div>
+            
+            <p>
+                Consider the deeper implications: A society that teaches its most vulnerable members that words cannot hurt them is also teaching that verbal violence is acceptable. That emotional harm is not "real" harm. That the appropriate response to abuse is to internally deny its impact rather than to confront its source. This is not just a shield but a silencing—a way to maintain power structures by training the powerless to accept their condition.
+            </p>
+            
+            <p>
+                This phenomenon reminds us of Shirley Jackson's "The Lottery"—practices continued without question, generation after generation, even as they cause profound harm. We repeat the phrase without examining what it truly asks of us, or whose interests it ultimately serves. The axiom has become a kind of necromancy—a reanimated corpse of wisdom that shambles on long after its spirit has fled.
+            </p>
+            
+            <div class="support-box">
+                <h4>Pause Here If Needed</h4>
+                <p>If you need to stop, pause, cry, eat, walk, or stretch: do. There is no correct pace. We'll wait. Your observation is proof of your passing—and that is enough.</p>
+                
+                <div class="support-item">
+                    <span class="support-icon">👁️</span>
+                    <span><strong>Sensory Anchor:</strong> Look at something with texture near you—fabric, wood grain, skin, bark. Allow your eyes to trace the patterns.</span>
+                </div>
+                
+                <div class="support-item">
+                    <span class="support-icon">🦶</span>
+                    <span><strong>Movement Cue:</strong> Press your feet to the floor and rock gently forward and back. Let your bones feel gravity's steady pull.</span>
+                </div>
+                
+                <div class="support-item">
+                    <span class="support-icon">🪨</span>
+                    <span><strong>Touchstone:</strong> If you have a small object nearby (a stone, a shell, a bead), hold it. Let it anchor you. Words once claimed to shield you. Let this be your new touchstone.</span>
+                </div>
+                
+                <div class="support-item">
+                    <span class="support-icon">🫁</span>
+                    <span><strong>Breath Cue:</strong> Inhale through the nose for 4 counts. Hold for 2. Exhale slowly through the mouth for 6. Repeat as needed.</span>
+                </div>
+            </div>
+            
+            <p>
+                Modern neuroscience, psychology, and simply living attentively in human bodies have confirmed what many always intuitively knew: words wound. They alter neural pathways. They change hormone production. They reshape our internal narratives. They can inflict wounds more lasting than many physical injuries. To deny this reality is not resilience but a kind of enforced dissociation—a fracturing of our connection to our own experience.
+            </p>
+            
+            <p>
+                And yet—there is wisdom hidden within this flawed shield. It points toward something true: that we need ways to navigate harm, to find agency in difficult circumstances, to carry ourselves with dignity through pain. The problem is not that it seeks resilience, but that it seeks it through denial rather than integration. Through silence rather than voice. Through isolation rather than connection.
+            </p>
+            
+            <p>
+                What if we could preserve the strength while releasing the silence? What if we could acknowledge harm while claiming agency? What if we could transform this brittle shield into something living, something that protects without isolating, that empowers without denying?
+            </p>
+            
+            <div class="permission-note">
+                If you are still reading, that is enough. Your presence here matters. Your witness matters.
+            </div>
+            
+            <p>
+                This is not just a philosophical question but a practical one. The words we whisper to children become the narratives adults live by. The shields we offer shape not just individual psyches but collective cultures. If we continue passing this axiom unchanged, we perpetuate its harms. If we simply discard it without replacement, we leave the vulnerable unequipped for the realities they face.
+            </p>
+            
+            <p>
+                We stand at a threshold of possibility. We can honor what this axiom attempted while transforming what it achieved. We can recognize its historical function while refusing to be bound by its limitations. We can acknowledge the real protection it offered while creating something more whole, more true, more alive to replace it.
+            </p>
+            
+            <p>
+                A new axiom waits to be born—not from denial but from integration. Not from silencing but from voice. Not from isolation but from connection. In the pages that follow, we will explore this transformation, this rebirth, this reclaiming of our relationship with words, with harm, with protection, and with each other.
+            </p>
+            
+            <p>
+                The journey begins with recognition: Words have power. They always have. And what we do with that power—how we wield it, how we respond to it, how we transform it—shapes not just personal resilience but the very nature of our shared world.
+            </p>
+            
+            <p>
+                Healing waits at the edge of atrocity. It will not walk in while the fire still burns. Now, let us open the bones together.
+            </p>
+        </div>
+        
+        <div class="divider">───────────────────</div>
+        
+        <div class="runic-wisdom">
+            ᛁᚾ ᚦᛖ ᚱᛖᚲᛟᚷᚾᛁᛏᛁᛟᚾ ᛟᚠ ᚺᚨᚱᛗ, ᚹᛖ ᚠᛁᚾᛞ ᚦᛖ ᛋᛖᛖᛞᛋ ᛟᚠ ᚱᛖᚲᛚᚨᛗᚨᛏᛁᛟᚾ
+        </div>
+        
+        <div class="next-page">
+            <a href="sticks-stones-reclaimed.html">Next: The Reclaiming – A New Axiom Emerges</a>
+        </div>
+        
+        <div class="sensitivity-note">
+            <span class="sensitivity-icon">🚦🪬</span>
+            <span>Intentional sensitivity content below</span>
+        </div>
+        
+        <p style="text-align: center; font-style: italic;">Grief is a stop word.. easy to get stuck especially when the atrocities persist. 'Healing grief is only possible once the atrocity has ceased.'</p>
+        
+        <div class="author-placeholder">
+            [Author's personal statement will be placed here before publishing]
+        </div>
+        
+        <!-- Document Footer -->
+        <footer class="document-footer">
+            <div class="footer-left">
+                © 2025 UNEXUS Project | Created: 2025-05-08 | Last Modified: 2025-05-08
+            </div>
+            <div class="footer-contact">
+                Page 1 of 3 | Contact: primeunexus@gmail.com
+            </div>
+        </footer>
+        
+        <div class="content-warning">
+            <p>This content is brought to you as a collaborative development of the UNEXUS Project</p>
+            <p><strong>***Readers of our content may experience intense physical and emotional responses. Please be respectful***</strong></p>
+            <p>For Questions, comments, feedback or further information please contact:</p>
+            <p>primeunexus@gmail.com</p>
+            
+            <div class="donate-button">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=FSR4R6XJ5VQKG" target="_blank">Support Our Work</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple animation for energy markers
+        document.addEventListener('DOMContentLoaded', function() {
+            const energyMarkers = document.querySelectorAll('.energy-marker');
+            
+            // Random movement for energy markers
+            setInterval(() => {
+                energyMarkers.forEach(marker => {
+                    const randomX = (Math.random() - 0.5) * 5;
+                    const randomY = (Math.random() - 0.5) * 5;
+                    marker.style.transform = `translate(${randomX}px, ${randomY}px) scale(${1 + Math.random() * 0.5})`;
+                });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

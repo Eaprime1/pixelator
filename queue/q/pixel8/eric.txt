@@ -1,0 +1,17 @@
+ 🚀 Next Actions
+
+  1. Fix trailing spaces (when ready):
+  bash _scripts/apply_renames.sh
+
+  2. Commit hodie to GitHub:
+  cd hodie
+  git add .
+  git commit -m "Initial plexus structure"
+  git push origin main
+
+  3. Start processing today_from_drive_SAFE through plexus stages
+
+  ---
+  Your vision is now structured and re
+
+

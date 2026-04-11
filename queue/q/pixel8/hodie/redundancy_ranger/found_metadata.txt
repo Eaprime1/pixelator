@@ -1,0 +1,5 @@
+../../runexusiam/genai-processors/examples/live/ais_app/metadata.json
+../../hodie/redundancy_entity/.trashed-1770593303-GRAVITY_METADATA_v1.0_2.json
+../../hodie/redundancy_ranger/found_metadata.txt
+../../today/simplex/incubator/meta_data/METADATA_QUICK_WINS_2.md
+../../today/simplex/incubator/meta_data/METADATA_INFRASTRUCTURE_PLAN_2.md

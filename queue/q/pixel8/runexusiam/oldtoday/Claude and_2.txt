@@ -1,0 +1,31 @@
+Claude and Slack have an integration that allows users to interact with the AI assistant directly within the Slack messaging platform to improve productivity. This can be done through a direct message, an AI assistant panel, or by mentioning "@Claude" in a thread to get help with tasks like summarizing discussions, drafting emails, or answering questions using Slack's own data. For development teams, integrations like Claude Code and Slack allow collaborative coding tasks directly within Slack. [1, 2, 3, 4, 5, 6, 7]  
+How to use Claude in Slack 
+
+• Direct Message: Start a private conversation with Claude by messaging it directly in Slack. 
+• AI Assistant Panel: Open a panel on the side of your Slack window to access Claude from anywhere. 
+• Thread Participation: Mention "@Claude" in a Slack thread to get help with that specific conversation. [1, 4]  
+
+What you can do with the integration 
+
+• Content Creation: Draft emails, documents, and proposals based on team discussions and share them in channels. 
+• Information Retrieval: Get answers to questions by having Claude search and summarize information from your Slack conversations and past messages. 
+• Summarization: Ask Claude to summarize long threads to quickly catch up on discussions. 
+• Task Management: Have Claude help with tasks like prioritizing work or scheduling meetings based on your Slack history. 
+• Collaborative Coding: For development teams, the integration allows for collaborative coding, bug fixing, and project management directly within Slack. [1, 2, 3, 4, 5, 6, 7]  
+
+Important considerations 
+
+• Availability: The Slack connector is typically available for Claude Team and Enterprise plan customers, and an administrator must enable it first. 
+• Security: Integrations are designed with security features like admin controls, compartmentalization, and eDiscovery in mind, especially for enterprise use. [3, 4, 8]  
+
+AI responses may include mistakes.
+
+[1] https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack
+[2] https://support.claude.com/en/articles/12461605-using-claude-in-slack
+[3] https://www.zdnet.com/article/your-team-can-chat-with-anthropics-claude-directly-in-slack-now-what-it-can-do/
+[4] https://slack.com/customer-stories/anthropic-story
+[5] https://www.youtube.com/watch?v=A-L21IFxPIA
+[6] https://mcpmarket.com/server/slack-claude-code-bot
+[7] https://slack.com/marketplace/A08SF47R6P4-claude
+[8] https://www.claude.com/blog/claude-and-slack
+

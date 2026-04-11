@@ -1,0 +1,14 @@
+# UNEXUSI Ensign Identity Moniker
+# Python dependencies
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=2.0.0
+myst-parser>=2.0.0
+
+# Optional: Web server for showcase
+# flask>=3.0.0
+
+# Optional: Metadata management
+# pyyaml>=6.0
+# jsonschema>=4.0.0

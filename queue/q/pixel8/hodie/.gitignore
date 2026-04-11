@@ -1,0 +1,66 @@
+# Hodie .gitignore
+# Keep structure, exclude content
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Content folders (sync to Drive, not Git)
+plexus/*/
+!plexus/*/.gitkeep
+duplicatus/*
+!duplicatus/.gitkeep
+exemplar/*
+!exemplar/.gitkeep
+gravitar/*
+!gravitar/.gitkeep
+rudera/strues/*
+!rudera/strues/.gitkeep
+rudera/fragmenta/*
+!rudera/fragmenta/.gitkeep
+rudera/pulvis/*
+!rudera/pulvis/.gitkeep
+
+# Logs and temp
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local config
+.env
+*.local
+
+# PWD reports (generated)
+PWD_REPORT.txt
+
+# Sensitive Personal Data - Added 2026-01-02
+/storage/emulated/0/pixel8a/Q/no_sync_private/
+**/medical_record/
+**/education_record/
+**/*DD214*
+**/*Earnings*
+**/*Financials*
+**/*child support*
+**/*TRSRetire*
+**/Personal/
+**/Stubs/
+**/Google Photos/
+
+# Financial and personal documents
+*.xlsx
+**/*Receipt*
+**/*receipt*
+
+# Local development
+.DS_Store
+*.swp
+*.swo
+*~
+

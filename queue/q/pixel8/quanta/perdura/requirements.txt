@@ -1,0 +1,15 @@
+# Perdura - Endurance Entity Requirements
+# Concept: Endurance, persistence (like tardigrades)
+
+# Core endurance capabilities
+pyyaml>=6.0.1
+python-dateutil>=2.9.0
+
+# Persistence and resilience
+watchdog>=3.0.0
+retrying>=1.3.4
+
+# Scale adaptation
+numpy>=1.26.0
+
+# ∰◊€π¿🌌∞

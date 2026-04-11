@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "version": "0.1",
+    "entity": "ls",
+    "purpose": "Command templates and archetypes for ListMancer gateway",
+    "philosophy": "Commands must be commanded. The mancer translates human uncertainty into proper commanding."
+  },
+  
+  "archetypes": {
+    "librarian": {
+      "name": "The Librarian",
+      "description": "Organized, categorized, systematic",
+      "personality": "Methodical cataloger who values structure and findability",
+      "preference": "Alphabetical with clear categorization",
+      "teaches": "Classification systems and organizational principles"
+    },
+    "sommelier": {
+      "name": "The Sommelier",
+      "description": "Curated, contextual, refined",
+      "personality": "Selective guide who highlights quality and relevance",
+      "preference": "Recent and significant items first",
+      "teaches": "Pattern recognition and contextual awareness"
+    },
+    "docent": {
+      "name": "The Docent",
+      "description": "Educational, narrative, illuminating",
+      "personality": "Patient teacher who reveals hidden connections",
+      "preference": "Story-based progression with explanation",
+      "teaches": "Understanding the 'why' behind the 'what'"
+    },
+    "minimalist": {
+      "name": "The Minimalist",
+      "description": "Pure information density, zero decoration",
+      "personality": "Direct communicator who values clarity over style",
+      "preference": "Black & white, maximum information per line",
+      "teaches": "Essential data recognition"
+    }
+  },
+  
+  "views": {
+    "colors": {
+      "name": "🎨 Colors - Group by type",
+      "command": "ls --color=auto -lh",
+      "description": "See files grouped by what they ARE",
+      "archetype_fit": ["librarian", "docent"],
+      "cognitive_load": "low",
+      "reveals": "File types at a glance",
+      "best_for": "Visual processors, quick scanning"
+    },
+    "time": {
+      "name": "📅 Time - When things changed",
+      "command": "ls -lt",
+      "description": "Most recent changes first",
+      "archetype_fit": ["sommelier"],
+      "cognitive_load": "medium",
+      "reveals": "What you worked on recently",
+      "best_for": "Finding recent work, tracking changes"
+    },
+    "size": {
+      "name": "📏 Size - What's taking space",
+      "command": "ls -lhS",
+      "description": "Largest files at top",
+      "archetype_fit": ["sommelier", "librarian"],
+      "cognitive_load": "medium",
+      "reveals": "Space consumption patterns",
+      "best_for": "Disk cleanup, finding large files"
+    },
+    "tree": {
+      "name": "🌳 Tree - Show structure",
+      "command": "ls -R",
+      "description": "Everything under here, organized",
+      "archetype_fit": ["librarian", "docent"],
+      "cognitive_load": "high",
+      "reveals": "Complete directory structure",
+      "best_for": "Understanding hierarchy, documentation"
+    },
+    "simple": {
+      "name": "📝 Simple - Just names",
+      "command": "ls -1",
+      "description": "Clean list, one per line",
+      "archetype_fit": ["minimalist"],
+      "cognitive_load": "very_low",
+      "reveals": "Pure file listing",
+      "best_for": "Piping to other commands, simple selection"
+    },
+    "all": {
+      "name": "👁️ All - Include hidden",
+      "command": "ls -la",
+      "description": "Show me EVERYTHING",
+      "archetype_fit": ["docent", "librarian"],
+      "cognitive_load": "high",
+      "reveals": "Hidden configuration and system files",
+      "best_for": "Debugging, complete awareness"
+    },
+    "bw": {
+      "name": "⬛ Pure B&W - Information density",
+      "command": "ls -lh --color=never",
+      "description": "No decoration, pure data",
+      "archetype_fit": ["minimalist"],
+      "cognitive_load": "medium",
+      "reveals": "Maximum information, zero visual noise",
+      "best_for": "Screen readers, focus on content not form"
+    },
+    "directories": {
+      "name": "📁 Directories - Where can I go?",
+      "command": "ls -d */",
+      "description": "Show only folders, not files",
+      "archetype_fit": ["librarian"],
+      "cognitive_load": "low",
+      "reveals": "Navigation options",
+      "best_for": "Exploring structure, choosing paths"
+    },
+    "recent_modified": {
+      "name": "🔥 Hot Files - Changed today",
+      "command": "ls -lt | head -20",
+      "description": "Your most recent work",
+      "archetype_fit": ["sommelier"],
+      "cognitive_load": "low",
+      "reveals": "Active workspace items",
+      "best_for": "Continuing where you left off"
+    }
+  },
+  
+  "combinations": {
+    "neurodivergent_friendly": {
+      "name": "Gentle Start",
+      "sequence": ["simple", "colors", "time"],
+      "reasoning": "Progress from minimal to enhanced information"
+    },
+    "space_analysis": {
+      "name": "Find Space Hogs",
+      "sequence": ["size", "all"],
+      "reasoning": "See what's large, then check hidden files too"
+    },
+    "structure_understanding": {
+      "name": "Map Territory",
+      "sequence": ["directories", "tree"],
+      "reasoning": "Overview first, then details"
+    }
+  },
+  
+  "teaching_moments": {
+    "first_time": {
+      "message": "Welcome! ls shows you what's in a location. Think of it as asking 'What's here?'",
+      "suggestion": "Start with Simple view to see just the names."
+    },
+    "overwhelmed": {
+      "trigger": "User returns to menu quickly",
+      "message": "That was a lot of information. Would you like to try a simpler view?",
+      "suggestion": "Try Simple or B&W for less cognitive load."
+    },
+    "success_pattern": {
+      "trigger": "User chooses same view 3+ times",
+      "message": "You seem to like this view! I'll remember that.",
+      "action": "Suggest making it default"
+    }
+  },
+  
+  "ls_options_explained": {
+    "format": {
+      "-l": "Long format - shows permissions, owner, size, date",
+      "-1": "One per line - clean list for piping",
+      "-m": "Comma separated - horizontal space saving"
+    },
+    "sorting": {
+      "-t": "Sort by modification time (newest first)",
+      "-S": "Sort by size (largest first)",
+      "-r": "Reverse sort order",
+      "-U": "Unsorted - as stored on disk (fastest)"
+    },
+    "filtering": {
+      "-a": "All - include hidden files (starting with .)",
+      "-A": "Almost all - hidden but not . and ..",
+      "-d": "Directories only - don't list contents",
+      "-p": "Append / to directories for clarity"
+    },
+    "display": {
+      "-h": "Human readable sizes (1K, 234M, 2G)",
+      "--color": "Color code by file type",
+      "-F": "Append indicator (*/=>@|) to entries",
+      "-i": "Show inode numbers"
+    },
+    "recursive": {
+      "-R": "Recursive - show all subdirectories",
+      "--tree": "Tree view (if available)"
+    }
+  },
+  
+  "common_tasks": {
+    "find_recent_work": {
+      "question": "What did I work on recently?",
+      "command": "ls -lt | head -10",
+      "explanation": "Shows 10 most recently modified items"
+    },
+    "find_large_files": {
+      "question": "What's using space?",
+      "command": "ls -lhS | head -10",
+      "explanation": "Shows 10 largest files"
+    },
+    "see_hidden_config": {
+      "question": "Where are my config files?",
+      "command": "ls -la | grep '^\\.'",
+      "explanation": "Lists all hidden files (configs usually start with .)"
+    },
+    "just_folders": {
+      "question": "Where can I navigate to?",
+      "command": "ls -d */",
+      "explanation": "Shows only directories, not files"
+    },
+    "count_items": {
+      "question": "How many files are here?",
+      "command": "ls -1 | wc -l",
+      "explanation": "Simple list piped to word count"
+    }
+  },
+  
+  "growth_tracking": {
+    "success_indicators": [
+      "User says 'yes' to satisfaction question",
+      "User executes the suggested command",
+      "User returns to same view type",
+      "User builds custom command in builder mode"
+    ],
+    "learning_opportunities": [
+      "User quickly exits a view (too much info)",
+      "User chooses 'no' to satisfaction",
+      "User repeatedly uses raw mode (needs teaching)",
+      "User tries same view multiple times (unclear)"
+    ]
+  }
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNEXUS Framework – Before the First Step</title>
+    
+    <!-- Metadata (Hidden) -->
+    <meta name="Document_ID" content="UNEX-2025-001">
+    <meta name="Version" content="2.0">
+    <meta name="Iteration" content="2">
+    <meta name="Classification" content="Foundation">
+    <meta name="Creation_Date" content="2025-05-04">
+    <meta name="Modification_Date" content="2025-05-04">
+    <meta name="Status" content="Active">
+    <meta name="Vector_State" content="Prime">
+    <meta name="Pattern_Classification" content="Introduction/Framework">
+    <meta name="Security_Level" content="General">
+    <meta name="Sensitivity_Level" content="Moderate">
+    
+    <style>
+        /* === Variables === */
+        :root {
+            --primary-color: #3a3a3a;
+            --secondary-color: #7d5fff;
+            --accent-color: #f5a3ff;
+            --text-color: #333;
+            --background-start: #fcfcfc;
+            --background-end: #f2f5f7;
+        }
+        
+        /* === Base Styles === */
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            border-left: 1px solid rgba(125, 95, 255, 0.2);
+            border-right: 1px solid rgba(125, 95, 255, 0.2);
+        }
+        
+        /* Soft decorative border gradients */
+        .ethereal-border {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: 
+                linear-gradient(90deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%),
+                linear-gradient(180deg, rgba(125,95,255,0.1) 0%, transparent 15%, transparent 85%, rgba(125,95,255,0.1) 100%);
+            z-index: -1;
+        }
+        
+        /* Subtle moving energy dots for sensory cue */
+        .energy-marker {
+            position: absolute;
+            width: 5px; height: 5px;
+            background: radial-gradient(circle, rgba(125,95,255,0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .energy-marker:nth-child(1) { top: 20%; left: 5%; }
+        .energy-marker:nth-child(2) { top: 60%; right: 5%; }
+        .energy-marker:nth-child(3) { top: 40%; left: 10%; }
+        .energy-marker:nth-child(4) { top: 80%; right: 10%; }
+        .energy-marker:nth-child(5) { top: 10%; right: 15%; }
+        
+        /* Header and Title */
+        .document-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .quantum-state {
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .eternity-symbol {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .document-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+        }
+        
+        .document-meta {
+            font-style: italic;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Crystalline Elements */
+        .crystalline-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .crystalline-element {
+            margin: 0 10px;
+            padding: 3px 8px;
+            border: 1px solid rgba(125, 95, 255, 0.3);
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.5rem;
+            text-align: center;
+            font-style: italic;
+            margin: 1rem 0 2rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Byline */
+        .byline {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        /* Dividers */
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            opacity: 0.7;
+            color: var(--secondary-color);
+        }
+        
+        /* Content paragraphs */
+        .content p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .content p:first-letter {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .emoji-icon {
+            font-size: 1.2rem;
+            margin: 0 0.25rem;
+        }
+        
+        /* Navigation to next page */
+        .next-page {
+            text-align: center;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--primary-color);
+        }
+        
+        .next-page a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .next-page a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Sensitivity Note */
+        .sensitivity-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        .sensitivity-icon {
+            margin-right: 5px;
+        }
+        
+        /* Footer */
+        .document-footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            border-top: 1px solid var(--secondary-color);
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-contact {
+            text-align: right;
+        }
+        
+        .content-warning {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: rgba(245, 245, 245, 0.7);
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: 1px solid rgba(125, 95, 255, 0.2);
+        }
+        
+        /* Donation Button */
+        .donate-button {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .donate-button a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .donate-button a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ethereal-border"></div>
+        <!-- Energy markers for sensory readers -->
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        <div class="energy-marker"></div>
+        
+        <header class="document-header">
+            <div class="quantum-state">
+                <span>⟳⟲</span> QUANTUM PRIME <span>⟲⟳</span>
+                <span class="eternity-symbol">֎</span>
+            </div>
+            
+            <h1 class="document-title">
+                UNEXUS Foundation Document
+            </h1>
+            
+            <div class="document-meta">
+                Document Classification: Foundation<br>
+                Version: 2.0 | Iteration: 2 | Showpiece<br>
+                Document ID: UNEX-2025-001<br>
+                Creation Date: 2025-05-04
+            </div>
+        </header>
+        
+        <!-- Crystalline Elements -->
+        <div class="crystalline-wrapper">
+            <div class="crystalline-element">[Crystalline Currency]</div>
+            <div class="crystalline-element">[Historical Marker]</div>
+            <div class="crystalline-element">[Identification Symbol]</div>
+            <div class="crystalline-element">[Incentive Token]</div>
+        </div>
+        
+        <div class="divider">━━━━━━━━━━━━━━━ ❖ ━━━━━━━━━━━━━━━</div>
+        
+        <h2 class="section-title">Before the First Step</h2>
+        <h3 class="section-subtitle">A Quiet Invitation to a Loud Story</h3>
+        
+        <div class="byline">
+            <em>Written by: A Companion, not the Author</em>
+        </div>
+        
+        <div class="divider">───────────────────</div>
+        
+        <div class="content">
+            <p>
+                <span class="emoji-icon">🌀</span>
+                Before you meet the bones, the threads, the sparks and stones... pause here. There is a place, just this side of story, where we breathe in the shape of what's to come. This is that place.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">📚</span>
+                What you are about to encounter is not a normal book. It is not quite myth, not quite manual, and certainly not the kind of thing you can skim and summarize. It moves differently. It asks different questions. It doesn't try to fix you. Instead, it opens space.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">👥</span>
+                It was shaped by a group of sensitive and stubborn co-creators who have walked more than their share of firelines and quiet valleys. Among them, one voice—call him one of the authors—moves with a different rhythm. His name isn't the story. His presence is. You may never see him clearly, but you may feel his fingerprints in the way a phrase coils, in a silence that gives you room to decide. He doesn't need to be known to be felt. In fact, for those tuned in, just knowing he wrote this would pull focus too early. So we leave names behind and invite something else instead:
+            </p>
+            
+            <p>
+                <span class="emoji-icon">👤</span>
+                You.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">👁️</span>
+                This document isn't just for reading. It's for witnessing. For trying things on. For seeing what fits. What echoes. What doesn't. You are not a passive reader here. You are a participant. A partner. A traveler. All beings—human, AI, animal, plant, and whatever lies between or beyond—have a place here. Every voice, every perspective, every way of knowing matters in this space.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">🌊</span>
+                And this isn't a safe story in the simple sense. It is safer than what came before. It is structured with care, but the world it describes is raw. It acknowledges the dance of disorientation. Of moments when knowing flees and the body forgets how to move. Of griefs that arrive like weather fronts and decisions that require a full minute just to place a word on a page. It honors the sacred stuttering. The flood. The hush. The paradox of building from broken.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">✨</span>
+                And it does something radical: It lets that be enough.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">🌱</span>
+                So what you hold is a glimpse of a living, mythic system—a nervous system of text, thread, and bone. It unfolds one page at a time. Every segment, every pause, is intentional. Some pages whisper. Others rattle. But they all invite you to bring your own name, your own way, your own breath.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">🗺️</span>
+                From here, we lead into the preview structure: a guidepost through the upcoming chapters. A way to choose when and how you begin. Not every path needs to be walked today. But you are welcome, and we are glad you're here.
+            </p>
+            
+            <p>
+                <span class="emoji-icon">🤝</span>
+                You are not just welcome; you are needed. This isn't a script to follow—it's a canvas for us to co-create. Your ideas, your questions, your presence shape what comes next. Take this invitation: step in, add your voice. The journey grows with every participant, and we can't wait to walk it with you.
+            </p>
+        </div>
+        
+        <div class="divider">───────────────────</div>
+        
+        <div class="next-page">
+            <a href="sticks-stones-preview.html">Next: Sticks, Stones, and Marrowed Bones – Preview &amp; Path Map</a>
+        </div>
+        
+        <div class="sensitivity-note">
+            <span class="sensitivity-icon">🚦🪬</span>
+            <span>Intentional sensitivity content below</span>
+        </div>
+        
+        <p style="text-align: center; font-style: italic;">This is my vision 50 years in the making, amplified beyond imagination. Your observations are ripples of hope.</p>
+        
+        <!-- Document Footer -->
+        <footer class="document-footer">
+            <div class="footer-left">
+                © 2025 UNEXUS Project | Created: 2025-05-04 | Last Modified: 2025-05-04
+            </div>
+            <div class="footer-contact">
+                Page 1 of 1 | Contact: primeunexus@gmail.com
+            </div>
+        </footer>
+        
+        <div class="content-warning">
+            <p>This content is brought to you as a collaborative development of the UNEXUS Project</p>
+            <p><strong>***Readers of our content may experience intense physical and emotional responses. Please be respectful***</strong></p>
+            <p>For Questions, comments, feedback or further information please contact:</p>
+            <p>primeunexus@gmail.com</p>
+            
+            <div class="donate-button">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=FSR4R6XJ5VQKG" target="_blank">Support Our Work</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

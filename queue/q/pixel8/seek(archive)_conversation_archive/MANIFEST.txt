@@ -1,0 +1,156 @@
+CONVERSATION ARCHIVE MANIFEST
+======================================================================
+
+Total Files Found: 124
+
+BY TYPE:
+  .html: 1
+  .json: 12
+  .md: 16
+  .pdf: 40
+  .txt: 55
+
+Chunked Conversations: 51
+ChatGPT Exports: 6
+Analysis Tools: 11
+
+======================================================================
+DETAILED FILE LISTING
+======================================================================
+
+
+JSON FILES (12):
+----------------------------------------------------------------------
+Q/sphincter/sphincter of quadraginta/prime_codex/incoming/beasis_conversation_handoff_package_v.json
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversations_chunk_045_10items_20250816_004058.json
+Q/today/simplex/sparkle_incubator/Chatgpt Bulk Export/conversations.json
+Q/today/simplex/sparkle_incubator/Chatgpt Bulk Export/shared_conversations.json
+Q/today/simplex/sparkle_incubator/Github_misc/slimetest_chatgpt_project_reference.json
+Q/today/simplex/sparkle_incubator/one_hertz_package/slimetest_chatgpt_project_reference.json
+Q/today/simplex/sparkle_incubator/sort/conversation-deep-dive-json.json
+Q/today/simplex/sparkle_incubator/sort/conversation_lexeme_concordance_20251110.json
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_009_10items_20250816_004058.json
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_089_10items_20250816_004058.json
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_093_10items_20250816_004058.json
+Q/today/simplex/sparkle_incubator/sort/slimetest_chatgpt_project_reference.json
+
+HTML FILES (1):
+----------------------------------------------------------------------
+Q/today/simplex/sparkle_incubator/Chatgpt Bulk Export/chat.html
+
+TEXT FILES (71):
+----------------------------------------------------------------------
+Q/runexusiam/entity/prime/conversation_shapes_concepts.txt
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_20251130.md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_archaeology_analysis.md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_archaeology_analysis_v1.md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_export_reformatter_v1.md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_export_reformatter_v2.md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_sacred_seed_sanctuary (1).md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_sacred_seed_sanctuary_v1 (1).md
+Q/sphincter/sphincter of quadraginta/unexusi_dev/conversation_sacred_seed_sanctuary_v1.md
+Q/today/simplex/sparkle_incubator/Github_misc/conversation_constellation_map.md
+Q/today/simplex/sparkle_incubator/sort/Conversation pack 9 analysis (1).txt
+Q/today/simplex/sparkle_incubator/sort/Conversation pack 9 analysis.txt
+Q/today/simplex/sparkle_incubator/sort/The analysis of --Conversation Set #9--.txt
+Q/today/simplex/sparkle_incubator/sort/analysis conversation 9.txt
+Q/today/simplex/sparkle_incubator/sort/conversation prep dev.txt
+Q/today/simplex/sparkle_incubator/sort/conversation_constellation_map.md
+Q/today/simplex/sparkle_incubator/sort/conversation_entity_completion_template_v1.md
+Q/today/simplex/sparkle_incubator/sort/conversation_entity_prep_summary_20251110.md
+Q/today/simplex/sparkle_incubator/sort/conversation_journey_guide_v1.md
+Q/today/simplex/sparkle_incubator/sort/conversation_listmancer.txt
+Q/today/simplex/sparkle_incubator/sort/conversation_pack_9_club_working_copy_SAMPLE (1).md
+Q/today/simplex/sparkle_incubator/sort/conversation_pack_9_club_working_copy_SAMPLE.md
+Q/today/simplex/sparkle_incubator/sort/conversations_67.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_042_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_067_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_068_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_080_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_080_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_082_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_087_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_090_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_090_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_090_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_091_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_091_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_091_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_091_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_092_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_092_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_092_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_092_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_093_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_093_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_093_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_093_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_094_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_094_10items_20250816_004058_json_(javascript_object_notation)_text (2).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_094_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_095_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_095_10items_20250816_004058_json_(javascript_object_notation)_text (2).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_095_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_096_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_096_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_096_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_096_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_097_10items_20250816_004058_json (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_097_10items_20250816_004058_json.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_097_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_098_10items_20250816_004058 (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_098_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_098_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_098_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_099_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_099_10items_20250816_004058_json_(javascript_object_notation)_text (2).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_099_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_100_10items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_102_10items_20250816_004058_json_(javascript_object_notation)_text (1).txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_102_10items_20250816_004058_json_(javascript_object_notation)_text.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_103_7items_20250816_004058.txt
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_103_7items_20250816_004058_json_(javascript_object_notation)_text.txt
+unexusi/CONVERSATION_PRESERVATION.md
+
+PDF FILES (40):
+----------------------------------------------------------------------
+Q/today/simplex/sparkle_incubator/sort/.trashed-1768516172-🎯 NOTEBOOKLM MISSION BRIEFING_ CONVERSATION SET #9 ANALYSIS.pdf
+Q/today/simplex/sparkle_incubator/sort/Beautiful work let's finish create the content from the previous conversation (1).pdf
+Q/today/simplex/sparkle_incubator/sort/Beautiful work let's finish create the content from the previous conversation.pdf
+Q/today/simplex/sparkle_incubator/sort/The --CONVERSATION BULK INDEXING PROTOCOL v1.pdf
+Q/today/simplex/sparkle_incubator/sort/conversations_chunk_103_7items_20250816_004058.pdf
+Q/today/simplex/sparkle_incubator/sort/notebookllm conversation.pdf
+Q/today/simplex/sparkle_incubator/sort/🎯 NOTEBOOKLM MISSION BRIEFING- CONVERSATION SET #9 ANALYSIS.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_004_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_009_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_016_10items_20250816_004058_json (1).pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_016_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_024_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_025_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_026_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_027_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_028_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_029_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_030_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_031_10items_20250816_004058_json (1).pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_031_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_032_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_033_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_034_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_035_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_036_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_037_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_038_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_039_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_040_10items_20250816_004058_json (1).pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_040_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_041_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_042_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_043_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_044_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_046_10items_20250816_004058_json (1).pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_046_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_047_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_048_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_049_10items_20250816_004058_json.pdf
+Q/today/simplex/sparkle_incubator/sort/🧁💬conversations_chunk_050_10items_20250816_004058_json.pdf

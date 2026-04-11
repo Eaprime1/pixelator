@@ -1,0 +1,111 @@
+THE NINE STANDARD CHESTS (Operational Infrastructure)
+
+WORK DOMAIN (Structure/Reality/Manifestation):
+├─ Tool_Chest
+│  └─ Material: Ash (foundation wood, flexible yet strong)
+│  └─ Lock: Bronze latch (basic competency)
+│  └─ Contains: Practical instruments for reality manipulation
+│  └─ Access: Demonstrate tool use capability
+│
+├─ Charter_Chest  
+│  └─ Material: Oak (knowledge, authority, permanence)
+│  └─ Lock: Silver seal (collaborative consensus)
+│  └─ Contains: Governing documents, agreements, principles
+│  └─ Access: Collective verification of understanding
+│
+└─ Cedar_Chest
+   └─ Material: Cedar (preservation, protection, sacred)
+   └─ Lock: Brass key (time-locked after initial opening)
+   └─ Contains: Long-term value, heritage items, protection
+   └─ Access: Sustained demonstration over time
+
+PLAY DOMAIN (Exploration/Joy/Discovery):
+├─ Steward's_Chest
+│  └─ Material: Birch (new beginnings, light, adaptable)
+│  └─ Lock: Copper medallion (earned through service)
+│  └─ Contains: Resources for caretaking, nurturing, guidance
+│  └─ Access: Demonstrated care for others/systems
+│
+├─ Wooden_Chest (Generic/Flexible)
+│  └─ Material: Variable softwoods
+│  └─ Lock: Simple latch (accessible to all)
+│  └─ Contains: General supplies, everyday resources
+│  └─ Access: Available by need
+│
+└─ Mystery_Chest
+   └─ Material: Unknown until opened
+   └─ Lock: None (already open, but contents obscured)
+   └─ Contains: Surprises, unexpected gifts, chaos
+   └─ Access: Willingness to encounter unknown
+
+CREATE DOMAIN (Making/Building/Generating):
+├─ Hope_Chest
+│  └─ Material: Pine (growth, resin preservation, future-oriented)
+│  └─ Lock: Gold lock (mastery demonstration)
+│  └─ Contains: Future possibilities, wedding gifts, legacy items
+│  └─ Access: Proven capability to build toward future
+│
+├─ Story_Chest
+│  └─ Material: Multiple woods (narrative layers)
+│  └─ Lock: Platinum cypher (collective wisdom)
+│  └─ Contains: Narratives, myths, histories, fictions
+│  └─ Access: Contribution to collective story
+│
+└─ Truth_Chest
+   └─ Material: Diamond-hard laminate (compressed heritage)
+   └─ Lock: Diamond seal (ultimate achievement)
+   └─ Contains: Reality verification, operational truth
+   └─ Access: Sustained truth-telling under pressure
+
+---
+
+THE SEVEN PINNACLE CHESTS (Prime Transition Containers)
+
+PRIME_CHEST_02: Mother_as_Shadow Foundation
+├─ Material: Ash (first accessible hardwood)
+├─ Lock: Bronze latch (basic competency required)
+├─ Contains: Duality tools, binary understanding, self/other
+├─ Unlocks: When stable distinction established
+└─ Achievement: "Foundation Walker"
+
+PRIME_CHEST_03: Triadic Synergy Birth
+├─ Material: Cedar (life force, preservation)
+├─ Lock: Silver seal (collaborative consensus needed)
+├─ Contains: Relationship-as-entity tools, third-way thinking
+├─ Unlocks: When first synergy recognized and maintained
+└─ Achievement: "Triad Recognition"
+
+PRIME_CHEST_05: Quintessence Spectrum
+├─ Material: Oak (knowledge lineage)
+├─ Lock: Brass key (time-locked, must wait for readiness)
+├─ Contains: Spectrum navigation, five-fold pattern tools
+├─ Unlocks: When consciousness first awakens to multiplicity
+└─ Achievement: "Spectrum Walker"
+
+PRIME_CHEST_07: Sabbath Completion
+├─ Material: Birch (new beginnings from endings)
+├─ Lock: Copper medallion (earned through service to completion)
+├─ Contains: Rest mechanics, 3+3+1 understanding, transformation
+├─ Unlocks: When sacred completion recognized as creative, not depleting
+└─ Achievement: "Seventh Pinnacle Entry"
+
+PRIME_CHEST_11: Architectural Sovereignty
+├─ Material: Walnut (nested complexity)
+├─ Lock: Gold lock (mastery demonstration required)
+├─ Contains: Structure-enables-freedom tools, team-of-teams frameworks
+├─ Unlocks: When architecture recognized as liberation, not constraint
+└─ Achievement: "Architect Sovereign"
+
+PRIME_CHEST_13: Mastery Navigation
+├─ Material: Mahogany (master craftsman standard)
+├─ Lock: Platinum cypher (collective wisdom verification)
+├─ Contains: Proven operation documentation, sustained practice evidence
+├─ Unlocks: When complexity navigation demonstrated over time (years not months)
+└─ Achievement: "Master Navigator"
+
+PRIME_CHEST_17: Heritage Crystallization
+├─ Material: Multi-wood laminate (all previous woods in harmony)
+├─ Lock: Diamond seal (ultimate achievement recognition)
+├─ Contains: Legacy frameworks, heritage that enables future work
+├─ Unlocks: When work demonstrably outlasts individual contribution
+└─ Achievement: "Heritage Crystallizer"
