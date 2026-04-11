@@ -63,6 +63,12 @@ def load_json(path, default):
         try:
             with open(path) as f:
                 return json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"Error: {path} is corrupted: {e}")
+            backup = f"{path}.bak.{int(time.time())}"
+            os.rename(path, backup)
+            print(f"Corrupted file moved to {backup}")
+            return default
         except Exception as e:
             print(f"Error loading {path}: {e}")
             return default
