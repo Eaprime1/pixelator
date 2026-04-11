@@ -47,6 +47,36 @@ if [ "$1" = "stop" ]; then
     exit 0
 fi
 
+# ── Validate interval and build cron schedule ─────────────
+if ! [[ "$INTERVAL" =~ ^[0-9]+$ ]] || [ "$INTERVAL" -lt 1 ]; then
+    echo "  Error: interval must be a positive integer."
+    echo "  Supported values:"
+    echo "    1-59              -> every N minutes"
+    echo "    multiples of 60   -> every N hours (for example: 60, 120)"
+    echo ""
+    exit 1
+fi
+
+if [ "$INTERVAL" -lt 60 ]; then
+    CRON_SCHEDULE="*/$INTERVAL * * * *"
+    SCHEDULE_LABEL="every $INTERVAL minute(s)"
+elif [ $((INTERVAL % 60)) -eq 0 ]; then
+    HOURS=$((INTERVAL / 60))
+    if [ "$HOURS" -lt 1 ] || [ "$HOURS" -gt 23 ]; then
+        echo "  Error: hourly cron schedules must be between 60 and 1380 minutes."
+        echo "  Use 1-59 for minute-based schedules, or a multiple of 60 up to 1380."
+        echo ""
+        exit 1
+    fi
+    CRON_SCHEDULE="0 */$HOURS * * *"
+    SCHEDULE_LABEL="every $HOURS hour(s)"
+else
+    echo "  Error: intervals of 60 minutes or more must be exact multiples of 60."
+    echo "  Examples: 60, 120, 180"
+    echo ""
+    exit 1
+fi
+
 # ── Install cronie if needed ──────────────────────────────
 if ! command -v crond &> /dev/null; then
     echo "  Installing cronie (cron daemon for Termux)..."
@@ -66,7 +96,7 @@ fi
 # Remove any existing Pixelator entry first (clean update)
 EXISTING=$(crontab -l 2>/dev/null | grep -v pixelator)
 
-CRON_ENTRY="*/$INTERVAL * * * * $PYTHON $AGENT >> /storage/emulated/0/pixel8a/pixelator/pixelator_cron.log 2>&1"
+CRON_ENTRY="$CRON_SCHEDULE $PYTHON $AGENT >> /storage/emulated/0/pixel8a/pixelator/pixelator_cron.log 2>&1"
 
 echo "$EXISTING" > /tmp/pixelator_cron_tmp 2>/dev/null || {
     # /tmp not available — write to pixelator dir instead
@@ -74,7 +104,7 @@ echo "$EXISTING" > /tmp/pixelator_cron_tmp 2>/dev/null || {
     echo "$CRON_ENTRY" >> /storage/emulated/0/pixel8a/pixelator/.cron_tmp
     crontab /storage/emulated/0/pixel8a/pixelator/.cron_tmp
     rm /storage/emulated/0/pixel8a/pixelator/.cron_tmp
-    echo "  ✓ Cron entry added (every $INTERVAL minutes)"
+    echo "  ✓ Cron entry added ($SCHEDULE_LABEL)"
     echo "  $CRON_ENTRY"
     echo ""
     echo "  Reactor online. One hertz releasing."
@@ -88,7 +118,7 @@ echo "$EXISTING" > /tmp/pixelator_cron_tmp 2>/dev/null || {
 echo "$CRON_ENTRY" >> /tmp/pixelator_cron_tmp
 crontab /tmp/pixelator_cron_tmp
 
-echo "  ✓ Cron entry added (every $INTERVAL minutes)"
+echo "  ✓ Cron entry added ($SCHEDULE_LABEL)"
 echo "  $CRON_ENTRY"
 echo ""
 echo "  Commands:"
