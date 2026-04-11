@@ -62,7 +62,8 @@ def load_json(path, default):
         try:
             with open(path) as f:
                 return json.load(f)
-        except Exception:
+        except Exception as e:
+            print(f"Error loading {path}: {e}")
             return default
     return default
 
