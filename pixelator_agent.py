@@ -85,15 +85,21 @@ def save_json(path, data):
 def route_file(filename):
     """
     Apply routing rules to determine destination for a file.
-    First match wins. Catch-all (*) always last.
+    First match wins among specific rules. Catch-all (*) is applied only
+    if no specific rule matches.
     """
     name_lower = filename.lower()
+    catch_all = None
     for rule in cfg.ROUTING_RULES:
         pattern = rule["pattern"].lower()
         if pattern == "*":
-            return rule["dest"], rule["label"]
+            if catch_all is None:
+                catch_all = (rule["dest"], rule["label"])
+            continue
         if pattern in name_lower or fnmatch.fnmatch(name_lower, f"*{pattern}*"):
             return rule["dest"], rule["label"]
+    if catch_all is not None:
+        return catch_all
     return cfg.PIXELATING_DIR, "unsorted"
 
 
