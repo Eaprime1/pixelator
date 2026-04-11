@@ -409,8 +409,10 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     # Log chain of custody
     append_custody_log(custody_entries)
 
-    # Update manifest with remaining queue
-    update_queue_manifest(queue[cfg.MAX_PER_RUN:])
+    # Rebuild queue from feeds after processing so the manifest reflects
+    # copy mode, dry-run mode, and any move/copy failures.
+    post_run_queue = scan_feeds()
+    update_queue_manifest(post_run_queue)
 
     print_run_summary(custody_entries, copy_mode=cfg.COPY_NOT_MOVE)
 
