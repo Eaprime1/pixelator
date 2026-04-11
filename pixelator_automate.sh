@@ -49,7 +49,7 @@ fi
 
 # ── Validate interval and build cron schedule ─────────────
 if ! [[ "$INTERVAL" =~ ^[0-9]+$ ]] || [ "$INTERVAL" -lt 1 ]; then
-    echo "  Error: interval must be a positive integer."
+    echo "  ✗ Error: interval must be a positive integer (got: '$INTERVAL')"
     echo "  Supported values:"
     echo "    1-59              -> every N minutes"
     echo "    multiples of 60   -> every N hours (for example: 60, 120)"
@@ -63,7 +63,7 @@ if [ "$INTERVAL" -lt 60 ]; then
 elif [ $((INTERVAL % 60)) -eq 0 ]; then
     HOURS=$((INTERVAL / 60))
     if [ "$HOURS" -lt 1 ] || [ "$HOURS" -gt 23 ]; then
-        echo "  Error: hourly cron schedules must be between 60 and 1380 minutes."
+        echo "  ✗ Error: hourly cron schedules must be between 60 and 1380 minutes."
         echo "  Use 1-59 for minute-based schedules, or a multiple of 60 up to 1380."
         echo ""
         exit 1
@@ -71,7 +71,7 @@ elif [ $((INTERVAL % 60)) -eq 0 ]; then
     CRON_SCHEDULE="0 */$HOURS * * *"
     SCHEDULE_LABEL="every $HOURS hour(s)"
 else
-    echo "  Error: intervals of 60 minutes or more must be exact multiples of 60."
+    echo "  ✗ Error: intervals of 60 minutes or more must be exact multiples of 60."
     echo "  Examples: 60, 120, 180"
     echo ""
     exit 1
