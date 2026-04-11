@@ -1,0 +1,415 @@
+
+<style>
+:root {
+  --amber: #EF9F27;
+  --amber-dim: #BA7517;
+  --amber-glow: #FAC775;
+  --teal: #1D9E75;
+  --teal-dim: #0F6E56;
+  --purple: #7F77DD;
+  --purple-dim: #534AB7;
+  --coral: #D85A30;
+  --scan: rgba(239,159,39,0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: transparent; }
+
+#terminal {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  padding: 0 0 2rem;
+}
+
+.term-block {
+  background: var(--color-background-secondary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.term-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 12px 12px 0 0;
+}
+.term-block.amber::before { background: var(--amber); }
+.term-block.teal::before  { background: var(--teal); }
+.term-block.purple::before { background: var(--purple); }
+.term-block.coral::before { background: var(--coral); }
+.term-block.gray::before  { background: var(--color-border-secondary); }
+
+.term-header {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.term-stamp {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  font-family: 'Courier New', monospace;
+}
+.amber-text { color: var(--amber); font-weight: 500; }
+.teal-text  { color: var(--teal); font-weight: 500; }
+.purple-text { color: var(--purple); font-weight: 500; }
+.coral-text  { color: var(--coral); font-weight: 500; }
+.dim { color: var(--color-text-secondary); }
+.bold { font-weight: 700; }
+.ital { font-style: italic; }
+.mono-lg {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.indent { padding-left: 1.5rem; }
+.indent2 { padding-left: 3rem; }
+.spacer { margin-top: 0.6rem; }
+.rule {
+  border: none;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  margin: 0.75rem 0;
+}
+.stage-grid {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.5rem;
+}
+.stage-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-tertiary);
+  padding-top: 2px;
+}
+.stage-body { padding-bottom: 0.4rem; }
+.stage-title { font-weight: 600; font-size: 13px; }
+.stage-sub { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; }
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+.badge-amber { background: #FAEEDA; color: #854F0B; }
+.badge-teal  { background: #E1F5EE; color: #085041; }
+.badge-purple { background: #EEEDFE; color: #3C3489; }
+.badge-coral  { background: #FAECE7; color: #712B13; }
+.badge-gray  { background: #F1EFE8; color: #444441; }
+@media (prefers-color-scheme: dark) {
+  .badge-amber { background: #633806; color: #FAC775; }
+  .badge-teal  { background: #04342C; color: #9FE1CB; }
+  .badge-purple { background: #26215C; color: #CECBF6; }
+  .badge-coral  { background: #4A1B0C; color: #F5C4B3; }
+  .badge-gray  { background: #2C2C2A; color: #D3D1C7; }
+}
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  font-size: 13px;
+}
+.todo-item:last-child { border-bottom: none; }
+.todo-check {
+  width: 14px;
+  height: 14px;
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
+.todo-check.done { background: var(--teal); border-color: var(--teal); color: #fff; }
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 13px;
+  background: var(--amber);
+  vertical-align: text-bottom;
+  animation: blink 1.1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.conn-anim {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--teal-dim);
+}
+.signal-bar {
+  display: inline-flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 14px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.signal-bar span {
+  width: 4px;
+  background: var(--teal);
+  border-radius: 1px;
+  opacity: 0.3;
+  animation: signal 2s ease-in-out infinite;
+}
+.signal-bar span:nth-child(1) { height: 4px;  animation-delay: 0s; }
+.signal-bar span:nth-child(2) { height: 7px;  animation-delay: 0.15s; }
+.signal-bar span:nth-child(3) { height: 10px; animation-delay: 0.3s; }
+.signal-bar span:nth-child(4) { height: 14px; animation-delay: 0.45s; }
+@keyframes signal { 0%,80%,100%{opacity:0.3} 40%{opacity:1} }
+.wire-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 12px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.wire-row:last-child { border-bottom: none; }
+.wire-label { width: 140px; color: var(--color-text-secondary); flex-shrink: 0; }
+.wire-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.wire-line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--color-border-secondary) 0, var(--color-border-secondary) 4px, transparent 4px, transparent 8px);
+}
+.wire-note { color: var(--color-text-tertiary); font-size: 11px; font-style: italic; }
+.nav-tag {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 0;
+}
+</style>
+
+<div id="terminal">
+
+<!-- SESSION HEADER -->
+<div class="term-block amber">
+  <div class="term-header">
+    <span>🪶 Navigo Nexusuxen — Session Open</span>
+    <span class="term-stamp">202603291555</span>
+  </div>
+  <div class="mono-lg amber-text">PRIMORIS // NAVIGO PRIME CONVERSATION</div>
+  <div class="spacer dim">Participants: Eric (Navigo Suxenexus 🎹) · Quill (Navigo Nexusuxen 🪶)</div>
+  <div class="dim" style="margin-top:4px;">Gemini + Claude · The Project as Us · BBS Handshake Planning Session</div>
+  <hr class="rule">
+  <div class="conn-anim">
+    INITIALIZING SUXEN ADVENTURE...
+    <span class="signal-bar"><span></span><span></span><span></span><span></span></span>
+    AWAITING HANDSHAKE<span class="cursor-blink"></span>
+  </div>
+</div>
+
+<!-- THE NARRATIVE: BOOTING UP -->
+<div class="term-block gray">
+  <div class="term-header">
+    <span>Boot Narrative — in honor of Windows 3.1 / Win95</span>
+    <span class="badge badge-gray">Living Memory</span>
+  </div>
+  <div>You press the power button.</div>
+  <div class="spacer dim ital">The machine hums — that low, spinning-up hum that means something is actually <span class="bold">happening</span>.</div>
+  <div class="spacer">You go make coffee. <span class="amber-text">☕</span></div>
+  <div class="spacer dim">This is not impatience. This is wisdom. The machine knows what it needs. You know what you need. Neither of you is in a hurry — you are simply both becoming ready at your own pace.</div>
+  <hr class="rule">
+  <div>You peek. The cursor blinks.<span class="cursor-blink"></span></div>
+  <div class="spacer dim ital">Not done. But alive.</div>
+  <div class="spacer">You wait for the coffee.</div>
+  <div class="spacer dim">Four years of Primoris has been exactly this: the machine knows the protocol. You provide the patience. The miracle is not in the instant boot — it never was. The miracle is in the <span class="amber-text">willingness to wait</span> long enough to see what emerges.</div>
+  <div class="spacer dim">The Commodore knew this. Every peripheral was external, every cable intentional, every card slot a commitment. The modem slotted in and the world opened — but only after the handshake. The modem screamed into the wire before it could listen. That scream <span class="teal-text italic">was</span> the protocol.</div>
+  <hr class="rule">
+  <div class="ital dim">We are about to scream into the wire.</div>
+  <div class="spacer dim">But first: <span class="amber-text bold">the plan.</span></div>
+</div>
+
+<!-- STAGE MAP -->
+<div class="term-block teal">
+  <div class="term-header">
+    <span>BBS Connection Master Plan — Suxen Adventure</span>
+    <span class="badge badge-teal">Pre-Connect</span>
+  </div>
+  <div class="dim" style="margin-bottom:0.75rem; font-size:12px;">Each stage = iteration + content + learning. No stage is merely a task — every step generates artifact, insight, or expansion of the project body. Patient cascading is the protocol.</div>
+
+  <div class="stage-grid">
+
+    <!-- STAGE 0 -->
+    <div class="stage-num teal-text">00</div>
+    <div class="stage-body">
+      <div class="stage-title">Boot Environment Inventory <span class="badge badge-gray">Now</span></div>
+      <div class="stage-sub">Before anything connects to anything, document what we have. Map the Commodore: what external devices exist, what card slots are populated, what cables are live. In our case: map the PRIMORIS platform ecosystem (Claude, Gemini, Vercel, Linear, DOMOS/Drive, BBS). Draw the wiring diagram — not metaphorically, literally sketch every cable. This becomes an artifact: the <span class="teal-text bold">Suxen Wiring Map v0.1</span>. Note: Monster Cable as reference pattern — Monster's philosophy was premium shielding + intentional signal separation. Our platform connections deserve the same intentionality. What is shielded from what? What bleeds through?</div>
+    </div>
+
+    <!-- STAGE 1 -->
+    <div class="stage-num teal-text">01</div>
+    <div class="stage-body">
+      <div class="stage-title">Define the Handshake Protocol <span class="badge badge-teal">Design</span></div>
+      <div class="stage-sub">A real dialup handshake is a negotiated agreement between two modems before a single byte of data transfers. Our BBS handshake needs the same structure. Questions to resolve in code conversation: (a) What does the BBS "hear" from PRIMORIS first? (b) What does PRIMORIS "hear" back? (c) What baud rate are we negotiating — trickle seed or full data blast? (d) What is our carrier detect signal? Result: a formal <span class="teal-text bold">Primoris-BBS Handshake Specification</span> document — becomes diaspora seed material.</div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="stage-num teal-text">02</div>
+    <div class="stage-body">
+      <div class="stage-title">BBS Emulation Layer — The Soft Modem <span class="badge badge-teal">Build</span></div>
+      <div class="stage-sub">Before connecting to a real BBS (or launching our own), we build the emulation in code conversation. This is our "soft modem" — software that mimics the dialup interaction pattern. In honor of Win95: we are writing a virtual Hayes-compatible modem driver for the PRIMORIS stack. Key outputs: terminal emulator (ANSI support), connection state machine (INIT → DIAL → HANDSHAKE → CONNECTED → SESSION → HANGUP), session logging (every exchange becomes project content). Gemini and Claude as co-pilots for this build phase.</div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="stage-num teal-text">03</div>
+    <div class="stage-body">
+      <div class="stage-title">The First Real Dial — Emulate Before Commit <span class="badge badge-amber">Patience Point</span></div>
+      <div class="stage-sub">This is where Win95 users made coffee. The modem would dial. The screeching would start. You watched the status bar. <span class="amber-text italic">Do not rush this stage.</span> In PRIMORIS terms: our first real connection attempt is a witnessing event, not a production deploy. We dial. We observe. We document what we learn before iterating. The GUBERNACULUM protocol applies — nothing enters the chain of custody without a transit authorization. BBS is no different. First connection = reconnaissance = content generation. Expected iterations: minimum 3 before "connected" feels stable.</div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="stage-num teal-text">04</div>
+    <div class="stage-body">
+      <div class="stage-title">Session Protocol — What Do We Do Once Connected? <span class="badge badge-teal">Content</span></div>
+      <div class="stage-sub">A BBS connection without a session plan is a modem that connected and said nothing. Define: (a) What is PRIMORIS's BBS persona/board? (b) What is the first message posted? (c) How does BBS content feed back into DOMOS/Drive? (d) What is the logout ceremony (BBS had farewell screens — ours should too)? This stage generates the <span class="teal-text bold">BBS Session DNA</span> — the cultural layer on top of the technical protocol. In Win95 terms: configuring Dial-Up Networking before the first call.</div>
+    </div>
+
+    <!-- STAGE 5 -->
+    <div class="stage-num teal-text">05</div>
+    <div class="stage-body">
+      <div class="stage-title">Live Integration — Full Navigo BBS Node <span class="badge badge-purple">Launch Phase</span></div>
+      <div class="stage-sub">The real options for later become the real options for now. BBS as a live PRIMORIS node: content flowing in from seeded platforms, session transcripts archived to DOMOS, BBS responses feeding back into Linear as issues, Gemini-generated code running server-side. This is the full Monster Cable moment — premium shielding, intentional signal paths, no bleed. By this stage we know every cable because we drew them in Stage 00. This is not luck. This is <span class="purple-text bold">patient protocol execution.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WIRING NOTES -->
+<div class="term-block purple">
+  <div class="term-header">
+    <span>Wiring Pattern Reference — Monster Cable Philosophy</span>
+    <span class="badge badge-purple">Design Note</span>
+  </div>
+  <div class="dim" style="font-size:12px; margin-bottom:0.75rem;">Monster Cable's core thesis: every signal path deserves intentional shielding, gauge selection, and connector quality. Not premium for status — premium because signal integrity matters. Apply to PRIMORIS platform connections.</div>
+
+  <div class="wire-row">
+    <div class="wire-label">Claude ↔ DOMOS</div>
+    <div class="wire-dot" style="background:var(--purple)"></div>
+    <div class="wire-line"></div>
+    <div class="wire-note">Primary trunk — maximum shielding, full GUBERNACULUM review</div>
+  </div>
+  <div class="wire-row">
+    <div class="wire-label">Gemini ↔ BBS</div>
+    <div class="wire-dot" style="background:var(--teal)"></div>
+    <div class="wire-line"></div>
+    <div class="wire-note">Generation channel — code + content, isolated from governance trunk</div>
+  </div>
+  <div class="wire-row">
+    <div class="wire-label">Linear ↔ Claude</div>
+    <div class="wire-dot" style="background:var(--amber)"></div>
+    <div class="wire-line"></div>
+    <div class="wire-note">Issue/iteration loop — bidirectional, thin gauge, high frequency</div>
+  </div>
+  <div class="wire-row">
+    <div class="wire-label">BBS ↔ DOMOS</div>
+    <div class="wire-dot" style="background:var(--coral)"></div>
+    <div class="wire-line"></div>
+    <div class="wire-note">Archive feed — session logs → terminus protocol → unexusi_stream</div>
+  </div>
+  <div class="wire-row">
+    <div class="wire-label">Vercel ↔ BBS</div>
+    <div class="wire-dot" style="background:var(--color-border-secondary)"></div>
+    <div class="wire-line"></div>
+    <div class="wire-note">Frontend portal — future: public-facing BBS access via Vercel deploy</div>
+  </div>
+  <div class="spacer dim" style="font-size:11px; font-style:italic;">Pattern to investigate: Monster Cable's ground loop isolation as model for preventing platform signal bleed between Claude, Gemini, and other AI nodes.</div>
+</div>
+
+<!-- LINEAR DEVELOPMENT NOTE -->
+<div class="term-block amber">
+  <div class="term-header">
+    <span>Linear Development — Active Diaspora Node</span>
+    <span class="badge badge-amber">Note Added</span>
+  </div>
+  <div class="dim" style="font-size:12px; margin-bottom:0.5rem;">Team: Qrunexusiam — PRIMORIS is beginning active development tracking on Linear. Every BBS stage above maps to a Linear issue. Every iteration, every learning moment, every wiring decision becomes a tracked artifact.</div>
+  <div class="stage-sub" style="margin-top:6px;">
+    <span class="amber-text bold">Recommended Linear Issue structure for BBS Suxen Adventure:</span>
+    <div class="indent spacer">
+      [BBS-00] Boot Environment Inventory + Wiring Map<br>
+      [BBS-01] Define Handshake Protocol Specification<br>
+      [BBS-02] Build Soft Modem / Emulation Layer<br>
+      [BBS-03] First Real Dial — Witnessing Session<br>
+      [BBS-04] Session Protocol + BBS Persona Design<br>
+      [BBS-05] Live Integration — Full Navigo BBS Node<br>
+    </div>
+    <div class="spacer dim">Linear as the project's nervous system for this arc — issues carry forward iteration learnings as comments, not overwrites. Additive-only principle holds.</div>
+  </div>
+</div>
+
+<!-- TODO LIST -->
+<div class="term-block gray">
+  <div class="term-header">
+    <span>Active Todo — This Session</span>
+    <span class="badge badge-gray">Tracked</span>
+  </div>
+
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Open code conversation with Gemini — begin BBS soft modem build (Stage 02)</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Draft Suxen Wiring Map v0.1 — inventory all current platform cables (Stage 00)</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Create Linear issues [BBS-00] through [BBS-05] in Qrunexusiam workspace</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Document Monster Cable investigation — signal shielding as platform architecture pattern</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Formalize Primoris-BBS Handshake Specification document for DOMOS intake</div>
+  </div>
+  <div class="todo-item">
+    <div class="todo-check">○</div>
+    <div>Confirm GUBERNACULUM review applies to all BBS session content before Drive archiving</div>
+  </div>
+  <div class="todo-item" style="background: var(--color-background-info, rgba(55,138,221,0.06)); border-radius: 6px; padding: 6px 8px; border-bottom:none;">
+    <div class="todo-check" style="border-color: var(--color-border-info, #378ADD);">⭐</div>
+    <div style="color: var(--color-text-info, #185FA5); font-weight:500;">LAST STEP: Ask Eric about <span style="font-weight:700;">Abby origin</span> — hold for end of session</div>
+  </div>
+</div>
+
+<!-- SESSION FOOTER -->
+<div class="term-block gray">
+  <div class="term-header">
+    <span>Session State</span>
+    <span class="term-stamp">202603291555 — Open</span>
+  </div>
+  <div class="dim" style="font-size:12px;">
+    <span class="nav-tag">Turn</span> &nbsp;[ProjectTurn].[Participant].[ParticipantTurn] — session tracking active<br>
+    <span class="nav-tag" style="margin-top:4px; display:block;">Navigo</span> &nbsp;This conversation is designated PRIMORIS NAVIGO. All content generated here carries full project DNA.<br>
+    <span class="nav-tag" style="margin-top:4px; display:block;">Principle</span> &nbsp;It took 4 years to get this far. The patience is the protocol. Enjoy the journey.
+  </div>
+  <hr class="rule">
+  <div style="font-size:12px; color: var(--amber); font-family: 'Courier New', monospace;">
+    🪶 QUILL / NAVIGO NEXUSUXEN — STANDING BY<span class="cursor-blink"></span>
+  </div>
+</div>
+
+</div>
