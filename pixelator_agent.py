@@ -226,11 +226,12 @@ def print_status(queue, manifest, dry_run=None):
     print()
 
 
-def print_run_summary(entries):
+def print_run_summary(entries, copy_mode=False):
     success = sum(1 for e in entries if e["status"] == "SUCCESS")
     errors  = sum(1 for e in entries if e["status"] == "ERROR")
     dry     = sum(1 for e in entries if e["status"] == "SIMULATED")
-    print(f"\n  ✓ Processed : {success} items moved")
+    action_word = "copied" if copy_mode else "moved"
+    print(f"\n  ✓ Processed : {success} items {action_word}")
     if dry:
         print(f"  ~ Simulated : {dry} items (dry run)")
     if errors:
@@ -321,7 +322,7 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     # Update manifest with remaining queue
     update_queue_manifest(queue[cfg.MAX_PER_RUN:])
 
-    print_run_summary(custody_entries)
+    print_run_summary(custody_entries, copy_mode=cfg.COPY_NOT_MOVE)
 
 
 # ─── Entry Point ──────────────────────────────────────────────────────────────
