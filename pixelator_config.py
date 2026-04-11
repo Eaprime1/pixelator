@@ -81,12 +81,11 @@ ROUTING_RULES = [
 MAX_PER_RUN        = 10      # one hertz burst size
 PRESSURE_THRESHOLD = 50      # alert if queue exceeds this
 
-# ─── Trigger Mode ─────────────────────────────────────────────────────────────
-# "manual"   → run with: python3 pixelator_agent.py
-# "interval" → run with: python3 pixelator_agent.py --interval 60  (seconds)
-# "watch"    → continuous file-system watch (requires: pip install watchdog)
-TRIGGER_MODE = "manual"
-DEFAULT_INTERVAL = 60  # seconds (used if TRIGGER_MODE = "interval")
+# ─── Invocation Notes ─────────────────────────────────────────────────────────
+# Pixelator is currently invoked manually or by an external scheduler/wrapper.
+# Example manual run:
+#   python3 pixelator_agent.py
+# Interval / watch behavior is not configured from this file at this time.
 
 # ─── Chain of Custody ─────────────────────────────────────────────────────────
 LOG_FILE         = f"{PIXELATOR_ROOT}/pixelator_log.json"
