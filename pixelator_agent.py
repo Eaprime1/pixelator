@@ -27,6 +27,7 @@ import shutil
 import fnmatch
 import argparse
 import time
+import tempfile
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
@@ -226,14 +227,56 @@ def process_item(item, dry_run=False, copy_mode=False):
 
 # ─── Chain of Custody Logger ──────────────────────────────────────────────────
 
+MAX_CUSTODY_LOG_BYTES = 5 * 1024 * 1024
+
+def _atomic_save_json(path, data):
+    """Write JSON via a temp file and atomically replace the destination."""
+    dest_path = Path(path)
+    os.makedirs(dest_path.parent, exist_ok=True)
+
+    fd, temp_path = tempfile.mkstemp(
+        dir=str(dest_path.parent),
+        prefix=f".{dest_path.name}.",
+        suffix=".tmp",
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump(data, fh, indent=2, ensure_ascii=False)
+            fh.write("\n")
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(temp_path, dest_path)
+    except Exception:
+        try:
+            os.unlink(temp_path)
+        except OSError:
+            pass
+        raise
+
+def _rotate_custody_log_if_needed(path):
+    """Rotate the custody log when the active JSON file grows too large."""
+    if not os.path.exists(path):
+        return
+    if os.path.getsize(path) < MAX_CUSTODY_LOG_BYTES:
+        return
+
+    log_path = Path(path)
+    rotated_path = log_path.with_name(
+        f"{log_path.stem}_{timestamp().replace(':', '').replace('-', '')}{log_path.suffix}"
+    )
+    os.replace(log_path, rotated_path)
+
 def append_custody_log(entries):
     if not cfg.CHAIN_OF_CUSTODY:
         return
+
+    _rotate_custody_log_if_needed(cfg.LOG_FILE)
+
     log = load_json(cfg.LOG_FILE, {"entries": [], "agent": AGENT_SIGNATURE})
     log["entries"].extend(entries)
     log["last_run"] = timestamp()
     log["total_operations"] = len(log["entries"])
-    save_json(cfg.LOG_FILE, log)
+    _atomic_save_json(cfg.LOG_FILE, log)
 
 # ─── Reports ──────────────────────────────────────────────────────────────────
 
