@@ -177,7 +177,7 @@ def process_item(item, dry_run=False, copy_mode=False):
         )
     except Exception as e:
         return log_entry(
-            action="MOVE_FAILED",
+            action="COPY_FAILED" if copy_mode else "MOVE_FAILED",
             source=source,
             dest=dest_path,
             label=label,
