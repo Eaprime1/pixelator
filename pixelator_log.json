@@ -3,52 +3,52 @@
     {
       "timestamp": "2026-03-24T02:25:19",
       "action": "DRY_RUN",
-      "source": "/storage/emulated/0/pixel8a/pixelate/4 more awesome (and practical) things you can do with a terminal on Android.pdf",
-      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/4 more awesome (and practical) things you can do with a terminal on Android.pdf",
+      "source": "sample-input/terminal-on-android.pdf",
+      "destination": "sample-output/pixelating/terminal-on-android.pdf",
       "label": "unsorted",
       "status": "SIMULATED",
-      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
-      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+      "note": "Would move \u2192 sample-output/pixelating",
+      "agent": "pixelator_agent | SAMPLE_DEVICE"
     },
     {
       "timestamp": "2026-03-24T02:25:19",
       "action": "DRY_RUN",
-      "source": "/storage/emulated/0/pixel8a/pixelate/Android.txt",
-      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Android.txt",
+      "source": "sample-input/Android.txt",
+      "destination": "sample-output/pixelating/Android.txt",
       "label": "unsorted",
       "status": "SIMULATED",
-      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
-      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+      "note": "Would move \u2192 sample-output/pixelating",
+      "agent": "pixelator_agent | SAMPLE_DEVICE"
     },
     {
       "timestamp": "2026-03-24T02:25:19",
       "action": "DRY_RUN",
-      "source": "/storage/emulated/0/pixel8a/pixelate/Claude (1).txt",
-      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Claude (1).txt",
+      "source": "sample-input/Claude.txt",
+      "destination": "sample-output/pixelating/Claude.txt",
       "label": "unsorted",
       "status": "SIMULATED",
-      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
-      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+      "note": "Would move \u2192 sample-output/pixelating",
+      "agent": "pixelator_agent | SAMPLE_DEVICE"
     },
     {
       "timestamp": "2026-03-24T02:25:19",
       "action": "DRY_RUN",
-      "source": "/storage/emulated/0/pixel8a/pixelate/PIXEL_8A_ENVIRONMENTAL_COMPLETE.md",
-      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/PIXEL_8A_ENVIRONMENTAL_COMPLETE.md",
+      "source": "sample-input/ENVIRONMENTAL_COMPLETE.md",
+      "destination": "sample-output/pixelating/ENVIRONMENTAL_COMPLETE.md",
       "label": "doc",
       "status": "SIMULATED",
-      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
-      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+      "note": "Would move \u2192 sample-output/pixelating",
+      "agent": "pixelator_agent | SAMPLE_DEVICE"
     },
     {
       "timestamp": "2026-03-24T02:25:19",
       "action": "DRY_RUN",
-      "source": "/storage/emulated/0/pixel8a/pixelate/Project dev plan and guide (1).pdf",
-      "destination": "/storage/emulated/0/pixel8a/pixelator/pixelating/Project dev plan and guide (1).pdf",
+      "source": "sample-input/project-plan.pdf",
+      "destination": "sample-output/pixelating/project-plan.pdf",
       "label": "unsorted",
       "status": "SIMULATED",
-      "note": "Would move \u2192 /storage/emulated/0/pixel8a/pixelator/pixelating",
-      "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
+      "note": "Would move \u2192 sample-output/pixelating",
+      "agent": "pixelator_agent | SAMPLE_DEVICE"
     },
     {
       "timestamp": "2026-03-24T02:25:19",
@@ -101,7 +101,7 @@
       "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8"
     }
   ],
-  "agent": "\u20ac(pixelator_agent) navigo nexusuxen | PIXEL8",
+  "agent": "pixelator_agent | SAMPLE_DEVICE",
   "last_run": "2026-03-24T02:25:19",
   "total_operations": 10
 }
