@@ -30,6 +30,8 @@ jobs:
           repo = Path(".")
           report = repo / "document_sentence_lexeme_report.md"
           skip = {".git", ".github", "__pycache__", ".pytest_cache", ".venv", "venv", "node_modules"}
+          top_lexemes_limit = 25
+          max_lexemes_per_sentence = 40
 
           def is_skipped(path: Path) -> bool:
               return any(part in skip for part in path.parts)
@@ -62,7 +64,7 @@ jobs:
                   raw = doc.read_text(encoding="utf-8", errors="ignore")
                   doc_sentences = sentences(raw)
                   doc_lexemes = lexemes(raw)
-                  top = Counter(doc_lexemes).most_common(25)
+                  top = Counter(doc_lexemes).most_common(top_lexemes_limit)
 
                   lines.extend([
                       f"## {doc.as_posix()}",
@@ -77,7 +79,7 @@ jobs:
                   if doc_sentences:
                       for idx, sentence in enumerate(doc_sentences, start=1):
                           sentence_lexemes = lexemes(sentence)
-                          chain = " -> ".join(sentence_lexemes[:40]) if sentence_lexemes else "(no lexemes)"
+                          chain = " -> ".join(sentence_lexemes[:max_lexemes_per_sentence]) if sentence_lexemes else "(no lexemes)"
                           lines.append(f"{idx}. {chain}")
                   else:
                       lines.append("No sentences detected.")
