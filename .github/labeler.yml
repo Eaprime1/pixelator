@@ -1,0 +1,16 @@
+ci:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**'
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - 'README*'
+
+automation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.agents/**'
+          - '.claude/**'
+          - '.codex/**'
