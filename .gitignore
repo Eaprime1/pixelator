@@ -14,3 +14,7 @@ qdrive/
 pixelator_queue.json
 pixelator_log.json
 pixelator_cron.log
+
+# Python cache artifacts
+__pycache__/
+*.py[cod]
