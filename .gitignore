@@ -7,3 +7,7 @@ Thumbs.db
 
 # Nested repos — should never be committed here
 qdrive/
+
+# Python cache
+__pycache__/
+*.pyc
