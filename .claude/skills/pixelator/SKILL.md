@@ -1,58 +1,47 @@
-```markdown
 # pixelator Development Patterns
 
 > Auto-generated skill from repository analysis
 
 ## Overview
-This skill teaches you the development patterns and coding conventions used in the `pixelator` repository, a Python-based project with no detected framework. You'll learn how to structure files, write imports and exports, and follow the repository's testing and commit practices. This guide also provides command suggestions for common workflows.
+This skill captures practical patterns for the `pixelator` repository, which is primarily a Termux/Bash workflow (`termux_proc.sh`) with lightweight Python test coverage (`test_sample.py`). Use it to keep script changes consistent and run quick validation before commits.
 
 ## Coding Conventions
 
 ### File Naming
-- Use **snake_case** for all file names.
-  - Example: `image_processor.py`, `pixel_utils.py`
+- Use **snake_case** for script and Python file names.
+  - Example: `termux_proc.sh`, `test_sample.py`
 
-### Import Style
-- Use **relative imports** within the codebase.
-  - Example:
-    ```python
-    from .utils import resize_image
-    ```
+### Shell Script Style
+- Keep menu options and prompts clear and stable in `termux_proc.sh`.
+- Prefer straightforward Bash flow (`case`, `if`, `echo`, `read`) over unnecessary abstraction.
 
-### Export Style
-- Use **named exports** (explicitly listing what is exported from a module).
-  - Example:
-    ```python
-    __all__ = ['resize_image', 'Pixelator']
-    ```
+### Test Naming
+- Use pytest-discoverable `test_*.py` naming.
+  - Example: `test_sample.py`
 
 ### Commit Patterns
 - Commit messages are **freeform** (no enforced prefixes).
 - Typical message length: ~20 characters.
-  - Example: `fix pixelation bug`
+  - Example: `fix menu cert output`
 
 ## Workflows
 
-### Adding a New Module
-**Trigger:** When you need to add new functionality.
-**Command:** `/add-module`
+### Updating the Procedure Script
+**Trigger:** When changing mobile workflow behavior.
+**Command:** `/update-script`
 
-1. Create a new Python file using snake_case naming.
-2. Implement your functionality.
-3. Use relative imports to reference other modules.
-4. Add named exports via `__all__` if necessary.
-5. Write corresponding tests in a `*.test.*` file.
+1. Update `termux_proc.sh` with minimal, focused edits.
+2. Preserve option numbering and output format compatibility where possible.
+3. Verify the script still supports start/resume, completion cert output, and log visibility.
 
 ### Running Tests
 **Trigger:** When you want to verify code correctness.
 **Command:** `/run-tests`
 
-1. Locate test files matching the `*.test.*` pattern.
-2. Run tests using your preferred Python test runner (framework is unspecified).
-   - Example with `pytest`:
-     ```
-     pytest
-     ```
+1. Run pytest from the repository root:
+   ```
+   pytest
+   ```
 
 ### Committing Changes
 **Trigger:** When you have changes ready to save.
@@ -67,15 +56,13 @@ This skill teaches you the development patterns and coding conventions used in t
 
 ## Testing Patterns
 
-- Test files follow the `*.test.*` naming pattern.
-  - Example: `image_processor.test.py`
-- The specific test framework is **unknown**; use your preferred Python test runner (e.g., `pytest`, `unittest`).
-- Place tests alongside or near the modules they test.
+- Test files follow pytest-style `test_*.py` naming.
+- Current tests are root-level (for example, `test_sample.py`).
+- Use `pytest` for validation.
 
 ## Commands
 | Command         | Purpose                                 |
 |-----------------|-----------------------------------------|
-| /add-module     | Scaffold and add a new module           |
+| /update-script  | Update `termux_proc.sh` behavior safely |
 | /run-tests      | Run all test files in the repository    |
 | /commit-changes | Commit your staged changes              |
-```

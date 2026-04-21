@@ -1,6 +1,6 @@
 # ECC for Codex CLI
 
-This supplements the root `AGENTS.md` with a repo-local ECC baseline.
+This provides a repo-local ECC baseline for Codex CLI in this repository.
 
 ## Repo Skill
 
@@ -11,7 +11,8 @@ This supplements the root `AGENTS.md` with a repo-local ECC baseline.
 ## MCP Baseline
 
 Treat `.codex/config.toml` as the default ECC-safe baseline for work in this repository.
-The generated baseline enables GitHub, Context7, Exa, Memory, Playwright, and Sequential Thinking.
+The generated baseline enables GitHub, Context7, Memory, Playwright, and Sequential Thinking.
+Web search and other networked extras should be enabled explicitly by each user in `~/.codex/config.toml`.
 
 ## Multi-Agent Support
 
@@ -22,5 +23,3 @@ The generated baseline enables GitHub, Context7, Exa, Memory, Playwright, and Se
 ## Workflow Files
 
 - No dedicated workflow command files were generated for this repo.
-
-Use these workflow files as reusable task scaffolds when the detected repository workflows recur.

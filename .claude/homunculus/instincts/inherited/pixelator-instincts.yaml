@@ -1,4 +1,4 @@
-# Instincts generated from https://github.com/Eaprime1/pixelator
+# Instincts generated from https://github.com/devicehaven/pixelator
 # Generated: 2026-04-11T02:23:38.272Z
 # Version: 2.0
 # NOTE: This file supplements (does not replace) any existing curated instincts.
@@ -10,7 +10,7 @@ trigger: "when writing a commit message"
 confidence: 0.6
 domain: git
 source: repo-analysis
-source_repo: https://github.com/Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Commit Length
@@ -30,7 +30,7 @@ trigger: "when creating a new file"
 confidence: 0.8
 domain: code-style
 source: repo-analysis
-source_repo: https://github.com/Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Naming Files
@@ -50,19 +50,19 @@ trigger: "when importing modules"
 confidence: 0.75
 domain: code-style
 source: repo-analysis
-source_repo: https://github.com/Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Import Relative
 
 ## Action
 
-Use relative imports for project files
+No repository-specific import convention is established; follow language defaults.
 
 ## Evidence
 
-- Import analysis shows relative import pattern
-- Example: import { x } from '../lib/x'
+- Repository is primarily Bash (`termux_proc.sh`) with minimal Python.
+- No meaningful in-repo import pattern to standardize.
 
 ---
 id: pixelator-export-style
@@ -70,19 +70,18 @@ trigger: "when exporting from a module"
 confidence: 0.7
 domain: code-style
 source: repo-analysis
-source_repo: https://github.com/Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Export Style
 
 ## Action
 
-Prefer named exports
+No repository-specific export convention is established; follow language defaults.
 
 ## Evidence
 
-- Export pattern analysis
-- Dominant style: named
+- Repository is not module-heavy and has no export-centric code pattern.
 
 ---
 id: pixelator-test-separate
@@ -90,19 +89,19 @@ trigger: "when writing tests"
 confidence: 0.8
 domain: testing
 source: repo-analysis
-source_repo: https://github.com/Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Test Separate
 
 ## Action
 
-Place tests in the tests/ or __tests__/ directory, mirroring src structure
+Use pytest-discoverable test naming (`test_*.py`) in this repository.
 
 ## Evidence
 
-- Separate test directory pattern detected
-- Tests live in dedicated test folders
+- Current test file is `test_sample.py` at repository root.
+- Existing CI test command uses `pytest`.
 
 ---
 id: pixelator-instinct-file-naming
@@ -110,7 +109,7 @@ trigger: "When creating a new Python file"
 confidence: 0.9
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct File Naming
@@ -129,14 +128,14 @@ trigger: "When defining a new function"
 confidence: 0.8
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Function Naming
 
 ## Action
 
-Name the function using camelCase
+Name Python functions using snake_case
 
 ## Evidence
 
@@ -148,7 +147,7 @@ trigger: "When defining a new class"
 confidence: 0.9
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Class Naming
@@ -167,7 +166,7 @@ trigger: "When defining a constant"
 confidence: 0.9
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Constant Naming
@@ -186,14 +185,14 @@ trigger: "When importing modules"
 confidence: 0.8
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Import Style
 
 ## Action
 
-Use relative imports
+No strict import convention is established; follow language defaults.
 
 ## Evidence
 
@@ -205,14 +204,14 @@ trigger: "When exporting symbols from a module"
 confidence: 0.8
 domain: code-style
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Export Style
 
 ## Action
 
-Use named exports
+No strict export convention is established; follow language defaults.
 
 ## Evidence
 
@@ -224,14 +223,14 @@ trigger: "When adding new tests"
 confidence: 0.8
 domain: testing
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Test Location
 
 ## Action
 
-Place test files in a separate folder from source code
+Use pytest-compatible `test_*.py` names (current tests are root-level).
 
 ## Evidence
 
@@ -243,7 +242,7 @@ trigger: "When making a git commit"
 confidence: 0.7
 domain: git
 source: repo-analysis
-source_repo: Eaprime1/pixelator
+source_repo: https://github.com/devicehaven/pixelator
 ---
 
 # Pixelator Instinct Commit Format
@@ -256,4 +255,3 @@ Use freeform commit messages without a required prefix
 
 - Pattern in commits.prefixes
 - Seen in commit: 'Add files via upload'
-
