@@ -1,0 +1,9 @@
+interface:
+  display_name: "Pixelator"
+  short_description: "Repo-specific patterns and workflows for pixelator"
+  default_prompt: >-
+    Work within the pixelator repository using existing Python scripts and GitHub
+    workflows. Prefer minimal, targeted changes; preserve chain-of-custody behavior
+    in `pixelator_agent.py`; and validate with existing flake8/pytest checks.
+policy:
+  allow_implicit_invocation: true
