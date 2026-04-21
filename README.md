@@ -35,7 +35,7 @@ bash termux_proc.sh
 | 3 | Show last cert (if you scrolled away) |
 | 4 | View recent log |
 | 5 | Save a quick note |
-| 6 | Roll D12 insight (timestamp + random icon) |
+| 6 | Roll D12 insight (timestamp + icon) |
 | 7 | Quit |
 
 ### Certificate format
@@ -52,11 +52,11 @@ All logs and certs saved to `~/.pixelator/` on your phone.
 
 ### D12 insight roll
 
-Option 6 populates a D12 dice pool (`1..12`), rolls once, and prints a timestamped insight:
+Option 6 rolls a D12 (`1..12`) once and prints a timestamped insight:
 
 `YYYY-MM-DD HH:MM:SS TZ | D12=<roll> <random dice-related icon> | <insight text>`
 
-This uses random icon output in place of lexeme-style wording.
+Each roll value maps to a dice-related icon in the displayed output instead of a fixed text label.
 
 ---
 

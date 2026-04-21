@@ -13,15 +13,28 @@ mkdir -p "$STORE"
 ts()   { date '+%Y%m%d-%H%M%S'; }
 ts_readable() { date '+%Y-%m-%d %H:%M:%S %Z'; }
 short(){ echo "$1" | sha256sum | cut -c1-8; }
-D12_ICONS=(⚀ ⚁ ⚂ ⚃ ⚄ ⚅ 🎲 🧊 🔷 🔶 ⭐ ✨)
+# Roll-to-icon mapping: 1-6 use die faces, 7-12 use dice-adjacent symbols.
+ROLL_ICONS=(⚀ ⚁ ⚂ ⚃ ⚄ ⚅ 🎲 🧊 🔷 🔶 ⭐ ✨)
 
 roll_d12() {
-    echo $((RANDOM % 12 + 1))
+    if command -v shuf >/dev/null 2>&1; then
+        shuf -i 1-12 -n 1
+    else
+        echo $((RANDOM % 12 + 1))
+    fi
 }
 
 dice_icon_for_roll() {
     local roll="$1"
-    echo "${D12_ICONS[$((roll - 1))]}"
+    if ! [[ "$roll" =~ ^[0-9]+$ ]]; then
+        echo "🎲"
+        return
+    fi
+    if [[ "$roll" -lt 1 || "$roll" -gt 12 ]]; then
+        echo "🎲"
+        return
+    fi
+    echo "${ROLL_ICONS[$((roll - 1))]}"
 }
 
 cert() {
@@ -125,7 +138,7 @@ do_d12_insight() {
     esac
     echo "${stamp} | D12=${roll} ${icon} | ${insight}"
     log_entry "INSIGHT [${stamp}] D12=${roll} ${icon} ${insight}"
-    cert "INSIGHT-D12-${roll}-${icon}"
+    cert "INSIGHT-D12-${roll}"
 }
 
 # ── run ───────────────────────────────────────────────────────────────────────
