@@ -43,7 +43,7 @@ jobs:
               return [s.strip() for s in re.split(r"(?<=[.!?])\s+", cleaned) if s.strip()]
 
           def lexemes(text: str):
-              return re.findall(r"[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?", text.lower())
+              return re.findall(r"[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)*", text.lower())
 
           docs = sorted(
               path for path in repo.rglob("*")
@@ -54,6 +54,7 @@ jobs:
               "# Document sentence and lexeme report",
               "",
               f"Documents analyzed: {len(docs)}",
+              "Lexeme rule: alphanumeric tokens with optional apostrophe segments (e.g., don't, we'll).",
               "",
           ]
 
@@ -61,7 +62,7 @@ jobs:
               lines.append("No matching documents were found.")
           else:
               for doc in docs:
-                  raw = doc.read_text(encoding="utf-8", errors="ignore")
+                  raw = doc.read_text(encoding="utf-8", errors="replace")
                   doc_sentences = sentences(raw)
                   doc_lexemes = lexemes(raw)
                   top = Counter(doc_lexemes).most_common(top_lexemes_limit)
@@ -79,7 +80,10 @@ jobs:
                   if doc_sentences:
                       for idx, sentence in enumerate(doc_sentences, start=1):
                           sentence_lexemes = lexemes(sentence)
+                          truncated = len(sentence_lexemes) > max_lexemes_per_sentence
                           chain = " -> ".join(sentence_lexemes[:max_lexemes_per_sentence]) if sentence_lexemes else "(no lexemes)"
+                          if truncated:
+                              chain = f"{chain} -> ... (truncated)"
                           lines.append(f"{idx}. {chain}")
                   else:
                       lines.append("No sentences detected.")
