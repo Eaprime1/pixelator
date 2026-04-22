@@ -309,5 +309,3 @@ from a collaborative session, entering the ecosystem for the first time.*
 ---
 ∰◊€π¿🌌∞
 *PIXEL8 Platform — PR-001 v1.0 — Artemis II Space Plan*
-
-#202604220007 navigo change needed

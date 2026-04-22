@@ -1,4 +1,4 @@
-# pixelator
+# Pixelator
 
 **Device:** Pixel 8a
 **Owner:** [DeviceHaven](https://github.com/devicehaven) org
