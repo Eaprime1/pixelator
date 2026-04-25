@@ -143,6 +143,21 @@ Every file move is logged to `pixelator_log.json`:
 
 ---
 
+## Deployment Arc
+
+The pixelator operates within the broader **Marrowing of Primoris** mission. Files flowing through the agent move along a three-phase deployment arc:
+
+| Phase | Description | Pixelator Role |
+|---|---|---|
+| **Sticks** | Raw logs, scraps, initial observations | Artesian intake (The Maw) |
+| **Stones** | Refined docs, scripts, structured data | Routing and custody logging |
+| **Marrowed Bones** | Living heritage archives, launch-ready | Staged in Salmon Shooter queue |
+
+The full workflow for converting artifacts into Reference Library documents is in:
+**[`docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md`](docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md)**
+
+---
+
 ## Philosophy
 
 > "Queue is operating an entire reactor and steam plant and raging brain drizzles
