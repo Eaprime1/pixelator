@@ -15,6 +15,12 @@ pixelator_queue.json
 pixelator_log.json
 pixelator_cron.log
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
 # Debug logs — never commit these
 firebase-debug.log
 *.debug.log
