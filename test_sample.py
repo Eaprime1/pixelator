@@ -253,10 +253,9 @@ def test_append_custody_log_skipped_when_disabled(tmp_path):
     log_path = tmp_path / "custody.json"
     _mock_cfg.LOG_FILE = str(log_path)
     _mock_cfg.CHAIN_OF_CUSTODY = False
-
-    entries = [agent.log_entry("MOVE", "/src/a.md", "/dest/a.md", "doc", "SUCCESS")]
-    agent.append_custody_log(entries)
-
-    assert not log_path.exists(), "No log should be written when custody logging is off"
-
-    _mock_cfg.CHAIN_OF_CUSTODY = True  # restore
+    try:
+        entries = [agent.log_entry("MOVE", "/src/a.md", "/dest/a.md", "doc", "SUCCESS")]
+        agent.append_custody_log(entries)
+        assert not log_path.exists(), "No log should be written when custody logging is off"
+    finally:
+        _mock_cfg.CHAIN_OF_CUSTODY = True  # restore regardless of assertion outcome
