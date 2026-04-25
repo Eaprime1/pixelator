@@ -10,40 +10,56 @@ Config is mocked so tests run off-device without Pixel 8a paths.
 import json
 import os
 import sys
+import importlib
+import json
+import os
+import sys
 from unittest.mock import MagicMock
 
-# ── Mock config before agent import (agent imports cfg at module level) ───────
-# Inject mock before pixelator_agent is loaded so cfg references resolve to the mock.
-# sys.modules.pop ensures a clean reload if pixelator_agent was pre-cached elsewhere.
-_mock_cfg = MagicMock()
-_mock_cfg.ROUTING_RULES = [
-    {"pattern": "approved_",     "dest": "/dest/pixelate",     "label": "pre-approved"},
-    {"pattern": "entity",        "dest": "/dest/hodie/quanta", "label": "entity"},
-    {"pattern": "consciousness", "dest": "/dest/hodie/quanta", "label": "entity"},
-    {"pattern": "codex",         "dest": "/dest/codex",        "label": "codex"},
-    {"pattern": "prime",         "dest": "/dest/prime",        "label": "prime"},
-    {"pattern": "conversation",  "dest": "/dest/visionhaven",  "label": "seed"},
-    {"pattern": "seed",          "dest": "/dest/visionhaven",  "label": "seed"},
-    {"pattern": ".py",           "dest": "/dest/ai-projects",  "label": "script"},
-    {"pattern": ".md",           "dest": "/dest/pixelating",   "label": "doc"},
-    {"pattern": "*",             "dest": "/dest/pixelating",   "label": "unsorted"},
-]
-_mock_cfg.PIXELATING_DIR     = "/dest/pixelating"
-_mock_cfg.CHAIN_OF_CUSTODY   = True
-_mock_cfg.SKIP_HIDDEN        = True
-_mock_cfg.COPY_NOT_MOVE      = False
-_mock_cfg.DRY_RUN            = False
-_mock_cfg.MAX_PER_RUN        = 10
-_mock_cfg.PRESSURE_THRESHOLD = 50
-_mock_cfg.LOG_FILE           = "/tmp/pixelator_test_log.json"
-_mock_cfg.QUEUE_MANIFEST     = "/tmp/pixelator_test_queue.json"
-
-sys.modules["pixelator_config"] = _mock_cfg
-sys.modules.pop("pixelator_agent", None)  # force clean import with the mock config
-
-import pixelator_agent as agent  # noqa: E402
+import pytest
 
 
+agent = None
+
+
+@pytest.fixture(autouse=True)
+def _mock_pixelator_agent(monkeypatch):
+    global agent
+
+    # Mock config before agent import (agent imports cfg at module level).
+    _mock_cfg = MagicMock()
+    _mock_cfg.ROUTING_RULES = [
+        {"pattern": "approved_",     "dest": "/dest/pixelate",     "label": "pre-approved"},
+        {"pattern": "entity",        "dest": "/dest/hodie/quanta", "label": "entity"},
+        {"pattern": "consciousness", "dest": "/dest/hodie/quanta", "label": "entity"},
+        {"pattern": "codex",         "dest": "/dest/codex",        "label": "codex"},
+        {"pattern": "prime",         "dest": "/dest/prime",        "label": "prime"},
+        {"pattern": "conversation",  "dest": "/dest/visionhaven",  "label": "seed"},
+        {"pattern": "seed",          "dest": "/dest/visionhaven",  "label": "seed"},
+        {"pattern": ".py",           "dest": "/dest/ai-projects",  "label": "script"},
+        {"pattern": ".md",           "dest": "/dest/pixelating",   "label": "doc"},
+        {"pattern": "*",             "dest": "/dest/pixelating",   "label": "unsorted"},
+    ]
+    _mock_cfg.PIXELATING_DIR     = "/dest/pixelating"
+    _mock_cfg.CHAIN_OF_CUSTODY   = True
+    _mock_cfg.SKIP_HIDDEN        = True
+    _mock_cfg.COPY_NOT_MOVE      = False
+    _mock_cfg.DRY_RUN            = False
+    _mock_cfg.MAX_PER_RUN        = 10
+    _mock_cfg.PRESSURE_THRESHOLD = 50
+    _mock_cfg.LOG_FILE           = "/tmp/pixelator_test_log.json"
+    _mock_cfg.QUEUE_MANIFEST     = "/tmp/pixelator_test_queue.json"
+
+    monkeypatch.setitem(sys.modules, "pixelator_config", _mock_cfg)
+    sys.modules.pop("pixelator_agent", None)
+
+    import pixelator_agent as _agent  # noqa: E402
+
+    agent = importlib.reload(_agent)
+    yield
+
+    sys.modules.pop("pixelator_agent", None)
+    agent = None
 # ── route_file ────────────────────────────────────────────────────────────────
 
 def test_route_file_entity():
