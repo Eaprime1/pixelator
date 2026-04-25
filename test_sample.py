@@ -7,9 +7,6 @@ Covers: route_file, log_entry, process_item (dry-run, move, collision),
 Config is mocked so tests run off-device without Pixel 8a paths.
 """
 
-import json
-import os
-import sys
 import importlib
 import json
 import os
@@ -24,9 +21,13 @@ agent = None
 
 @pytest.fixture(autouse=True)
 def _mock_pixelator_agent(monkeypatch):
+    """Set up a fresh mocked pixelator_agent for every test.
+
+    Yields _mock_cfg so tests that need to adjust config attributes
+    (e.g. LOG_FILE, CHAIN_OF_CUSTODY) can request this fixture by name.
+    """
     global agent
 
-    # Mock config before agent import (agent imports cfg at module level).
     _mock_cfg = MagicMock()
     _mock_cfg.ROUTING_RULES = [
         {"pattern": "approved_",     "dest": "/dest/pixelate",     "label": "pre-approved"},
@@ -56,10 +57,12 @@ def _mock_pixelator_agent(monkeypatch):
     import pixelator_agent as _agent  # noqa: E402
 
     agent = importlib.reload(_agent)
-    yield
+    yield _mock_cfg
 
     sys.modules.pop("pixelator_agent", None)
     agent = None
+
+
 # ── route_file ────────────────────────────────────────────────────────────────
 
 def test_route_file_entity():
@@ -236,9 +239,9 @@ def test_process_item_collision_adds_timestamp_suffix(tmp_path):
 
 # ── append_custody_log ────────────────────────────────────────────────────────
 
-def test_append_custody_log_creates_valid_json(tmp_path):
+def test_append_custody_log_creates_valid_json(tmp_path, _mock_pixelator_agent):
     log_path = tmp_path / "custody.json"
-    _mock_cfg.LOG_FILE = str(log_path)
+    _mock_pixelator_agent.LOG_FILE = str(log_path)
 
     entries = [agent.log_entry("MOVE", "/src/a.md", "/dest/a.md", "doc", "SUCCESS")]
     agent.append_custody_log(entries)
@@ -252,9 +255,9 @@ def test_append_custody_log_creates_valid_json(tmp_path):
     assert "agent" in data["entries"][0]
 
 
-def test_append_custody_log_accumulates_across_runs(tmp_path):
+def test_append_custody_log_accumulates_across_runs(tmp_path, _mock_pixelator_agent):
     log_path = tmp_path / "custody.json"
-    _mock_cfg.LOG_FILE = str(log_path)
+    _mock_pixelator_agent.LOG_FILE = str(log_path)
 
     first  = [agent.log_entry("MOVE", "/src/a.txt", "/dest/a.txt", "doc",  "SUCCESS")]
     second = [agent.log_entry("COPY", "/src/b.txt", "/dest/b.txt", "seed", "SUCCESS")]
@@ -268,13 +271,13 @@ def test_append_custody_log_accumulates_across_runs(tmp_path):
     assert actions == {"MOVE", "COPY"}
 
 
-def test_append_custody_log_skipped_when_disabled(tmp_path):
+def test_append_custody_log_skipped_when_disabled(tmp_path, _mock_pixelator_agent):
     log_path = tmp_path / "custody.json"
-    _mock_cfg.LOG_FILE = str(log_path)
-    _mock_cfg.CHAIN_OF_CUSTODY = False
+    _mock_pixelator_agent.LOG_FILE = str(log_path)
+    _mock_pixelator_agent.CHAIN_OF_CUSTODY = False
     try:
         entries = [agent.log_entry("MOVE", "/src/a.md", "/dest/a.md", "doc", "SUCCESS")]
         agent.append_custody_log(entries)
         assert not log_path.exists(), "No log should be written when custody logging is off"
     finally:
-        _mock_cfg.CHAIN_OF_CUSTODY = True  # restore regardless of assertion outcome
+        _mock_pixelator_agent.CHAIN_OF_CUSTODY = True  # restore regardless of assertion outcome
