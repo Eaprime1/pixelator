@@ -13,6 +13,8 @@ import sys
 from unittest.mock import MagicMock
 
 # ── Mock config before agent import (agent imports cfg at module level) ───────
+# Inject mock before pixelator_agent is loaded so cfg references resolve to the mock.
+# sys.modules.pop ensures a clean reload if pixelator_agent was pre-cached elsewhere.
 _mock_cfg = MagicMock()
 _mock_cfg.ROUTING_RULES = [
     {"pattern": "approved_",     "dest": "/dest/pixelate",     "label": "pre-approved"},
@@ -37,6 +39,7 @@ _mock_cfg.LOG_FILE           = "/tmp/pixelator_test_log.json"
 _mock_cfg.QUEUE_MANIFEST     = "/tmp/pixelator_test_queue.json"
 
 sys.modules["pixelator_config"] = _mock_cfg
+sys.modules.pop("pixelator_agent", None)  # force clean import with the mock config
 
 import pixelator_agent as agent  # noqa: E402
 

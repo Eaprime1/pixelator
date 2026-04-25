@@ -6,6 +6,9 @@
 # https://github.com/actions/labeler
 
 name: Labeler
+# pull_request: works for branch-based PRs (no fork support needed for this org repo).
+# To support fork PRs in future, switch to pull_request_target and ensure labeler.yml
+# exists on the base branch before changing the trigger.
 on: [pull_request]
 
 jobs:

@@ -49,8 +49,8 @@ on:
     branches: [ "claude/restructure-pixel8a-architecture-8TCj4" ]
   pull_request:
     paths:
-      - '**.tf'
-      - '**.tfvars'
+      - '**/*.tf'
+      - '**/*.tfvars'
 
 permissions:
   contents: read
