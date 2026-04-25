@@ -2,6 +2,12 @@
 .DS_Store
 Thumbs.db
 
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
 # Termux local data (stays on device, not in repo)
 .pixelator/
 
@@ -14,3 +20,13 @@ qdrive/
 pixelator_queue.json
 pixelator_log.json
 pixelator_cron.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Debug logs — never commit these
+firebase-debug.log
+*.debug.log

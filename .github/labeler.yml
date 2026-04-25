@@ -1,0 +1,29 @@
+# GitHub PR auto-labeler configuration
+# Used by .github/workflows/label.yml (actions/labeler@v4)
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.md'
+      - 'docs/**'
+
+python:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.py'
+
+shell:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.sh'
+
+ci:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**'
+
+configuration:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'pixelator_config.py'
+      - '.gitignore'

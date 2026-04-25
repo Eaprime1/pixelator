@@ -1,13 +1,14 @@
 # MISSION NOTES — Pixelator Domos
 *Living document — updated each session*
-*Last updated: 2026-03-01*
+*Last updated: 2026-04-25*
 
 ---
 
 ## Current Mission
 **Primary Focus**: pixelator domos — build the sovran terminal entity home
-**Phase**: Dev / pre-launch (third wave)
-**Prime Launch Target**: pixel8a folder becomes PIXEL
+**Phase**: Stones — Infrastructure Build (advancing from third wave)
+**Refinement Stage**: Pinnacle Refinement active — see [`docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md`](docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md)
+**Prime Launch Target**: pixel8a folder becomes PIXEL | PRIME 2026
 
 ---
 
@@ -101,14 +102,15 @@ Each develops independently until ready.
 
 ## Pending Actions
 
-- [ ] Create pixelator repo on eaprime1 GitHub (fresh, clean)
-- [ ] Create pixelator/dev branch
+- [x] Create pixelator repo on eaprime1 GitHub (fresh, clean)
+- [x] Create pixelator/dev branch (`claude/organize-pixelator-repo-cBTCL`)
 - [ ] vis domos created — beasis to move there (additive, never delete)
 - [ ] Find Shackle + Ness docs on Google Drive
-- [ ] git init in pixelator domos
+- [x] git init in pixelator domos
 - [ ] Rename consciousness_* folders when ready
 - [ ] pixelator repo → Unexusi org when entity decides
 - [ ] pixel8a → becomes PIXEL at prime launch (future)
+- [ ] PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md — formulate response in `docs/reading_room/`
 
 ---
 
@@ -122,6 +124,21 @@ beasis catalog      ← inventory / be-as-is force
 pixel pipeline      ← docs through lifecycle stages
 simplex_ui          ← the seed terminal (already exists)
 ```
+
+---
+
+---
+
+## Seeds Forward
+
+- **Chest metadata in routing rules** — add `chest` field to `ROUTING_RULES` in `pixelator_config.py` mapping each label to its Chest assignment (Tool_Chest, Charter_Chest, Cedar_Chest, etc.)
+- **Salmon Shooter flag** — add `--salmon` CLI flag to `pixelator_agent.py` reporting which queued items are mature and ready for Reference Library deployment
+- **π_remember routing** — add routing rule for items tagged with the `π_remember` lexeme (heritage memory shortcut)
+- **Nani Engine phase markers** — add explicit `[LOAD] / [DO] / [UNLOAD]` phase labels to agent log output
+- **Active Mission Reading Room** — create `docs/reading_room/ACTIVE_MISSION_STATUS.md` tracking open Perspective Requests and current queue state
+- **Carbonite Maw response** — `PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md` needs a formal response artifact staged in `docs/reading_room/`
+- **vis domos** — `beasis` entity needs its own domos directory in `vis/` (additive only)
+- **PIXEL prime launch prep** — define the exact file operations for `pixel8a/` → `PIXEL/` transition
 
 ---
 
