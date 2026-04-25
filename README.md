@@ -1,11 +1,30 @@
 # pixelator
 
 **Device:** Pixel 8a
-**Owner:** [DeviceHaven](https://github.com/devicehaven) org
-**Repo:** `github.com/devicehaven/pixelator`
+**Owner:** [Eaprime1](https://github.com/eaprime1) / [DeviceHaven](https://github.com/devicehaven) org
+**Platform:** PIXEL8 | Marrowing of Primoris | PRIME 2026
 
-Mobile workspace running on a Pixel 8a via Termux.
-Part of the [DeviceHaven](https://github.com/devicehaven) organization.
+Mobile workspace automation running on a Pixel 8a via Termux.
+The pixelator is one leg of the **PIXEL Triad**:
+
+| Component | Role | Location |
+|---|---|---|
+| **pixelator** | Entity terminal home — file routing, queue management | `~/pixelator` |
+| **pixelshard** | Shard/fragment entity | `~/pixelshard` |
+| **pixelspace** | Narrative universe space | `~/pixelspace` |
+
+These three converge toward PIXEL at prime launch.
+
+---
+
+## Documentation
+
+| Doc | Purpose |
+|---|---|
+| [`PIXELATOR_README.md`](PIXELATOR_README.md) | Full agent documentation |
+| [`MISSION_NOTES.md`](MISSION_NOTES.md) | Living strategic notes |
+| [`PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md`](PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md) | Open perspective request |
+| [`docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md`](docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md) | Refinement workflow reference |
 
 ---
 
