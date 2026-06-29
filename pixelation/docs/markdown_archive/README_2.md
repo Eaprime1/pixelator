@@ -1,2 +1,0 @@
-# PRIME
-the concept PRIME

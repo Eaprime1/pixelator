@@ -1,2 +1,0 @@
-# fleet-commander
-git manager

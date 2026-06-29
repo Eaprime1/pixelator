@@ -1,9 +1,0 @@
-{
-  "id": "1",
-  "subject": "Install LSP and MCP servers via Claude install",
-  "description": "Run claude install to set up Language Server Protocol and Model Context Protocol servers for enhanced code intelligence in each repository.",
-  "activeForm": "Installing LSP and MCP servers",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

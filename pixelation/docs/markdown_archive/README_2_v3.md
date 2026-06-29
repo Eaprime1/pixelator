@@ -1,2 +1,0 @@
-# plex
-automation_hodie

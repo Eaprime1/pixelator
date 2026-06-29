@@ -1,9 +1,0 @@
-{
-  "id": "9",
-  "subject": "Test carbonite conversion on sample files",
-  "description": "Test the duplicatus system on small sample of files beginning with 'dup'. Verify: origin metrics, carbonite creation, shadow merging, ©(count) tracking, unique content preservation, chain of custody documentation.",
-  "activeForm": "Testing carbonite conversion",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}
