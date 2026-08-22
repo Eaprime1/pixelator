@@ -3,7 +3,7 @@
   "schemaVersion": "1.0",
   "generatedBy": "ecc-tools",
   "generatedAt": "2026-04-19T04:10:11.151Z",
-  "repo": "https://github.com/Eaprime1/repo_template_prima",
+  "repo": "https://github.com/Eaprime1/pixelator",
   "profiles": {
     "requested": "core",
     "recommended": "core",
@@ -26,97 +26,118 @@
   "requestedAddComponents": [],
   "requestedRemoveComponents": [],
   "blockedRemovalComponents": [],
-  "tierFilteredComponents": [],
+  "tierFilteredComponents": [
+    "research-tooling"
+  ],
   "requestedRootPackages": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack",
+    "research-pack"
   ],
   "selectedRootPackages": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "requestedPackages": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack",
+    "research-pack"
   ],
   "requestedAddPackages": [],
   "requestedRemovePackages": [],
   "selectedPackages": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "packages": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "blockedRemovalPackages": [],
-  "tierFilteredRootPackages": [],
-  "tierFilteredPackages": [],
+  "tierFilteredRootPackages": [
+    "research-pack"
+  ],
+  "tierFilteredPackages": [
+    "research-pack"
+  ],
   "conflictingPackages": [],
   "dependencyGraph": {
-    "runtime-core": []
+    "runtime-core": [],
+    "workflow-pack": [
+      "runtime-core"
+    ]
   },
   "resolutionOrder": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "requestedModules": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack",
+    "research-pack"
   ],
   "selectedModules": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "modules": [
-    "runtime-core"
+    "runtime-core",
+    "workflow-pack"
   ],
   "managedFiles": [
-    ".claude/skills/repo_template_prima/SKILL.md",
-    ".agents/skills/repo_template_prima/SKILL.md",
-    ".agents/skills/repo_template_prima/agents/openai.yaml",
+    ".claude/skills/pixelator/SKILL.md",
+    ".agents/skills/pixelator/SKILL.md",
+    ".agents/skills/pixelator/agents/openai.yaml",
     ".claude/identity.json",
     ".codex/config.toml",
     ".codex/AGENTS.md",
     ".codex/agents/explorer.toml",
     ".codex/agents/reviewer.toml",
     ".codex/agents/docs-researcher.toml",
-    ".claude/homunculus/instincts/inherited/repo_template_prima-instincts.yaml"
+    ".claude/homunculus/instincts/inherited/pixelator-instincts.yaml"
   ],
   "packageFiles": {
     "runtime-core": [
-      ".claude/skills/repo_template_prima/SKILL.md",
-      ".agents/skills/repo_template_prima/SKILL.md",
-      ".agents/skills/repo_template_prima/agents/openai.yaml",
+      ".claude/skills/pixelator/SKILL.md",
+      ".agents/skills/pixelator/SKILL.md",
+      ".agents/skills/pixelator/agents/openai.yaml",
       ".claude/identity.json",
       ".codex/config.toml",
       ".codex/AGENTS.md",
       ".codex/agents/explorer.toml",
       ".codex/agents/reviewer.toml",
       ".codex/agents/docs-researcher.toml",
-      ".claude/homunculus/instincts/inherited/repo_template_prima-instincts.yaml"
+      ".claude/homunculus/instincts/inherited/pixelator-instincts.yaml"
     ]
   },
   "moduleFiles": {
     "runtime-core": [
-      ".claude/skills/repo_template_prima/SKILL.md",
-      ".agents/skills/repo_template_prima/SKILL.md",
-      ".agents/skills/repo_template_prima/agents/openai.yaml",
+      ".claude/skills/pixelator/SKILL.md",
+      ".agents/skills/pixelator/SKILL.md",
+      ".agents/skills/pixelator/agents/openai.yaml",
       ".claude/identity.json",
       ".codex/config.toml",
       ".codex/AGENTS.md",
       ".codex/agents/explorer.toml",
       ".codex/agents/reviewer.toml",
       ".codex/agents/docs-researcher.toml",
-      ".claude/homunculus/instincts/inherited/repo_template_prima-instincts.yaml"
+      ".claude/homunculus/instincts/inherited/pixelator-instincts.yaml"
     ]
   },
   "files": [
     {
       "moduleId": "runtime-core",
-      "path": ".claude/skills/repo_template_prima/SKILL.md",
+      "path": ".claude/skills/pixelator/SKILL.md",
       "description": "Repository-specific Claude Code skill generated from git history."
     },
     {
       "moduleId": "runtime-core",
-      "path": ".agents/skills/repo_template_prima/SKILL.md",
+      "path": ".agents/skills/pixelator/SKILL.md",
       "description": "Codex-facing copy of the generated repository skill."
     },
     {
       "moduleId": "runtime-core",
-      "path": ".agents/skills/repo_template_prima/agents/openai.yaml",
+      "path": ".agents/skills/pixelator/agents/openai.yaml",
       "description": "Codex skill metadata so the repo skill appears cleanly in the skill interface."
     },
     {
@@ -151,21 +172,21 @@
     },
     {
       "moduleId": "runtime-core",
-      "path": ".claude/homunculus/instincts/inherited/repo_template_prima-instincts.yaml",
+      "path": ".claude/homunculus/instincts/inherited/pixelator-instincts.yaml",
       "description": "Continuous-learning instincts derived from repository patterns."
     }
   ],
   "workflows": [],
   "adapters": {
     "claudeCode": {
-      "skillPath": ".claude/skills/repo_template_prima/SKILL.md",
+      "skillPath": ".claude/skills/pixelator/SKILL.md",
       "identityPath": ".claude/identity.json",
       "commandPaths": []
     },
     "codex": {
       "configPath": ".codex/config.toml",
       "agentsGuidePath": ".codex/AGENTS.md",
-      "skillPath": ".agents/skills/repo_template_prima/SKILL.md"
+      "skillPath": ".agents/skills/pixelator/SKILL.md"
     }
   }
 }
