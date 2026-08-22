@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "claude/restructure-pixel8a-architecture-8TCj4" ]
+    branches: [ "main", "claude/**" ]
   pull_request:
-    branches: [ "claude/restructure-pixel8a-architecture-8TCj4" ]
+    branches: [ "main", "claude/**" ]
 
 permissions:
   contents: read
