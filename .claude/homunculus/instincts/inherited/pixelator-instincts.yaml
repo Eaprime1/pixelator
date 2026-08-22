@@ -45,7 +45,7 @@ Use snake_case naming convention
 - Dominant pattern: snake_case
 
 ---
-id: pixelator-import-relative
+id: pixelator-import-absolute
 trigger: "when importing modules"
 confidence: 0.75
 domain: code-style
@@ -53,16 +53,16 @@ source: repo-analysis
 source_repo: https://github.com/Eaprime1/pixelator
 ---
 
-# Pixelator Import Relative
+# Pixelator Import Absolute
 
 ## Action
 
-Use relative imports for project files
+Use absolute imports of sibling modules — this is a flat script layout, not a package with subpackages
 
 ## Evidence
 
-- Import analysis shows relative import pattern
-- Example: from .utils import resize_image
+- Import analysis shows absolute sibling-module imports, not relative imports
+- Example: `import pixelator_config as cfg`
 
 ---
 id: pixelator-export-style
@@ -77,12 +77,12 @@ source_repo: https://github.com/Eaprime1/pixelator
 
 ## Action
 
-Prefer named exports
+Do not add an `__all__` export list — this codebase does not use one; modules are imported and used directly by name
 
 ## Evidence
 
-- Export pattern analysis
-- Dominant style: named
+- No `__all__` declarations found anywhere in the codebase
+- Modules are consumed via direct attribute access (e.g. `cfg.SOME_SETTING`)
 
 ---
 id: pixelator-test-location
@@ -193,7 +193,7 @@ source_repo: Eaprime1/pixelator
 
 ## Action
 
-Use relative imports
+Use absolute imports of sibling modules (e.g. `import pixelator_config as cfg`)
 
 ## Evidence
 
@@ -212,7 +212,7 @@ source_repo: Eaprime1/pixelator
 
 ## Action
 
-Use named exports
+Do not use `__all__` — this codebase has no export-list convention
 
 ## Evidence
 

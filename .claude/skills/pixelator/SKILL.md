@@ -3,27 +3,23 @@
 > Auto-generated skill from repository analysis
 
 ## Overview
-This skill teaches you the development patterns and coding conventions used in the `pixelator` repository, a Python-based project with no detected framework. You'll learn how to structure files, write imports and exports, and follow the repository's testing and commit practices. This guide also provides command suggestions for common workflows.
+This skill teaches you the development patterns and coding conventions used in the `pixelator` repository: a flat-layout Python automation tool (`pixelator_agent.py`, `pixelator_config.py`) paired with Termux/Android shell scripts (`pixelator_automate.sh`, `termux_proc.sh`) for file routing and queue management. You'll learn how to structure files, write imports, and follow the repository's testing and commit practices. This guide also provides command suggestions for common workflows.
 
 ## Coding Conventions
 
 ### File Naming
 - Use **snake_case** for all file names.
-  - Example: `image_processor.py`, `pixel_utils.py`
+  - Example: `pixelator_agent.py`, `pixelator_config.py`
 
 ### Import Style
-- Use **relative imports** within the codebase.
+- Use **absolute imports** of sibling modules — this is a flat script layout, not a package with subpackages.
   - Example:
     ```python
-    from .utils import resize_image
+    import pixelator_config as cfg
     ```
 
 ### Export Style
-- Use **named exports** (explicitly listing what is exported from a module).
-  - Example:
-    ```python
-    __all__ = ['resize_image', 'Pixelator']
-    ```
+- No `__all__` or explicit export list convention is used anywhere in this codebase; modules are imported and used directly by name.
 
 ### Commit Patterns
 - Commit messages are **freeform** (no enforced prefixes).
@@ -38,9 +34,8 @@ This skill teaches you the development patterns and coding conventions used in t
 
 1. Create a new Python file using snake_case naming.
 2. Implement your functionality.
-3. Use relative imports to reference other modules.
-4. Add named exports via `__all__` if necessary.
-5. Write corresponding tests in a `test_*.py` file.
+3. Use absolute imports to reference sibling modules (e.g. `import pixelator_config as cfg`).
+4. Write corresponding tests in a `test_*.py` file.
 
 ### Running Tests
 **Trigger:** When you want to verify code correctness.
