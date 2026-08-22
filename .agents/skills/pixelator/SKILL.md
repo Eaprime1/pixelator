@@ -1,4 +1,3 @@
-```markdown
 # pixelator Development Patterns
 
 > Auto-generated skill from repository analysis
@@ -41,13 +40,13 @@ This skill teaches you the development patterns and coding conventions used in t
 2. Implement your functionality.
 3. Use relative imports to reference other modules.
 4. Add named exports via `__all__` if necessary.
-5. Write corresponding tests in a `*.test.*` file.
+5. Write corresponding tests in a `test_*.py` file.
 
 ### Running Tests
 **Trigger:** When you want to verify code correctness.
 **Command:** `/run-tests`
 
-1. Locate test files matching the `*.test.*` pattern.
+1. Locate test files matching the `test_*.py` pattern.
 2. Run tests using your preferred Python test runner (framework is unspecified).
    - Example with `pytest`:
      ```
@@ -67,7 +66,10 @@ This skill teaches you the development patterns and coding conventions used in t
 
 ## Testing Patterns
 
-- Test files follow the test_*.py naming pattern.\n  - Example: test_image_processor.py\n- The specific test framework is unknown; use your preferred Python test runner (e.g., pytest, unittest).\n- Place tests in a dedicated tests/ directory mirroring the source structure.
+- Test files follow the `test_*.py` naming pattern.
+  - Example: `test_sample.py`
+- The specific test framework is unknown; use your preferred Python test runner (e.g., pytest, unittest).
+- Tests currently live at the repo root, not in a separate `tests/` directory.
 
 ## Commands
 | Command         | Purpose                                 |
@@ -75,4 +77,3 @@ This skill teaches you the development patterns and coding conventions used in t
 | /add-module     | Scaffold and add a new module           |
 | /run-tests      | Run all test files in the repository    |
 | /commit-changes | Commit your staged changes              |
-```

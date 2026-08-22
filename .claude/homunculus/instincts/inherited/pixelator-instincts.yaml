@@ -62,7 +62,7 @@ Use relative imports for project files
 ## Evidence
 
 - Import analysis shows relative import pattern
-- Example: import { x } from '../lib/x'
+- Example: from .utils import resize_image
 
 ---
 id: pixelator-export-style
@@ -85,7 +85,7 @@ Prefer named exports
 - Dominant style: named
 
 ---
-id: pixelator-test-separate
+id: pixelator-test-location
 trigger: "when writing tests"
 confidence: 0.8
 domain: testing
@@ -93,16 +93,16 @@ source: repo-analysis
 source_repo: https://github.com/Eaprime1/pixelator
 ---
 
-# Pixelator Test Separate
+# Pixelator Test Location
 
 ## Action
 
-Place tests in the tests/ or __tests__/ directory, mirroring src structure
+Place test files at the project root using the test_*.py naming convention (e.g. test_sample.py)
 
 ## Evidence
 
-- Separate test directory pattern detected
-- Tests live in dedicated test folders
+- pytest-style test discovery pattern detected
+- Tests currently live at the repo root, not in a dedicated test folder
 
 ---
 id: pixelator-instinct-file-naming
@@ -136,7 +136,7 @@ source_repo: Eaprime1/pixelator
 
 ## Action
 
-Name the function using camelCase
+Name the function using snake_case
 
 ## Evidence
 
