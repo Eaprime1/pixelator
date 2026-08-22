@@ -1,5 +1,5 @@
 # GitHub PR auto-labeler configuration
-# Used by .github/workflows/label.yml (actions/labeler@v4)
+# Used by .github/workflows/label.yml (actions/labeler@v5)
 
 documentation:
   - changed-files:
@@ -27,3 +27,10 @@ configuration:
     - any-glob-to-any-file:
       - 'pixelator_config.py'
       - '.gitignore'
+
+automation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.agents/**'
+      - '.claude/**'
+      - '.codex/**'
