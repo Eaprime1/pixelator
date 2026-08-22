@@ -11,7 +11,9 @@ This is the repo-local ECC baseline for Codex CLI usage in this repository.
 ## MCP Baseline
 
 Treat `.codex/config.toml` as the default ECC-safe baseline for work in this repository.
-The generated baseline enables GitHub, Context7, Exa, Memory, Playwright, and Sequential Thinking.
+The generated baseline registers GitHub, Context7, Exa, Memory, Playwright, and Sequential
+Thinking. Live web search is off by default — enable it explicitly per-user in
+`~/.codex/config.toml` if you need it.
 
 ## Multi-Agent Support
 
