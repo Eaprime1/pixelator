@@ -81,3 +81,5 @@ github.com/devicehaven/
 ```
 
 Each device/project is its own repo — flat, no nesting.
+
+<!-- pipeline check 2026-08-22T01:45:39Z -->
