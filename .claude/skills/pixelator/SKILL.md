@@ -67,7 +67,10 @@ This skill teaches you the development patterns and coding conventions used in t
 
 ## Testing Patterns
 
-- Test files follow the test_*.py naming pattern.\n  - Example: test_image_processor.py\n- The specific test framework is unknown; use your preferred Python test runner (e.g., pytest, unittest).\n- Place tests in a dedicated tests/ directory mirroring the source structure.
+- Test files follow the `test_*.py` naming pattern.
+  - Example: `test_image_processor.py`
+- The project uses **pytest** (see `test_sample.py` at the repo root).
+- Tests currently live at the repo root, not in a separate `tests/` directory.
 
 ## Commands
 | Command         | Purpose                                 |
