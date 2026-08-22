@@ -136,7 +136,7 @@ source_repo: Eaprime1/pixelator
 
 ## Action
 
-Name the function using camelCase
+Name the function using snake_case
 
 ## Evidence
 
