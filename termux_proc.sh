@@ -11,7 +11,31 @@ mkdir -p "$STORE"
 # ── helpers ──────────────────────────────────────────────────────────────────
 
 ts()   { date '+%Y%m%d-%H%M%S'; }
+ts_readable() { date '+%Y-%m-%d %H:%M:%S %Z'; }
 short(){ echo "$1" | sha256sum | cut -c1-8; }
+# Roll-to-icon mapping: 1-6 use die faces, 7-12 use dice-adjacent symbols.
+ROLL_ICONS=(⚀ ⚁ ⚂ ⚃ ⚄ ⚅ 🎲 🧊 🔷 🔶 ⭐ ✨)
+
+roll_d12() {
+    if command -v shuf >/dev/null 2>&1; then
+        shuf -i 1-12 -n 1
+    else
+        echo $((RANDOM % 12 + 1))
+    fi
+}
+
+dice_icon_for_roll() {
+    local roll="$1"
+    if ! [[ "$roll" =~ ^[0-9]+$ ]]; then
+        echo "🎲"
+        return
+    fi
+    if [[ "$roll" -lt 1 || "$roll" -gt 12 ]]; then
+        echo "🎲"
+        return
+    fi
+    echo "${ROLL_ICONS[$((roll - 1))]}"
+}
 
 cert() {
     local label="$1"
@@ -39,7 +63,8 @@ show_menu() {
     echo "3) Show last cert"
     echo "4) View log"
     echo "5) Save a note"
-    echo "6) Quit"
+    echo "6) Roll D12 insight (timestamp + icon)"
+    echo "7) Quit"
     echo "=============================="
     printf "Choice: "
 }
@@ -89,6 +114,33 @@ do_note() {
     cert "NOTE-${note:0:20}"
 }
 
+do_d12_insight() {
+    local roll
+    roll=$(roll_d12)
+    local icon
+    icon=$(dice_icon_for_roll "$roll")
+    local stamp
+    stamp=$(ts_readable)
+    local insight
+    case "$roll" in
+        1) insight="Start small and keep momentum." ;;
+        2) insight="Pair up tasks to reduce friction." ;;
+        3) insight="Trim one unnecessary step right now." ;;
+        4) insight="Stabilize before you optimize." ;;
+        5) insight="Document while context is fresh." ;;
+        6) insight="Test the riskiest path first." ;;
+        7) insight="Ship a small visible improvement." ;;
+        8) insight="Refactor one repeated pattern." ;;
+        9) insight="Validate assumptions with a quick check." ;;
+        10) insight="Choose clarity over cleverness." ;;
+        11) insight="Close one open loop before adding more." ;;
+        12) insight="Review results and lock in the win." ;;
+    esac
+    echo "${stamp} | D12=${roll} ${icon} | ${insight}"
+    log_entry "INSIGHT [${stamp}] D12=${roll} ${icon} ${insight}"
+    cert "INSIGHT-D12-${roll}"
+}
+
 # ── run ───────────────────────────────────────────────────────────────────────
 
 while true; do
@@ -100,7 +152,8 @@ while true; do
         3) do_last_cert ;;
         4) do_view_log ;;
         5) do_note ;;
-        6) echo "Bye."; break ;;
+        6) do_d12_insight ;;
+        7) echo "Bye."; break ;;
         *) echo "Invalid choice." ;;
     esac
 done
