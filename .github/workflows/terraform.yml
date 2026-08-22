@@ -68,16 +68,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
     - name: Detect Terraform files
       id: tf_files
       run: |
-        if ls *.tf >/dev/null 2>&1; then
+        if find . -path ./.git -prune -o -name '*.tf' -print -quit | grep -q .; then
           echo "has_tf=true" >> "$GITHUB_OUTPUT"
         else
           echo "has_tf=false" >> "$GITHUB_OUTPUT"
@@ -85,7 +79,14 @@ jobs:
 
     - name: Skip Terraform (no config files)
       if: steps.tf_files.outputs.has_tf != 'true'
-      run: echo "No Terraform .tf files found; skipping terraform init/fmt/plan/apply."
+      run: echo "No Terraform .tf files found; skipping Terraform setup/init/fmt/plan/apply."
+
+    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+    - name: Setup Terraform
+      if: steps.tf_files.outputs.has_tf == 'true'
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
