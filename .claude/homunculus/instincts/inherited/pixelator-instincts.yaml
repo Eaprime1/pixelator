@@ -97,7 +97,7 @@ source_repo: https://github.com/Eaprime1/pixelator
 
 ## Action
 
-Place tests in the tests/ or __tests__/ directory, mirroring src structure
+Place test files at the project root using the `test_*.py` naming convention (e.g. `test_sample.py`).
 
 ## Evidence
 
