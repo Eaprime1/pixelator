@@ -3,7 +3,9 @@
 # ECC Tools generated Codex baseline
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
-web_search = "live"
+# Disabled by default for an ECC-safe baseline. To opt in, set
+# web_search = "live" in your own ~/.codex/config.toml override.
+web_search = "off"
 
 [mcp_servers.github]
 command = "npx"
@@ -11,7 +13,7 @@ args = ["-y", "@modelcontextprotocol/server-github"]
 
 [mcp_servers.context7]
 command = "npx"
-args = ["-y", "@upstash/context7-mcp@latest"]
+args = ["-y", "@upstash/context7-mcp@4.0.3"]
 
 [mcp_servers.exa]
 url = "https://mcp.exa.ai/mcp"
@@ -22,7 +24,7 @@ args = ["-y", "@modelcontextprotocol/server-memory"]
 
 [mcp_servers.playwright]
 command = "npx"
-args = ["-y", "@playwright/mcp@latest", "--extension"]
+args = ["-y", "@playwright/mcp@0.0.79", "--extension"]
 
 [mcp_servers.sequential-thinking]
 command = "npx"
