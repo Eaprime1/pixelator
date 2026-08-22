@@ -1,0 +1,8 @@
+# CODEOWNERS — pixelator
+#
+# The Shepherd (eaprime1) holds the Deck Master role across all repos in the
+# chain of custody. Path-specific rules mirror custos and will pick up
+# real teeth here as pixelator grows the same directory structure
+# (vault/, moav/, prima-clock/, branch-tracker/, world/, device/).
+
+*                           @eaprime1
