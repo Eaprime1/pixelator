@@ -54,7 +54,16 @@ bash termux_proc.sh
 | 3 | Show last cert (if you scrolled away) |
 | 4 | View recent log |
 | 5 | Save a quick note |
-| 6 | Quit |
+| 6 | Roll D12 insight (timestamp + icon) |
+| 7 | Quit |
+
+### D12 insight roll
+
+Option 6 rolls a D12 (`1..12`) once and prints a timestamped insight:
+
+`YYYY-MM-DD HH:MM:SS TZ | D12=<roll> <dice-related icon> | <insight text>`
+
+Each roll value maps to a dice-related icon in the displayed output instead of a fixed text label.
 
 ### Certificate format
 
