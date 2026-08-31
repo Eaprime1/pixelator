@@ -1,0 +1,36 @@
+# Custos — Validate JSON/YAML
+#
+# Blocking check: every .json and .yaml/.yml file must parse cleanly.
+# Unlike scan-lexeme.yml (advisory), this fails the PR — invalid JSON/YAML
+# is unambiguously broken, not a matter of taste. Exists because this
+# repo's own PR #2 hit a merge collision on identity.json/ecc-tools.json
+# that produced silently invalid JSON with no conflict markers, and
+# nothing in CI caught it. Ported from custos — see custos's
+# atelier/legatum/202608220000_pixelator-legacy-infusion.md (that history
+# lives in custos, not here) and tools/validate_json_yaml.sh.
+name: Custos — Validate JSON/YAML
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: python3 -m pip install --quiet pyyaml
+
+      - name: Validate JSON/YAML files parse
+        run: bash tools/validate_json_yaml.sh .
+
+# ∰🛠️🌿-custos_validate_json_yaml_v1
