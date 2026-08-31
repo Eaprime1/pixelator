@@ -2,11 +2,12 @@
 #
 # Blocking check: every .json and .yaml/.yml file must parse cleanly.
 # Unlike scan-lexeme.yml (advisory), this fails the PR — invalid JSON/YAML
-# is unambiguously broken, not a matter of taste. Exists because a merge
-# collision on identity.json/ecc-tools.json produced silently invalid
-# JSON with no conflict markers, and nothing in CI caught it. See
-# atelier/legatum/202608220000_pixelator-legacy-infusion.md and
-# tools/validate_json_yaml.sh.
+# is unambiguously broken, not a matter of taste. Exists because this
+# repo's own PR #2 hit a merge collision on identity.json/ecc-tools.json
+# that produced silently invalid JSON with no conflict markers, and
+# nothing in CI caught it. Ported from custos — see custos's
+# atelier/legatum/202608220000_pixelator-legacy-infusion.md (that history
+# lives in custos, not here) and tools/validate_json_yaml.sh.
 name: Custos — Validate JSON/YAML
 
 on:
@@ -22,8 +23,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install PyYAML
-        run: pip install --quiet pyyaml
+        run: python3 -m pip install --quiet pyyaml
 
       - name: Validate JSON/YAML files parse
         run: bash tools/validate_json_yaml.sh .
