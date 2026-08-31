@@ -20,9 +20,19 @@ Port custos's new JSON/YAML validity check — this repo's own PR #2 is the reas
 
 Also rewritten as a single batched Python process instead of one subprocess per file, matching the same performance fix applied in custos PR #312.
 
+## Reviewer Findings and Disposition — Round 2 (commit `3aefbf8`)
+
+Surfaced once CI turned green and `claude-review` ran its full pass:
+
+| Reviewer | Finding | Disposition |
+|---|---|---|
+| claude[bot] | `os.walk()` silently yields nothing when `root` doesn't exist, so the script exited 0 and printed "All JSON/YAML files parse cleanly" — a false negative | **Applied verbatim** — added an `isdir()` guard. Confirmed the false-negative was real before fixing: a nonexistent root printed success and exited 0. |
+| claude[bot] | `unique_mapping()` bypassed `flatten_mapping`, so YAML merge keys (`<<: *alias`) were treated as literal — but the *suggested fix* (call `flatten_mapping` then check the full result) has the same override bug it's meant to solve: a local key legitimately overriding a merged key gets flagged as a false duplicate, which is standard valid YAML, not corruption | **Fixed differently, not verbatim.** Verified against plain PyYAML's own `yaml.safe_load()` first (`{'derived': {'x': 99}}` is the correct, non-error result for an override). Rewrote to check only this mapping's own literal keys before merge expansion — real duplicates still caught, legitimate overrides now pass. Tested both cases explicitly. |
+| claude[bot] | `actions/checkout@v4` and `actions/setup-python@v5` use floating tags, a supply-chain risk | **Applied verbatim** — pinned to the suggested SHAs, but verified each against the actual tagged release via the GitHub API first rather than trusting the suggestion blindly. |
+
 ## Status at Time of Writing
 
-All four findings resolved. All CI checks passing (Codacy, GitGuardian, claude-review, dependency-review, build, custos-speaks, label, scan, validate, Terraform, Vercel). No issues/missions spun off.
+All seven findings across two rounds resolved. All CI checks passing. No issues/missions spun off.
 
 ## Filed To
 
