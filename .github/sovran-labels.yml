@@ -52,4 +52,13 @@ labels:
     color: "5319e7"
     description: "Review period closed — PR Journey committed"
 
+  # ── Issue forms ────────────────────────────────────────────────────────────
+  - name: lexeme
+    color: "c5def5"
+    description: "Develop a named concept or term from a citable source (the fallback path)"
+
+  - name: open
+    color: "0e8a16"
+    description: "Available — no claim yet"
+
 # ∰🌿-sovran_labels_v1
