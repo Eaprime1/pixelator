@@ -19,7 +19,7 @@ python3 pixelator_agent.py --dry-run     # what would happen (safe)
 python3 pixelator_agent.py               # one burst (up to MAX_PER_RUN files)
 python3 pixelator_agent.py --pressure    # pressure report
 
-pip install flake8 pytest
+# one-time setup, not part of each pass: pip install flake8 pytest
 flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics   # what CI runs first
 pytest                                    # tests mock the config, so they run off-device
 

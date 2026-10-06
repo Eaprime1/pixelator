@@ -16,7 +16,7 @@ One fenced block per entry:
 prima_clock: YYYYMMDDHHMM    # UTC: date -u '+%Y%m%d%H%M'
 event:       cross | fast-track | fix-in-place | send-to-maw | hold | correction
 item:        <path or batch name, as it arrived>
-from:        <where it was: ~/pixel8/... or a repo path>
+from:        <where it was: ~/pixel8/... , a repo path, or a named source such as a conversation or PR>
 to:          <where it went: a path here, maw, hodie, or held>
 by:          <who judged it: e.g. eaprime1, nav1>
 note:        <one line: why this rung>
