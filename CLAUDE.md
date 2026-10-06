@@ -41,7 +41,7 @@ bash termux_proc.sh                       # step-by-step procedure tracker for t
 
 ## Governance pipeline (`.github/workflows/`)
 
-Ported from custos and adapted. `latin-cue-record.yml`, `review-packet.yml` and `witness-pr.yml` are added, and `finalize-pr.yml` is updated, by pixelator PR #13: if those three files are not in `.github/workflows/` yet, that PR has not merged, and only the older `finalize-pr.yml` (which reacts to `@claude finalize` alone) is live.
+Ported from custos and adapted (pixelator PR #13). `finalize-pr.yml` seals on `@claude finalize` or `@claude ultima probatio`; `latin-cue-record.yml`, `review-packet.yml` and `witness-pr.yml` log cues, summarise the PR and keep the witness list.
 
 - `finalize-pr.yml`: seals a PR when the owner comments `@claude finalize` (or `@claude ultima probatio`). A comment that carries the Claude Code footer never seals, and quoted cues are ignored.
 - `latin-cue-record.yml`: logs each owner cue and the PR's state in one comment (UTC stamps).
@@ -56,8 +56,8 @@ In PR comments a navigo describes the seal cue in words and does not post it, un
 - **Branches:** `claude/<topic>` for AI-authored work, one topic per branch. PRs open as drafts.
 - **PR template:** Intent, What Arrived, Resonance, Ethics Check, What Door Does This Open?
 - **prima-clock stamps:** `YYYYMMDDHHMM`. The Shepherd's own stamps use local time. The seal, the cue record and custody logs are UTC (`date -u '+%Y%m%d%H%M'`), so official records do not depend on where the Shepherd is.
-- **No bounties, no cash.** The `bounty` issue form is retired (custos did the same); pixelator PR #15 removes the file. Rewards are XP and credit.
-- **Issue forms:** `mission`, `upgrade`, `lexeme`. The `lexeme` form arrives with pixelator PR #15; until it merges, `.github/ISSUE_TEMPLATE/` still holds `bounty.yml` and has no `lexeme.yml`.
+- **No bounties, no cash.** The `bounty` issue form is retired and removed (custos did the same). Rewards are XP and credit.
+- **Issue forms:** `mission`, `upgrade`, `lexeme`. The `lexeme` form needs the `lexeme` and `open` labels, which `.github/sovran-labels.yml` defines and the label sync creates.
 - **Distressed words:** some words are weighted (custos keeps the compiled list, `atelier/lexemes/distressed-lexeme-list.md`). Do not rewrite them in place; route them by the ladder.
 - Anything that needs the Shepherd's judgment is held and asked, not guessed. Report outcomes as they are: if a check fails, say so.
 
