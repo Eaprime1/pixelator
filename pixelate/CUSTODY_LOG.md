@@ -4,7 +4,7 @@
 
 Chain of custody for gateway routing decisions: what crossed the gateway from `~/pixel8` into this repo, and any other item routed by the ladder in `ROUTING.md`, whether it came from the phone, a conversation or a PR. Append only: new entries go at the bottom; past entries are never edited. A correction is a new entry that names the one it corrects.
 
-This is a different record from `pixelator_log.json`. That file is the agent's own log of every file move it makes. This file records the **decisions**: what crossed, which rung of the ladder it took, and who judged it. For what happens after a send to maw, the record continues in maw's own log (`eaprime1/maw`, `maw/registry/custody_log.md`).
+This is a different record from `pixelator_log.json` (on the phone, at `LOG_FILE` in `pixelator_config.py`; it is not in this repo). That file is the agent's own log of every file move it makes. This file records the **decisions**: what crossed, which rung of the ladder it took, and who judged it. For what happens after a send to maw, the record continues in maw's own log (`eaprime1/maw`, `maw/registry/custody_log.md`).
 
 `ROUTING.md` is still a draft, so this log is too: it records intent until the phone side confirms the procedure.
 
