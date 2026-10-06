@@ -28,3 +28,7 @@ pixelator_cron.log
 # Debug logs — never commit these
 firebase-debug.log
 *.debug.log
+
+# Personal/private content — never belongs in this repo (removed from history 2026-10-06)
+no_sync_private/
+**/no_sync_private/
