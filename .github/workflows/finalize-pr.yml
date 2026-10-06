@@ -13,7 +13,8 @@
 # If branch protection blocks Actions from committing to main, enable
 # "Allow GitHub Actions to bypass required pull requests" in Settings → Branches.
 #
-# Allowed to trigger: OWNER / MEMBER / COLLABORATOR / github-actions[bot]
+# Allowed to trigger: OWNER / MEMBER / COLLABORATOR comments. Bots never seal
+# (a PR is sealed only by a cue the owner posts). There is no auto-finalize.
 name: Pixelator — Finalize PR
 
 on:
@@ -41,10 +42,7 @@ jobs:
       contains(github.event.comment.body, '@claude') &&
       (contains(github.event.comment.body, 'finalize') || contains(github.event.comment.body, 'probatio')) &&
       !contains(fromJSON('["Copilot","copilot[bot]","github-actions[bot]","dependabot[bot]"]'), github.actor) &&
-      (
-        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association) ||
-        github.event.comment.user.login == 'github-actions[bot]'
-      )
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
