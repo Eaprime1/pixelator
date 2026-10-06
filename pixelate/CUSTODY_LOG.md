@@ -2,7 +2,7 @@
 
 `status: DRAFT — opened by the custos-side conversation; the phone-side conversation reads it, corrects it and owns it`
 
-Chain of custody for what crosses the gateway from `~/pixel8` into this repo (the routing ladder in `ROUTING.md`). Append only: new entries go at the bottom; past entries are never edited. A correction is a new entry that names the one it corrects.
+Chain of custody for gateway routing decisions: what crossed the gateway from `~/pixel8` into this repo, and any other item routed by the ladder in `ROUTING.md`, whether it came from the phone, a conversation or a PR. Append only: new entries go at the bottom; past entries are never edited. A correction is a new entry that names the one it corrects.
 
 This is a different record from `pixelator_log.json`. That file is the agent's own log of every file move it makes. This file records the **decisions**: what crossed, which rung of the ladder it took, and who judged it. For what happens after a send to maw, the record continues in maw's own log (`eaprime1/maw`, `maw/registry/custody_log.md`).
 

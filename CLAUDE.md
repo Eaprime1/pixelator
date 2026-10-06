@@ -20,7 +20,7 @@ python3 pixelator_agent.py               # one burst (up to MAX_PER_RUN files)
 python3 pixelator_agent.py --pressure    # pressure report
 python3 pixelator_agent.py --interval 60 # run every 60 seconds (Ctrl+C to stop)
 
-# one-time setup, not part of each pass: pip install flake8 pytest
+# one-time setup, not part of each pass: pip install flake8 pytest pyyaml
 flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics   # what CI runs first
 pytest                                    # tests mock the config, so they run off-device
 
@@ -35,7 +35,7 @@ bash termux_proc.sh                       # step-by-step procedure tracker for t
 
 ## Routing
 
-`pixelate/ROUTING.md` sets out where content goes: fast track for vetted content, fix in place (with a review folder and a note) for polish, `eaprime1/maw` for polluted or distressed content, `eaprime1/hodie` where it belongs there, and **when unsure, maw**. Record each crossing in `pixelate/CUSTODY_LOG.md`.
+`pixelate/ROUTING.md` (a draft) sets out where content goes, lightest touch first: fast track for clean, vetted content; fix in place (a review folder and a note) for a distressed lexeme or another small problem a simple fix resolves; `eaprime1/maw` for polluted or extremely distressed content; `eaprime1/hodie` where it needs a real overhaul; and **when unsure, maw**. Record each crossing in `pixelate/CUSTODY_LOG.md`.
 
 ## Governance pipeline (`.github/workflows/`)
 
