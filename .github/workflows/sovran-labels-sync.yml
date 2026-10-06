@@ -66,6 +66,8 @@ jobs:
               { name: 'held',           color: 'b60205', description: 'Held — addressed in a separate conversation or decision'    },
               { name: 'witnessed',      color: '0e8a16', description: 'Witnessed and recorded in the prima custody chain'          },
               { name: 'finalized',      color: '5319e7', description: 'Review period closed — PR Journey committed'                },
+              { name: 'lexeme',         color: 'c5def5', description: 'Develop a named concept or term from a citable source (the fallback path)' },
+              { name: 'open',           color: '0e8a16', description: 'Available — no claim yet'                                           },
             ];
 
             const results = { created: [], updated: [], unchanged: [] };
