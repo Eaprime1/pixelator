@@ -75,7 +75,7 @@ jobs:
             // Placeholder words in added lines: the list from tools/scan_lexeme.sh,
             // matched as whole words (any case), so "replaced" doesn't count as
             // REPLACE. The shell scan matches substrings, so it can flag more.
-            const LEX = ['TODO', 'FIXME', 'BROKEN', 'placeholder', 'REPLACE', 'TBD', '???', 'UNKNOWN', 'My Prima Terminal'];
+            const LEX = ['TODO', 'FIXME', 'BROKEN', 'placeholder', 'REPLACE', 'TBD', '???', 'UNKNOWN', 'My Prima Terminal', 'fill this in'];
             const esc = w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const LEX_RE = LEX.map(w => ({ w, re: new RegExp('(^|[^A-Za-z0-9_])' + esc(w) + '(?![A-Za-z0-9_])', 'i') }));
             const EXT = /\.(md|sh|ya?ml|json)$/;
