@@ -8,7 +8,7 @@ body:
       value: |
         **A lexeme issue opens a term nobody has defined yet.** Pick up the term, ground it in a citable source (Wikipedia preferred), and write what it could mean here. Seeds, not canon: the Shepherd decides what graduates. Claim by commenting `claiming this`.
 
-        If the term is one of the weighted words in custos's compiled list (`atelier/lexemes/distressed-lexeme-list.md`), do not rewrite it here: route it by `pixelate/ROUTING.md` (when unsure, to maw).
+        If the term is one of the weighted words in custos's compiled list (`atelier/lexemes/distressed-lexeme-list.md`), do not rewrite it here. `pixelate/ROUTING.md` is still a draft and the handoff to maw is not built, so for now say in this issue that the term is on the list and leave it for the Shepherd to route (the draft's rule is that anything unsure goes to maw).
 
   - type: input
     id: term
