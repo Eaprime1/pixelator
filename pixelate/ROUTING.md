@@ -3,6 +3,8 @@
 `prima-clock: 202610060627`
 `status: DRAFT — written by the custos-side conversation for the phone-side conversation to read, correct, and own`
 
+> **DRAFT — not live, not authoritative.** This describes intended routing. Nothing reads this file and no automation follows it. `pixelator_config.py` is unchanged and still governs what the agent actually does. Neither Maw destination named below exists as a working target yet. The phone-side conversation has not reviewed this.
+
 If you are the conversation working on the Pixel 8a: **start here.**
 
 ## The shape
@@ -38,9 +40,9 @@ Two places are called the Maw, and this draft does not pick between them:
 Until the Shepherd decides, "route to maw" means one of those two, not both. It could also be a mapping (internal intake feeding the external repo).
 
 ### Open items for the Shepherd (not decided here)
-- **The full distressed-lexeme list.** Only two are named. custos has `atelier/lexemes/manifesto.md` and `atelier/lexeme-drift.md` as a starting point. The scan should read from one list, not several.
-- **Conflict with current config.** `pixelator_config.py` routes the pattern `consciousness` to `hodie/quanta`. Under this rule it goes to maw. The config needs a decision before the two disagree in practice.
-- **Which Maw** receives distressed-lexeme content: the `eaprime1/maw` repo, `pixelate/maw_pixellum/`, or the internal one feeding the repo. See *Which Maw?* above.
+- **The full distressed-lexeme list.** Only two are named here. These files live in the **`eaprime1/custos`** repo, not this one: `atelier/lexemes/manifesto.md`, `atelier/lexeme-drift.md`, and a draft compiled list at `atelier/lexemes/distressed-lexeme-list.md` (custos PR 406). A scanner in this repo would need a copy of the list or a defined path to custos. The scan should read from one list, not several.
+- **Conflict with current config.** `pixelator_config.py` routes the pattern `consciousness` to `hodie/quanta`. Under this rule it goes to maw. Until the config changes, files with `consciousness` in the name still go to `hodie/quanta`, and this document does not override that. The config needs a decision before the two disagree in practice, and before this file is treated as live.
+- **Which Maw** receives distressed-lexeme content: the `eaprime1/maw` repo, `pixelate/maw_pixellum/`, or the internal one feeding the repo. See *Which Maw?* above. Neither is actionable today: the repo needs a cross-repo handoff that is not defined, and the `maw_pixellum/` directory does not exist here.
 - **Who does the "vetting".** Name the step and the person or entity that marks a file fast-track-ready.
 
 ## The roots
