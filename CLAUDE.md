@@ -54,8 +54,8 @@ In PR comments a navigo describes the seal cue in words and does not post it, un
 - **Branches:** `claude/<topic>` for AI-authored work, one topic per branch. PRs open as drafts.
 - **PR template:** Intent, What Arrived, Resonance, Ethics Check, What Door Does This Open?
 - **prima-clock stamps:** `YYYYMMDDHHMM`. The Shepherd's own stamps use local time. The seal, the cue record and custody logs are UTC (`date -u '+%Y%m%d%H%M'`), so official records do not depend on where the Shepherd is.
-- **No bounties, no cash.** The `bounty` issue form is retired (custos did the same). Rewards are XP and credit.
-- **Issue forms:** `mission`, `upgrade`, `lexeme`.
+- **No bounties, no cash.** The `bounty` issue form is retired (custos did the same); pixelator PR #15 removes the file. Rewards are XP and credit.
+- **Issue forms:** `mission`, `upgrade`, `lexeme`. The `lexeme` form arrives with pixelator PR #15; until it merges, `.github/ISSUE_TEMPLATE/` still holds `bounty.yml` and has no `lexeme.yml`.
 - **Distressed words:** some words are weighted (custos keeps the compiled list, `atelier/lexemes/distressed-lexeme-list.md`). Do not rewrite them in place; route them by the ladder.
 - Anything that needs the Shepherd's judgment is held and asked, not guessed. Report outcomes as they are: if a check fails, say so.
 
