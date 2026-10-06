@@ -9,3 +9,7 @@ Thumbs.db
 qdrive/
 .vercel
 .env*.local
+
+# Claude Code local settings — personal/machine-specific, not shared
+.claude/settings.local.json
+queue/q/.claude/
