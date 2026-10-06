@@ -25,14 +25,22 @@ Content that is already well developed and clean may slide straight into place.
 | Content | Route |
 |---|---|
 | Vetted, no issues, ready to enter. Minor cosmetic edits and small clarity edits are allowed. | **Fast track**: through `pixelate/` into the project. Skips maw. |
-| Contains a distressed lexeme (`consciousness`, `manifesto`, others) | **maw** (`eaprime1/maw`) |
+| Contains a distressed lexeme (`consciousness`, `manifesto`, others) | **maw** (destination to be confirmed, see *Which Maw?* below) |
 | Needs polish, chain of custody, or is other system content | **custos** (for now) |
 
 When in doubt, route to maw or custos. Do not fast-track on a guess.
 
+### Which Maw?
+Two places are called the Maw, and this draft does not pick between them:
+- **`eaprime1/maw`**, a separate repo with its own arrival routine (`maw/ARRIVAL.md`) and custody log. It sits before nullus in the custody chain.
+- **`pixelate/maw_pixellum/`**, which `PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md` (lines 74-75 and 216) describes as the existing intake system, with arrivals going to `maw_pixellum/intake/`. That directory is **not present in this repo today**, so the document may be describing something that lives elsewhere or has not been created.
+
+Until the Shepherd decides, "route to maw" means one of those two, not both. It could also be a mapping (internal intake feeding the external repo).
+
 ### Open items for the Shepherd (not decided here)
 - **The full distressed-lexeme list.** Only two are named. custos has `atelier/lexemes/manifesto.md` and `atelier/lexeme-drift.md` as a starting point. The scan should read from one list, not several.
 - **Conflict with current config.** `pixelator_config.py` routes the pattern `consciousness` to `hodie/quanta`. Under this rule it goes to maw. The config needs a decision before the two disagree in practice.
+- **Which Maw** receives distressed-lexeme content: the `eaprime1/maw` repo, `pixelate/maw_pixellum/`, or the internal one feeding the repo. See *Which Maw?* above.
 - **Who does the "vetting".** Name the step and the person or entity that marks a file fast-track-ready.
 
 ## The roots
