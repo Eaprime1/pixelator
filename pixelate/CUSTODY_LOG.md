@@ -22,10 +22,12 @@ by:          <who judged it: e.g. eaprime1, nav1>
 note:        <one line: why this rung>
 ```
 
+- `cross`: an item crossed the gateway and the log records only that, with no more specific rung to name (for example a draft entering `pixelate/`).
 - `fast-track`: vetted content, straight in.
 - `fix-in-place`: a polish or small edit made here, with a review folder and a note of what changed.
 - `send-to-maw`: sent to `eaprime1/maw` (distressed words, or when unsure).
 - `hold`: left outside until a decision is made.
+- `correction`: fixes an earlier entry. Name that entry in `note`; the old entry stays as it was.
 
 ## Entries
 
