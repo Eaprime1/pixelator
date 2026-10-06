@@ -31,7 +31,7 @@ These three converge toward PIXEL at prime launch.
 ## Setup (Termux — run once)
 
 ```bash
-git clone https://github.com/devicehaven/pixelator
+git clone https://github.com/eaprime1/pixelator
 cd pixelator
 chmod +x termux_proc.sh
 ```
