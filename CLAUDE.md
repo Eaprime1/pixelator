@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+`prima-clock: 202610061006` (UTC)
+
 Guidance for Claude Code when working in this repository.
 
 ## What this repository is
