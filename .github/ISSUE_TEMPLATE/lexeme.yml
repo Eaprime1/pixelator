@@ -1,0 +1,65 @@
+name: Lexeme
+description: Develop a named term or concept from a citable source. Also the fallback path for any mission that can't be done as written.
+title: "[lexeme] "
+labels: ["lexeme", "open"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **A lexeme issue opens a term nobody has defined yet.** Pick up the term, ground it in a citable source (Wikipedia preferred), and write what it could mean here. Seeds, not canon: the Shepherd decides what graduates. Claim by commenting `claiming this`.
+
+        If the term is one of the weighted words in custos's compiled list (`atelier/lexemes/distressed-lexeme-list.md`), do not rewrite it here: route it by `pixelate/ROUTING.md` (when unsure, to maw).
+
+  - type: input
+    id: term
+    attributes:
+      label: Term or concept
+      description: The lexeme to develop, exactly as it appears.
+      placeholder: "the sphincter gateway"
+    validations:
+      required: true
+
+  - type: textarea
+    id: found_in
+    attributes:
+      label: Where it appears
+      description: File path(s) or issue(s) where the term is used but not defined.
+    validations:
+      required: true
+
+  - type: input
+    id: suggested_source
+    attributes:
+      label: Suggested starting source
+      description: Optional. A Wikipedia article or other citable page to start from. Contributors may choose their own.
+    validations:
+      required: false
+
+  - type: textarea
+    id: read_first
+    attributes:
+      label: Read first
+      value: |
+        - `README.md`
+        - `pixelate/ROUTING.md` (where things go, and what to send to maw)
+        - `docs/concepts/` (terms already written up; don't collide)
+    validations:
+      required: true
+
+  - type: textarea
+    id: completion_check
+    attributes:
+      label: Completion Check
+      render: bash
+      value: |
+        f=$(git diff --name-only --diff-filter=A origin/main -- 'docs/lexemes/*.md' | head -1); \
+          test -n "$f" && grep -qi "^source:" "$f" && grep -qi "^## sense check" "$f" && echo "lexeme note ready: $f"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **Note shape:** a `source:` line near the top (the citable page), what the source says, what it could mean here, and a `## Sense check` section (where you were unsure and what you chose).
+
+        **Write to:** `docs/lexemes/<slug>.md`. Markdown only, no code. **Out of scope:** declaring canon, inventing events, editing `pixelate/` directly.
