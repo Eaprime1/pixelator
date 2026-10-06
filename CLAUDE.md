@@ -38,7 +38,7 @@ bash termux_proc.sh                       # step-by-step procedure tracker for t
 
 ## Governance pipeline (`.github/workflows/`)
 
-Ported from custos and adapted:
+Ported from custos and adapted. `latin-cue-record.yml`, `review-packet.yml` and `witness-pr.yml` are added, and `finalize-pr.yml` is updated, by pixelator PR #13: if those three files are not in `.github/workflows/` yet, that PR has not merged, and only the older `finalize-pr.yml` (which reacts to `@claude finalize` alone) is live.
 
 - `finalize-pr.yml`: seals a PR when the owner comments `@claude finalize` (or `@claude ultima probatio`). A comment that carries the Claude Code footer never seals, and quoted cues are ignored.
 - `latin-cue-record.yml`: logs each owner cue and the PR's state in one comment (UTC stamps).
