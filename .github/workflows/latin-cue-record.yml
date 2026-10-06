@@ -86,7 +86,8 @@ jobs:
               cue = 'Prima Recensio';
               by = context.payload.sender.login;
               source = `[${act === 'opened' ? 'opened ready' : 'ready for review'}](${context.payload.pull_request.html_url})`;
-              when = new Date();
+              // Use the PR's own creation time so a queued runner doesn't skew the stamp.
+              when = act === 'opened' ? new Date(context.payload.pull_request.created_at) : new Date();
             } else {
               const comment = context.payload.comment;
               const raw = comment.body || '';
@@ -145,8 +146,13 @@ jobs:
             });
             // Same rule as the finalization gate: any completed conclusion other
             // than success, neutral or skipped is a failure (stale, startup_failure…).
+            // A cancelled run is forgiven when the same check later succeeded.
+            const passingNames = new Set(runs
+              .filter(r => r.status === 'completed' && r.conclusion === 'success')
+              .map(r => r.name));
             const failed = runs.filter(r => r.status === 'completed' &&
-              !['success', 'neutral', 'skipped'].includes(r.conclusion));
+              !['success', 'neutral', 'skipped'].includes(r.conclusion) &&
+              !(r.conclusion === 'cancelled' && passingNames.has(r.name)));
             const pending = runs.filter(r => r.status !== 'completed');
             const passed = runs.filter(r => r.conclusion === 'success').length;
             const skipped = runs.filter(r => ['skipped', 'neutral'].includes(r.conclusion)).length;
