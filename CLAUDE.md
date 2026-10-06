@@ -67,7 +67,6 @@ In PR comments a navigo describes the seal cue in words and does not post it, un
 
 ## Known stale content
 
-- `README.md` tells you to clone `github.com/devicehaven/pixelator`; the Shepherd says `devicehaven` is now the spectorium repo, so the line is stale. Suggested replacement: `eaprime1/pixelator`.
-- `.github/workflows/blank.yml` and `terraform.yml` target a branch that no longer exists and are proposed for retirement.
+- `README.md` lines 4 and 85 still point at the `devicehaven` org; the Shepherd says `devicehaven` is now the spectorium repo. Only the clone line has been corrected so far, and the other two mentions wait for the Shepherd.
 
 These are recorded in custos's `queue/future-forward/pixelator.md`, not fixed here.
