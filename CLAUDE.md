@@ -22,7 +22,7 @@ python3 pixelator_agent.py               # one burst (up to MAX_PER_RUN files)
 python3 pixelator_agent.py --pressure    # pressure report
 python3 pixelator_agent.py --interval 60 # run every 60 seconds (Ctrl+C to stop)
 
-# one-time setup, not part of each pass: pip install flake8 pytest pyyaml
+# one-time setup, not part of each pass: python3 -m pip install flake8 pytest pyyaml
 flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics   # what CI runs first
 pytest                                    # tests mock the config, so they run off-device
 
@@ -69,6 +69,5 @@ In PR comments a navigo describes the seal cue in words and does not post it, un
 
 - `README.md` tells you to clone `github.com/devicehaven/pixelator`; the Shepherd says `devicehaven` is now the spectorium repo, so the line is stale. Suggested replacement: `eaprime1/pixelator`.
 - `.github/workflows/blank.yml` and `terraform.yml` target a branch that no longer exists and are proposed for retirement.
-- `auto-finalize.yml` does not use the witness-seal protocol that `finalize-pr.yml` and `witness-pr.yml` use; its future is a pending decision.
 
 These are recorded in custos's `queue/future-forward/pixelator.md`, not fixed here.
