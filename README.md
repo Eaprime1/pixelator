@@ -1,11 +1,30 @@
-# pixelator
+# Pixelator
 
 **Device:** Pixel 8a
-**Owner:** [DeviceHaven](https://github.com/devicehaven) org
-**Repo:** `github.com/devicehaven/pixelator`
+**Owner:** [Eaprime1](https://github.com/eaprime1) / [DeviceHaven](https://github.com/devicehaven) org
+**Platform:** PIXEL8 | Marrowing of Primoris | PRIME 2026
 
-Mobile workspace running on a Pixel 8a via Termux.
-Part of the [DeviceHaven](https://github.com/devicehaven) organization.
+Mobile workspace automation running on a Pixel 8a via Termux.
+The pixelator is one leg of the **PIXEL Triad**:
+
+| Component | Role | Location |
+|---|---|---|
+| **pixelator** | Entity terminal home — file routing, queue management | `~/pixelator` |
+| **pixelshard** | Shard/fragment entity | `~/pixelshard` |
+| **pixelspace** | Narrative universe space | `~/pixelspace` |
+
+These three converge toward PIXEL at prime launch.
+
+---
+
+## Documentation
+
+| Doc | Purpose |
+|---|---|
+| [`PIXELATOR_README.md`](PIXELATOR_README.md) | Full agent documentation |
+| [`MISSION_NOTES.md`](MISSION_NOTES.md) | Living strategic notes |
+| [`PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md`](PERSPECTIVE_REQUEST_001_CARBONITE_MAW.md) | Open perspective request |
+| [`docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md`](docs/concepts/PINNACLE_REFINEMENT_WORKFLOW.md) | Refinement workflow reference |
 
 ---
 
@@ -35,7 +54,16 @@ bash termux_proc.sh
 | 3 | Show last cert (if you scrolled away) |
 | 4 | View recent log |
 | 5 | Save a quick note |
-| 6 | Quit |
+| 6 | Roll D12 insight (timestamp + icon) |
+| 7 | Quit |
+
+### D12 insight roll
+
+Option 6 rolls a D12 (`1..12`) once and prints a timestamped insight:
+
+`YYYY-MM-DD HH:MM:SS TZ | D12=<roll> <dice-related icon> | <insight text>`
+
+Each roll value maps to a dice-related icon in the displayed output instead of a fixed text label.
 
 ### Certificate format
 
@@ -62,3 +90,5 @@ github.com/devicehaven/
 ```
 
 Each device/project is its own repo — flat, no nesting.
+
+<!-- pipeline check 2026-08-22T01:45:39Z -->

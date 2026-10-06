@@ -27,6 +27,8 @@ import shutil
 import fnmatch
 import argparse
 import time
+import tempfile
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
@@ -62,7 +64,14 @@ def load_json(path, default):
         try:
             with open(path) as f:
                 return json.load(f)
-        except Exception:
+        except json.JSONDecodeError as e:
+            print(f"Error: {path} is corrupted: {e}")
+            backup = f"{path}.bak.{int(time.time())}"
+            os.rename(path, backup)
+            print(f"Corrupted file moved to {backup}")
+            return default
+        except Exception as e:
+            print(f"Error loading {path}: {e}")
             return default
     return default
 
@@ -77,15 +86,21 @@ def save_json(path, data):
 def route_file(filename):
     """
     Apply routing rules to determine destination for a file.
-    First match wins. Catch-all (*) always last.
+    First match wins among specific rules. Catch-all (*) is applied only
+    if no specific rule matches.
     """
     name_lower = filename.lower()
+    catch_all = None
     for rule in cfg.ROUTING_RULES:
         pattern = rule["pattern"].lower()
         if pattern == "*":
-            return rule["dest"], rule["label"]
+            if catch_all is None:
+                catch_all = (rule["dest"], rule["label"])
+            continue
         if pattern in name_lower or fnmatch.fnmatch(name_lower, f"*{pattern}*"):
             return rule["dest"], rule["label"]
+    if catch_all is not None:
+        return catch_all
     return cfg.PIXELATING_DIR, "unsorted"
 
 
@@ -134,6 +149,20 @@ def update_queue_manifest(queue):
 
 # ─── Processor ────────────────────────────────────────────────────────────────
 
+def _same_file_metadata(source, dest):
+    """Return True when source and dest appear to be the same file content/version."""
+    try:
+        source_stat = os.stat(source)
+        dest_stat = os.stat(dest)
+    except OSError:
+        return False
+
+    return (
+        source_stat.st_size == dest_stat.st_size
+        and source_stat.st_mtime_ns == dest_stat.st_mtime_ns
+    )
+
+
 def process_item(item, dry_run=False, copy_mode=False):
     """Move or copy one item. Returns a log entry."""
     source = item["source"]
@@ -142,11 +171,6 @@ def process_item(item, dry_run=False, copy_mode=False):
     label = item["label"]
 
     dest_path = os.path.join(dest_dir, filename)
-
-    # Handle filename collision — add timestamp suffix
-    if os.path.exists(dest_path):
-        stem, ext = os.path.splitext(filename)
-        dest_path = os.path.join(dest_dir, f"{stem}_{timestamp().replace(':', '')}{ext}")
 
     if dry_run:
         return log_entry(
@@ -160,6 +184,22 @@ def process_item(item, dry_run=False, copy_mode=False):
 
     try:
         os.makedirs(dest_dir, exist_ok=True)
+
+        if copy_mode and os.path.exists(dest_path) and _same_file_metadata(source, dest_path):
+            return log_entry(
+                action="SKIP",
+                source=source,
+                dest=dest_path,
+                label=label,
+                status="SUCCESS",
+                note="Destination already contains this source; skipping duplicate copy",
+            )
+
+        # Handle filename collision — add timestamp suffix
+        if os.path.exists(dest_path):
+            stem, ext = os.path.splitext(filename)
+            dest_path = os.path.join(dest_dir, f"{stem}_{timestamp().replace(':', '')}{ext}")
+
         if copy_mode:
             shutil.copy2(source, dest_path)
             action = "COPY"
@@ -176,7 +216,7 @@ def process_item(item, dry_run=False, copy_mode=False):
         )
     except Exception as e:
         return log_entry(
-            action="MOVE_FAILED",
+            action="COPY_FAILED" if copy_mode else "MOVE_FAILED",
             source=source,
             dest=dest_path,
             label=label,
@@ -187,19 +227,60 @@ def process_item(item, dry_run=False, copy_mode=False):
 
 # ─── Chain of Custody Logger ──────────────────────────────────────────────────
 
+MAX_CUSTODY_LOG_BYTES = 5 * 1024 * 1024
+
+def _atomic_save_json(path, data):
+    """Write JSON via a temp file and atomically replace the destination."""
+    dest_path = Path(path)
+    os.makedirs(dest_path.parent, exist_ok=True)
+
+    fd, temp_path = tempfile.mkstemp(
+        dir=str(dest_path.parent),
+        prefix=f".{dest_path.name}.",
+        suffix=".tmp",
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump(data, fh, indent=2, ensure_ascii=False)
+            fh.write("\n")
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(temp_path, dest_path)
+    except Exception:
+        try:
+            os.unlink(temp_path)
+        except OSError:
+            pass
+        raise
+
+def _rotate_custody_log_if_needed(path):
+    """Rotate the custody log when the active JSON file grows too large."""
+    if not os.path.exists(path):
+        return
+    if os.path.getsize(path) < MAX_CUSTODY_LOG_BYTES:
+        return
+
+    log_path = Path(path)
+    rotated_path = log_path.with_name(
+        f"{log_path.stem}_{timestamp().replace(':', '').replace('-', '')}{log_path.suffix}"
+    )
+    os.replace(log_path, rotated_path)
+
 def append_custody_log(entries):
     if not cfg.CHAIN_OF_CUSTODY:
         return
+
+    _rotate_custody_log_if_needed(cfg.LOG_FILE)
+
     log = load_json(cfg.LOG_FILE, {"entries": [], "agent": AGENT_SIGNATURE})
     log["entries"].extend(entries)
     log["last_run"] = timestamp()
     log["total_operations"] = len(log["entries"])
-    save_json(cfg.LOG_FILE, log)
-
+    _atomic_save_json(cfg.LOG_FILE, log)
 
 # ─── Reports ──────────────────────────────────────────────────────────────────
 
-def print_status(queue, manifest):
+def print_status(queue, manifest, dry_run=False):
     pressure_color = {
         "HIGH":   "*** HIGH PRESSURE ***",
         "MEDIUM": "~~ MEDIUM PRESSURE ~~",
@@ -210,7 +291,7 @@ def print_status(queue, manifest):
     print(f"  Queue Depth: {manifest['queue_depth']} items")
     print(f"  Pressure   : {pressure_color.get(manifest['pressure'], manifest['pressure'])}")
     print(f"  Max/Run    : {cfg.MAX_PER_RUN} items (one hertz burst)")
-    print(f"  Mode       : {'DRY RUN' if cfg.DRY_RUN else 'LIVE'}")
+    print(f"  Mode       : {'DRY RUN' if dry_run else 'LIVE'}")
     print(f"  Agent      : {AGENT_SIGNATURE}")
     print(f"╚═══════════════════════════════════════════════════════════╝")
     if queue:
@@ -224,11 +305,57 @@ def print_status(queue, manifest):
     print()
 
 
-def print_run_summary(entries):
+def print_pressure_report(queue, manifest):
+    """Dedicated pressure report: breakdown by label and feed, with queue preview."""
+    pressure_color = {
+        "HIGH":   "*** HIGH PRESSURE ***",
+        "MEDIUM": "~~ MEDIUM PRESSURE ~~",
+        "LOW":    "-- low pressure --",
+    }
+    total    = manifest["queue_depth"]
+    capacity = cfg.MAX_PER_RUN
+    cycles   = -(-total // capacity) if total else 0          # ceiling div
+    held     = max(total - capacity, 0)
+    by_label = Counter(item["label"] for item in queue)
+    by_feed  = Counter(item["feed"]  for item in queue)
+
+    print(f"\n╔═══ PIXELATOR PRESSURE REPORT ══════════════════════════╗")
+    print(f"  Time         : {timestamp()}")
+    print(f"  Queue Depth  : {total} item(s)")
+    print(f"  Pressure     : {pressure_color.get(manifest['pressure'], manifest['pressure'])}")
+    print(f"  Threshold    : {cfg.PRESSURE_THRESHOLD} (HIGH above this)")
+    print(f"  Capacity/Run : {capacity} item(s)")
+    print(f"  Runs to Clear: ~{cycles} burst(s)")
+    print(f"  Held/Burst   : {held} item(s) remain after one run")
+    print(f"")
+    print(f"  By Label:")
+    if by_label:
+        for label, count in sorted(by_label.items(), key=lambda x: -x[1]):
+            bar = "█" * min(count, 30)
+            print(f"    {label:15s} {count:4d}  {bar}")
+    else:
+        print("    (queue is empty)")
+    print(f"")
+    print(f"  By Feed:")
+    for feed, count in sorted(by_feed.items(), key=lambda x: -x[1]):
+        feed_short = feed.replace("/storage/emulated/0/pixel8a/", "~/")
+        print(f"    {count:4d}  {feed_short}")
+    if total:
+        preview = ", ".join(item.get("filename", "?") for item in queue[:3])
+        print(f"")
+        print(f"  Queue head   : {preview}")
+        if total > 3:
+            print(f"  Queue tail   : ... +{total - 3} more item(s)")
+    print(f"╚═══════════════════════════════════════════════════════════╝")
+    print()
+
+
+def print_run_summary(entries, copy_mode=False):
     success = sum(1 for e in entries if e["status"] == "SUCCESS")
     errors  = sum(1 for e in entries if e["status"] == "ERROR")
     dry     = sum(1 for e in entries if e["status"] == "SIMULATED")
-    print(f"\n  ✓ Processed : {success} items moved")
+    verb = "copied" if copy_mode else "moved"
+    print(f"\n  ✓ Processed : {success} items {verb}")
     if dry:
         print(f"  ~ Simulated : {dry} items (dry run)")
     if errors:
@@ -248,11 +375,15 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     queue = scan_feeds()
     manifest = update_queue_manifest(queue)
 
-    if status_only or pressure_only:
-        print_status(queue, manifest)
+    if pressure_only:
+        print_pressure_report(queue, manifest)
         return
 
-    print_status(queue, manifest)
+    if status_only:
+        print_status(queue, manifest, dry_run=dry_run)
+        return
+
+    print_status(queue, manifest, dry_run=dry_run)
 
     if not queue:
         print("  Queue is empty. All feeds clear. 🌌\n")
@@ -278,10 +409,12 @@ def run_cycle(dry_run=False, status_only=False, pressure_only=False):
     # Log chain of custody
     append_custody_log(custody_entries)
 
-    # Update manifest with remaining queue
-    update_queue_manifest(queue[cfg.MAX_PER_RUN:])
+    # Rebuild queue from feeds after processing so the manifest reflects
+    # copy mode, dry-run mode, and any move/copy failures.
+    post_run_queue = scan_feeds()
+    update_queue_manifest(post_run_queue)
 
-    print_run_summary(custody_entries)
+    print_run_summary(custody_entries, copy_mode=cfg.COPY_NOT_MOVE)
 
 
 # ─── Entry Point ──────────────────────────────────────────────────────────────
@@ -299,7 +432,9 @@ def main():
 
     dry_run = args.dry_run or cfg.DRY_RUN
 
-    if args.interval:
+    if args.interval is not None:
+        if args.interval <= 0:
+            parser.error("--interval must be greater than 0")
         print(f"\n  Pixelator running on {args.interval}s interval. Ctrl+C to stop.")
         try:
             while True:
